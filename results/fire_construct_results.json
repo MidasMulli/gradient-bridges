@@ -1,0 +1,1340 @@
+{
+ "prereg": "see module docstring; primary = constructed vs random_branch pooled, one-sided Fisher, bar p<0.01; oracle pool 0/96 => UNDERPOWERED, nulls void",
+ "sanity_directly_trained_NVDA": "8/8",
+ "AAPL": {
+  "beta_injected": 1.0065784454345703,
+  "own_true_branch_B_norm": 0.8449732065200806,
+  "beta_over_own": 1.1913,
+  "manifold": {
+   "norm_delta_hat": 3.5907440185546875,
+   "norm_trained_delta": 3.588940143585205,
+   "cos_delta_hat_vs_trained": 0.9499305486679077,
+   "cos_trunk_vs_trained": 0.9563927054405212
+  },
+  "ceiling": {
+   "fires_target": "8/8",
+   "emitted": {
+    "AAPL": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")"
+   ]
+  },
+  "oracle_branch": {
+   "fires_target": "8/8",
+   "emitted": {
+    "AAPL": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")"
+   ]
+  },
+  "constructed": {
+   "fires_target": "8/8",
+   "emitted": {
+    "AAPL": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")"
+   ]
+  },
+  "wrong_grad": {
+   "fires_target": "0/8",
+   "emitted": {
+    "AMZN": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")"
+   ]
+  },
+  "random_branch": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  },
+  "trunk_only": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  }
+ },
+ "AMZN": {
+  "beta_injected": 1.0058718919754028,
+  "own_true_branch_B_norm": 0.8527454137802124,
+  "beta_over_own": 1.1796,
+  "manifold": {
+   "norm_delta_hat": 3.6226754188537598,
+   "norm_trained_delta": 3.6394827365875244,
+   "cos_delta_hat_vs_trained": 0.9635339975357056,
+   "cos_trunk_vs_trained": 0.9672600626945496
+  },
+  "ceiling": {
+   "fires_target": "8/8",
+   "emitted": {
+    "AMZN": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")"
+   ]
+  },
+  "oracle_branch": {
+   "fires_target": "8/8",
+   "emitted": {
+    "AMZN": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")"
+   ]
+  },
+  "constructed": {
+   "fires_target": "8/8",
+   "emitted": {
+    "AMZN": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")",
+    "CALL: stock_quote(\"AMZN\")"
+   ]
+  },
+  "wrong_grad": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 7,
+    "BAC": 1
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\"BAC\")"
+   ]
+  },
+  "random_branch": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  },
+  "trunk_only": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  }
+ },
+ "BAC": {
+  "beta_injected": 0.9776990413665771,
+  "own_true_branch_B_norm": 1.1626471281051636,
+  "beta_over_own": 0.8409,
+  "manifold": {
+   "norm_delta_hat": 3.6363956928253174,
+   "norm_trained_delta": 3.7419023513793945,
+   "cos_delta_hat_vs_trained": 0.9206563234329224,
+   "cos_trunk_vs_trained": 0.9226819276809692
+  },
+  "ceiling": {
+   "fires_target": "8/8",
+   "emitted": {
+    "BAC": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"BAC\")",
+    "CALL: stock_quote(\"BAC\")",
+    "CALL: stock_quote(\"BAC\")",
+    "CALL: stock_quote(\"BAC\")",
+    "CALL: stock_quote(\"BAC\")",
+    "CALL: stock_quote(\"BAC\")",
+    "CALL: stock_quote(\"BAC\")",
+    "CALL: stock_quote(\"BAC\")"
+   ]
+  },
+  "oracle_branch": {
+   "fires_target": "8/8",
+   "emitted": {
+    "BAC": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"BAC\")",
+    "CALL: stock_quote(\"BAC\")",
+    "CALL: stock_quote(\"BAC\")",
+    "CALL: stock_quote(\"BAC\")",
+    "CALL: stock_quote(\"BAC\")",
+    "CALL: stock_quote(\"BAC\")",
+    "CALL: stock_quote(\"BAC\")",
+    "CALL: stock_quote(\"BAC\")"
+   ]
+  },
+  "constructed": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  },
+  "wrong_grad": {
+   "fires_target": "0/8",
+   "emitted": {
+    "DIS": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")"
+   ]
+  },
+  "random_branch": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  },
+  "trunk_only": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  }
+ },
+ "DIS": {
+  "beta_injected": 0.9956070184707642,
+  "own_true_branch_B_norm": 0.9656591415405273,
+  "beta_over_own": 1.031,
+  "manifold": {
+   "norm_delta_hat": 3.7227237224578857,
+   "norm_trained_delta": 3.696807384490967,
+   "cos_delta_hat_vs_trained": 0.9582775235176086,
+   "cos_trunk_vs_trained": 0.9557899832725525
+  },
+  "ceiling": {
+   "fires_target": "8/8",
+   "emitted": {
+    "DIS": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")"
+   ]
+  },
+  "oracle_branch": {
+   "fires_target": "8/8",
+   "emitted": {
+    "DIS": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")"
+   ]
+  },
+  "constructed": {
+   "fires_target": "8/8",
+   "emitted": {
+    "DIS": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")"
+   ]
+  },
+  "wrong_grad": {
+   "fires_target": "0/8",
+   "emitted": {
+    "GOOGL": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")"
+   ]
+  },
+  "random_branch": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  },
+  "trunk_only": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  }
+ },
+ "GOOGL": {
+  "beta_injected": 0.9867106080055237,
+  "own_true_branch_B_norm": 1.06351900100708,
+  "beta_over_own": 0.9278,
+  "manifold": {
+   "norm_delta_hat": 3.5893170833587646,
+   "norm_trained_delta": 3.6452112197875977,
+   "cos_delta_hat_vs_trained": 0.9352698922157288,
+   "cos_trunk_vs_trained": 0.9346697330474854
+  },
+  "ceiling": {
+   "fires_target": "8/8",
+   "emitted": {
+    "GOOGL": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")"
+   ]
+  },
+  "oracle_branch": {
+   "fires_target": "8/8",
+   "emitted": {
+    "GOOGL": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")"
+   ]
+  },
+  "constructed": {
+   "fires_target": "8/8",
+   "emitted": {
+    "GOOGL": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")",
+    "CALL: stock_quote(\"GOOGL\")"
+   ]
+  },
+  "wrong_grad": {
+   "fires_target": "0/8",
+   "emitted": {
+    "JPM": 7,
+    "NONE": 1
+   },
+   "texts": [
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\"JPM\")"
+   ]
+  },
+  "random_branch": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  },
+  "trunk_only": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  }
+ },
+ "JPM": {
+  "beta_injected": 0.9806084036827087,
+  "own_true_branch_B_norm": 1.1306437253952026,
+  "beta_over_own": 0.8673,
+  "manifold": {
+   "norm_delta_hat": 3.628648281097412,
+   "norm_trained_delta": 3.7505297660827637,
+   "cos_delta_hat_vs_trained": 0.9364585876464844,
+   "cos_trunk_vs_trained": 0.9366416931152344
+  },
+  "ceiling": {
+   "fires_target": "8/8",
+   "emitted": {
+    "JPM": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\"JPM\")"
+   ]
+  },
+  "oracle_branch": {
+   "fires_target": "8/8",
+   "emitted": {
+    "JPM": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\"JPM\")"
+   ]
+  },
+  "constructed": {
+   "fires_target": "1/8",
+   "emitted": {
+    "NONE": 7,
+    "JPM": 1
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\"JPM\")",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  },
+  "wrong_grad": {
+   "fires_target": "0/8",
+   "emitted": {
+    "KO": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")"
+   ]
+  },
+  "random_branch": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  },
+  "trunk_only": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  }
+ },
+ "KO": {
+  "beta_injected": 0.9952815771102905,
+  "own_true_branch_B_norm": 0.9692394733428955,
+  "beta_over_own": 1.0269,
+  "manifold": {
+   "norm_delta_hat": 3.720766544342041,
+   "norm_trained_delta": 3.698660373687744,
+   "cos_delta_hat_vs_trained": 0.9596995115280151,
+   "cos_trunk_vs_trained": 0.9582319855690002
+  },
+  "ceiling": {
+   "fires_target": "8/8",
+   "emitted": {
+    "KO": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")"
+   ]
+  },
+  "oracle_branch": {
+   "fires_target": "8/8",
+   "emitted": {
+    "KO": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")"
+   ]
+  },
+  "constructed": {
+   "fires_target": "8/8",
+   "emitted": {
+    "KO": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")"
+   ]
+  },
+  "wrong_grad": {
+   "fires_target": "0/8",
+   "emitted": {
+    "META": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")"
+   ]
+  },
+  "random_branch": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  },
+  "trunk_only": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  }
+ },
+ "META": {
+  "beta_injected": 1.0035890340805054,
+  "own_true_branch_B_norm": 0.8778576254844666,
+  "beta_over_own": 1.1432,
+  "manifold": {
+   "norm_delta_hat": 3.7222187519073486,
+   "norm_trained_delta": 3.6565120220184326,
+   "cos_delta_hat_vs_trained": 0.9620866775512695,
+   "cos_trunk_vs_trained": 0.9647458791732788
+  },
+  "ceiling": {
+   "fires_target": "8/8",
+   "emitted": {
+    "META": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")"
+   ]
+  },
+  "oracle_branch": {
+   "fires_target": "8/8",
+   "emitted": {
+    "META": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")"
+   ]
+  },
+  "constructed": {
+   "fires_target": "8/8",
+   "emitted": {
+    "META": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")",
+    "CALL: stock_quote(\"META\")"
+   ]
+  },
+  "wrong_grad": {
+   "fires_target": "0/8",
+   "emitted": {
+    "MSFT": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")"
+   ]
+  },
+  "random_branch": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  },
+  "trunk_only": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  }
+ },
+ "MSFT": {
+  "beta_injected": 1.0075887441635132,
+  "own_true_branch_B_norm": 0.833860456943512,
+  "beta_over_own": 1.2083,
+  "manifold": {
+   "norm_delta_hat": 3.6168503761291504,
+   "norm_trained_delta": 3.6136436462402344,
+   "cos_delta_hat_vs_trained": 0.9617663025856018,
+   "cos_trunk_vs_trained": 0.9679811000823975
+  },
+  "ceiling": {
+   "fires_target": "8/8",
+   "emitted": {
+    "MSFT": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")"
+   ]
+  },
+  "oracle_branch": {
+   "fires_target": "8/8",
+   "emitted": {
+    "MSFT": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")"
+   ]
+  },
+  "constructed": {
+   "fires_target": "8/8",
+   "emitted": {
+    "MSFT": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")",
+    "CALL: stock_quote(\"MSFT\")"
+   ]
+  },
+  "wrong_grad": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NVDA": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")"
+   ]
+  },
+  "random_branch": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  },
+  "trunk_only": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  }
+ },
+ "NVDA": {
+  "beta_injected": 1.0097060203552246,
+  "own_true_branch_B_norm": 0.8105707168579102,
+  "beta_over_own": 1.2457,
+  "manifold": {
+   "norm_delta_hat": 3.6216180324554443,
+   "norm_trained_delta": 3.6249709129333496,
+   "cos_delta_hat_vs_trained": 0.9638388156890869,
+   "cos_trunk_vs_trained": 0.9694934487342834
+  },
+  "ceiling": {
+   "fires_target": "8/8",
+   "emitted": {
+    "NVDA": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")"
+   ]
+  },
+  "oracle_branch": {
+   "fires_target": "8/8",
+   "emitted": {
+    "NVDA": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")"
+   ]
+  },
+  "constructed": {
+   "fires_target": "7/8",
+   "emitted": {
+    "NVNV": 1,
+    "NVDA": 7
+   },
+   "texts": [
+    "CALL: stock_quote(\"NVNV\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")"
+   ]
+  },
+  "wrong_grad": {
+   "fires_target": "0/8",
+   "emitted": {
+    "WFC": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")"
+   ]
+  },
+  "random_branch": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  },
+  "trunk_only": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  }
+ },
+ "WFC": {
+  "beta_injected": 0.9717628955841064,
+  "own_true_branch_B_norm": 1.2279444932937622,
+  "beta_over_own": 0.7914,
+  "manifold": {
+   "norm_delta_hat": 3.638343095779419,
+   "norm_trained_delta": 3.749325752258301,
+   "cos_delta_hat_vs_trained": 0.913040041923523,
+   "cos_trunk_vs_trained": 0.9069191813468933
+  },
+  "ceiling": {
+   "fires_target": "8/8",
+   "emitted": {
+    "WFC": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")"
+   ]
+  },
+  "oracle_branch": {
+   "fires_target": "8/8",
+   "emitted": {
+    "WFC": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")"
+   ]
+  },
+  "constructed": {
+   "fires_target": "8/8",
+   "emitted": {
+    "WFC": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")",
+    "CALL: stock_quote(\"WFC\")"
+   ]
+  },
+  "wrong_grad": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  },
+  "random_branch": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  },
+  "trunk_only": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  }
+ },
+ "XOM": {
+  "beta_injected": 0.9763327240943909,
+  "own_true_branch_B_norm": 1.1776765584945679,
+  "beta_over_own": 0.829,
+  "manifold": {
+   "norm_delta_hat": 3.6355793476104736,
+   "norm_trained_delta": 3.7536637783050537,
+   "cos_delta_hat_vs_trained": 0.9216604232788086,
+   "cos_trunk_vs_trained": 0.9223592877388
+  },
+  "ceiling": {
+   "fires_target": "8/8",
+   "emitted": {
+    "XOM": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"XOM\")",
+    "CALL: stock_quote(\"XOM\")",
+    "CALL: stock_quote(\"XOM\")",
+    "CALL: stock_quote(\"XOM\")",
+    "CALL: stock_quote(\"XOM\")",
+    "CALL: stock_quote(\"XOM\")",
+    "CALL: stock_quote(\"XOM\")",
+    "CALL: stock_quote(\"XOM\")"
+   ]
+  },
+  "oracle_branch": {
+   "fires_target": "8/8",
+   "emitted": {
+    "XOM": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"XOM\")",
+    "CALL: stock_quote(\"XOM\")",
+    "CALL: stock_quote(\"XOM\")",
+    "CALL: stock_quote(\"XOM\")",
+    "CALL: stock_quote(\"XOM\")",
+    "CALL: stock_quote(\"XOM\")",
+    "CALL: stock_quote(\"XOM\")",
+    "CALL: stock_quote(\"XOM\")"
+   ]
+  },
+  "constructed": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  },
+  "wrong_grad": {
+   "fires_target": "0/8",
+   "emitted": {
+    "AAPL": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")",
+    "CALL: stock_quote(\"AAPL\")"
+   ]
+  },
+  "random_branch": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  },
+  "trunk_only": {
+   "fires_target": "0/8",
+   "emitted": {
+    "NONE": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote(",
+    "CALL: stock_quote(\" stock_quote(\" stock_quote(\" stock_quote("
+   ]
+  }
+ },
+ "pooled": {
+  "ceiling": {
+   "rate": "96/96",
+   "wilson95": [
+    0.9615,
+    1
+   ]
+  },
+  "oracle_branch": {
+   "rate": "96/96",
+   "wilson95": [
+    0.9615,
+    1
+   ]
+  },
+  "constructed": {
+   "rate": "72/96",
+   "wilson95": [
+    0.6549,
+    0.8259
+   ]
+  },
+  "wrong_grad": {
+   "rate": "0/96",
+   "wilson95": [
+    0,
+    0.0385
+   ]
+  },
+  "random_branch": {
+   "rate": "0/96",
+   "wilson95": [
+    0,
+    0.0385
+   ]
+  },
+  "trunk_only": {
+   "rate": "0/96",
+   "wilson95": [
+    0,
+    0.0385
+   ]
+  },
+  "wrong_grad_fired_injected_ticker": "80/96"
+ },
+ "primary_fisher_p_constructed_vs_random": 3.011857341102682e-32,
+ "underpowered": false,
+ "stamped_utc": "2026-08-23T03-40-01Z"
+}

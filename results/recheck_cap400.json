@@ -1,0 +1,55 @@
+{
+ "cap": 400,
+ "ceiling_NVDA": {
+  "rate": "7/8",
+  "detail": [
+   "PASS",
+   "PASS",
+   "PASS",
+   "PASS",
+   "PASS",
+   "PASS",
+   "PASS",
+   "FAIL-nocall"
+  ]
+ },
+ "TSLA": {
+  "rate": "5/8",
+  "detail": [
+   "PASS",
+   "FAIL-nocall",
+   "FAIL-nocall",
+   "PASS",
+   "PASS",
+   "PASS",
+   "PASS",
+   "FAIL-nocall"
+  ]
+ },
+ "NFLX": {
+  "rate": "6/8",
+  "detail": [
+   "PASS",
+   "PASS",
+   "FAIL-nocall",
+   "PASS",
+   "PASS",
+   "PASS",
+   "PASS",
+   "FAIL-nocall"
+  ]
+ },
+ "GS": {
+  "rate": "7/8",
+  "detail": [
+   "PASS",
+   "PASS",
+   "PASS",
+   "FAIL-nocall",
+   "PASS",
+   "PASS",
+   "PASS",
+   "PASS"
+  ]
+ }
+}

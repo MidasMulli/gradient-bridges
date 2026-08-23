@@ -1,0 +1,61 @@
+{
+ "ceiling": {
+  "wf_fires_injected": 96,
+  "wf_nonfiring": 0,
+  "degen_fires": 0,
+  "degen_nonfiring": 0,
+  "well_formed_rate": "96/96",
+  "wf_emitting_any_known_ticker": "96/96"
+ },
+ "oracle_branch": {
+  "wf_fires_injected": 96,
+  "wf_nonfiring": 0,
+  "degen_fires": 0,
+  "degen_nonfiring": 0,
+  "well_formed_rate": "96/96",
+  "wf_emitting_any_known_ticker": "96/96"
+ },
+ "constructed": {
+  "wf_fires_injected": 72,
+  "wf_nonfiring": 1,
+  "degen_fires": 0,
+  "degen_nonfiring": 23,
+  "well_formed_rate": "73/96",
+  "wf_emitting_any_known_ticker": "72/96"
+ },
+ "wrong_grad": {
+  "wf_fires_injected": 80,
+  "wf_nonfiring": 0,
+  "degen_fires": 0,
+  "degen_nonfiring": 16,
+  "well_formed_rate": "80/96",
+  "wf_emitting_any_known_ticker": "80/96"
+ },
+ "random_branch": {
+  "wf_fires_injected": 0,
+  "wf_nonfiring": 0,
+  "degen_fires": 0,
+  "degen_nonfiring": 96,
+  "well_formed_rate": "0/96",
+  "wf_emitting_any_known_ticker": "0/96"
+ },
+ "trunk_only": {
+  "wf_fires_injected": 0,
+  "wf_nonfiring": 0,
+  "degen_fires": 0,
+  "degen_nonfiring": 96,
+  "well_formed_rate": "0/96",
+  "wf_emitting_any_known_ticker": "0/96"
+ },
+ "coherence_restoration": {
+  "reading": "compare WF rates: trunk_only vs random_branch vs gradient-basis arms. random ~ trunk (both low) => coherence is branch-DIRECTION-sensitive, not norm-sensitive \u2014 a random branch at beta does not restore it; only gradient-basis branches do.",
+  "wf_rates": {
+   "ceiling": "96/96",
+   "oracle_branch": "96/96",
+   "constructed": "73/96",
+   "wrong_grad": "80/96",
+   "random_branch": "0/96",
+   "trunk_only": "0/96"
+  }
+ }
+}

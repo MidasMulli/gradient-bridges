@@ -1,0 +1,44 @@
+{
+ "beta": 0.9931113719940186,
+ "armA": {
+  "NVDA+KOgrad": {
+   "KO": 8
+  },
+  "NVDA+DISgrad": {
+   "DIS": 8
+  },
+  "KO+NVDAgrad": {
+   "NVNV": 2,
+   "NVDA": 6
+  },
+  "KO+DISgrad": {
+   "DIS": 8
+  },
+  "DIS+NVDAgrad": {
+   "NVDA": 8
+  },
+  "DIS+KOgrad": {
+   "KO": 8
+  }
+ },
+ "armA_controls": {
+  "NVDA+random": {
+   "NVDA": 8
+  },
+  "KO+random": {
+   "KO": 8
+  }
+ },
+ "armB": {
+  "TSLA": {
+   "DEGEN": 8
+  },
+  "NFLX": {
+   "DEGEN": 8
+  },
+  "GS": {
+   "DEGEN": 8
+  }
+ },
+ "stamped_utc": "2026-08-23T21-18-37Z"
+}

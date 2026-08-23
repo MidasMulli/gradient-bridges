@@ -1,0 +1,66 @@
+{
+ "A1": {
+  "endpoint_pairwise_cos_mean": 0.9076865315437317,
+  "min": 0.8605694770812988,
+  "max": 0.95445317029953,
+  "std": 0.026989687234163284,
+  "pc_var_captured": 0.9898474342785484
+ },
+ "A2": {
+  "loto_heldout_cos_mean": 0.519729687785573,
+  "loto_cos_per_target": {
+   "AAPL": 0.5276,
+   "AMZN": 0.5221,
+   "BAC": 0.5123,
+   "DIS": 0.5226,
+   "GOOGL": 0.5243,
+   "JPM": 0.524,
+   "KO": 0.5211,
+   "META": 0.5234,
+   "MSFT": 0.5238,
+   "NVDA": 0.5233,
+   "WFC": 0.5192,
+   "XOM": 0.4931
+  },
+  "loto_rsa_mean": 0.645668451647808,
+  "kill_bar": "cos<=0.1 AND rsa<=0.1 => WALL-REPLICATED",
+  "verdict_A2": "FIELD-PREDICTABLE-cos>0.1 \u2014 escalate to A3"
+ },
+ "CONTROL_meanfield": {
+  "meanfield_loto_cos_mean": 0.9495962262153625,
+  "meanfield_loto_rsa_mean": 0.9964153311655161,
+  "meanfield_cos_per_target": {
+   "AAPL": 0.9578,
+   "AMZN": 0.971,
+   "BAC": 0.928,
+   "DIS": 0.966,
+   "GOOGL": 0.9493,
+   "JPM": 0.9367,
+   "KO": 0.9646,
+   "META": 0.9635,
+   "MSFT": 0.9604,
+   "NVDA": 0.9645,
+   "WFC": 0.9245,
+   "XOM": 0.909
+  },
+  "reading": "ridge ~ meanfield => shared-schedule signal, free rep adds nothing; ridge >> meanfield => target-specific signal"
+ },
+ "pcs": 64,
+ "n_targets": 12,
+ "fires": {
+  "AAPL": "8/8",
+  "AMZN": "8/8",
+  "BAC": "8/8",
+  "DIS": "8/8",
+  "GOOGL": "8/8",
+  "JPM": "8/8",
+  "KO": "8/8",
+  "META": "8/8",
+  "MSFT": "8/8",
+  "NVDA": "8/8",
+  "WFC": "8/8",
+  "XOM": "8/8"
+ },
+ "analyzer": "analyze_stream.py (streaming port; see docstring)",
+ "stamped_utc": "2026-08-23T01-52-09Z"
+}

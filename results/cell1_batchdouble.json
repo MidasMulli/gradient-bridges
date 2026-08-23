@@ -1,0 +1,24 @@
+{
+ "BAC": {
+  "align24": 0.3834,
+  "align48": 0.3768,
+  "delta": -0.0066
+ },
+ "XOM": {
+  "align24": 0.395,
+  "align48": 0.3892,
+  "delta": -0.0058
+ },
+ "JPM": {
+  "align24": 0.4255,
+  "align48": 0.4035,
+  "delta": -0.022
+ },
+ "DIS": {
+  "align24": 0.5331,
+  "align48": 0.4998,
+  "delta": -0.0333
+ },
+ "verdict": "CURVATURE-LIMITED (per-identity floor)",
+ "sanity_DIS_moved": true
+}
