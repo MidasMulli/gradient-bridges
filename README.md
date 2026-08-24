@@ -4,8 +4,10 @@ Building a working LoRA adapter for a task that was never trained, using the mea
 other tasks' adapters plus one gradient evaluated at the untrained initialization.
 
 All results are from one bench: RTX 2080 Ti (11 GB), a 9B instruction-tuned causal LM
-quantized to NF4 and frozen, LoRA rank 4. Two seeds. Preregistered with executable
-gates. Status: candidate. Not externally reproduced.
+quantized to NF4 and frozen, LoRA rank 4 (the cross-frame walk in the report uses rank 8,
+where the interpolation is exact). The main panel is one seed; a partial replication at a
+second seed covers 6 of the 12 tasks. Preregistered with executable gates. Status:
+candidate, not externally reproduced.
 
 ## The construction
 
@@ -22,110 +24,190 @@ adapter(T) = trunk + beta * unit_B( grad L_T(theta_0) - mean_grad_others )
   text is generated from a template.
 * `beta` is the typical task-specific ("branch") norm across the library.
 
+"Never trained" refers to the construction, not to the study. For the 12 leave-one-out
+tasks a trained adapter does exist, and is used only to define the ceiling and the oracle
+and to measure alignment after the fact; it is excluded from the trunk and is never an
+input to the constructed adapter. For the 3 novel tasks no adapter was trained at all.
+
 ## What was measured
 
-The task is a synthetic tool-call protocol the base model does not produce (0/8 control).
+The task is a synthetic tool-call protocol the base model did not produce in 8 greedy
+single-shot control generations.
 
 | arm | result |
 |-----|--------|
+| directly trained, 12 tasks (ceiling) | 96/96 |
+| oracle, true branch direction at the same norm | 96/96 |
 | constructed, 12 leave-one-out tasks | 72/96 |
-| constructed, 3 tasks with no training anywhere, trigger regime | 24/24 |
-| constructed, same 3 tasks, speak-then-act regime, 400-token budget | 18/24 |
-| directly trained ceiling, same regime and budget | 7/8 |
 | matched-norm random direction, same subspace | 0/96 |
 | trunk alone | 0/96 |
-| constructed-arm generations emitting a different ticker | 0/96 |
+| wrong-gradient, target emitted | 0/96 |
+| constructed, a ticker other than the target emitted | 0/96 |
 
-The last row is the misattribution check. Of the 24 leave-one-out cases that did not
-fire, 23 produced no call at all and 1 produced a fragmentary string (`NVNV`). None
-produced a different valid ticker. The wrong-gradient arm is the deliberate contrast: it
-never emits the target (0/96) and emits the injected ticker instead 80/96.
+On 3 tasks with no trained adapter anywhere, the constructed adapter fires 24/24 in the
+trigger regime. In the speak-then-act regime at a 400-token budget it pools 18/24 against
+a 7/8 directly trained ceiling for one task under the same cap.
+
+Failure is degenerate rather than misdirected. Of the 24 leave-one-out non-fires, 23 emit
+a repeating malformed scaffold (`CALL: stock_quote(" stock_quote(" ...`), which is the
+same signature the trunk-only arm produces, and 1 emits the fragment `NVNV`. None emits a
+different valid ticker. The wrong-gradient arm is the deliberate contrast: it never emits
+the target and emits the injected ticker instead, 80/96.
 
 ## Findings
 
-1. **Population geometry.** Trained adapters decompose into a shared trunk carrying most
-   of the step-level predictability (a mean-field control predicts a held-out task's
-   steps at cosine 0.95, against 0.52 for a fitted per-task predictor) and near-orthogonal
-   per-task branches at roughly 20% of step norm. The branch direction locks early: its
-   cosine with its own final direction is 0.769 at training step 5, 0.947 at step 20, and
-   0.991 at step 40, out of 120.
+### Population geometry
 
-2. **A firing threshold.** Gradient-to-branch alignment runs 0.38 to 0.53 across tasks
-   (null p95 0.083) and reproduces across seeds to the third decimal. Firing is a step
-   function of that alignment, with onset bracketed between 0.4255 and 0.4485, one data
-   point per edge. The three failures are the three lowest alignments. Doubling the
-   gradient's data from 24 to 48 examples moved alignment down in all four tasks tested,
-   by 0.006 to 0.033, and improved none, so the floor is not a sampling limit.
+Trained adapters decompose into a shared trunk and near-orthogonal per-task branches. A
+mean-field control predicts a held-out task's training steps at cosine 0.95, against 0.52
+for a fitted per-task ridge, so the fitted predictor loses to the trivial centroid. The
+per-task branch carries about 20% of step norm (mean 0.206) with pairwise cosines near the
+independence reference of -1/11 (measured -0.084). The branch direction locks early: its
+cosine with its own final direction is 0.769 at training step 5, 0.947 at step 20, and
+0.991 at step 40, out of 120.
 
-3. **Override.** A foreign task's gradient branch at matched norm, injected onto a fully
-   trained adapter, produces the foreign identity 46/48 across six ordered pairs, with the
-   resident owner at zero in every generation. The other 2 generations are fragmentary
-   rather than owner. Random directions at the same norm leave the owner intact, 8/8 in
-   both control pairs, so replacement tracks the direction and not the added norm.
+### Alignment predicts firing, with a caveat at the margin
 
-4. **Dose.** Sweeping injection strength over two ordered pairs: at 0.6 beta the owner is
-   untouched in both (8/8 owner), clean replacement arrives at 0.8 beta in one pair and
-   0.9 in the other, and fragmentary strings appear in one pair only, at 1.0 beta (2/8)
-   and 1.1 beta (5/8). The upper edge is pair-dependent.
+Gradient-to-branch alignment in the B-subspace, against constructed fire rate, all 12
+tasks:
 
-5. **Coherence depends on the direction family.** The centroid of cross-task adapters is
-   itself non-functional. At matched norm, random directions and unembedding-derived
-   directions do not restore function; gradient-derived directions do. Same-task centroids
-   are reported to work elsewhere (arXiv:2302.04863), so the condition here is crossing
-   tasks, not averaging.
+| task | alignment | fires |
+|---|---|---|
+| BAC | 0.3834 | 0/8 |
+| XOM | 0.3950 | 0/8 |
+| JPM | 0.4255 | 1/8 |
+| WFC | 0.4485 | 8/8 |
+| GOOGL | 0.4622 | 8/8 |
+| AAPL | 0.4874 | 8/8 |
+| MSFT | 0.4999 | 8/8 |
+| META | 0.5093 | 8/8 |
+| KO | 0.5191 | 8/8 |
+| NVDA | 0.5260 | 7/8 |
+| AMZN | 0.5276 | 8/8 |
+| DIS | 0.5331 | 8/8 |
 
-6. **Frame locality.** The construction is deterministic within an initialization frame:
-   the alignment band reproduces at a second seed (mean 0.467), where five of six
-   constructed bridges fire 8/8 and the lowest-aligned task fires 3/8. Across seeds,
-   trained solutions share 0.144 weight-space cosine against a null of 0.041, and trunks
-   share 0.200. Interpolating two same-task solutions from different seeds fires at every
-   point (21/21), so in this object class those solutions are connected. The gradient
-   therefore computes something valid in the initialization frame it was computed in,
-   rather than a frame-independent object.
+Null p95 for alignment is 0.083, so every task clears the null. The three lowest
+alignments hold the three lowest fire rates (Pearson 0.85; Spearman 0.34, blunted by the
+nine-way tie at 8/8). Onset is bracketed by JPM at 0.4255 and WFC at 0.4485, one task per
+edge, so this is a bracket rather than a fitted threshold. NVDA at 0.5260 contributes the
+one `NVNV` fragment despite sitting second from the top, so alignment orders the tasks but
+does not account for every individual generation.
 
-7. **Identity separates from the behavioral program.** Branches computed under one
-   training regime drive adapters trained under another (cross-regime branch cosine 0.734;
-   24/24 in the easier direction). A speak-then-act regime shows the separation: the model
-   answers an unrelated question, then emits the call naming the never-trained target.
-   Runnable in a browser via `code/gpu_worker.py`.
+Alignment is also not the only variable near the edge. JPM fires 1/8 in its own clean
+leave-one-out trunk and 7/8 in GOOGL's trunk, which carries a 1/11 trace of JPM's own
+trained branch. At fixed alignment, trunk composition changed the outcome.
 
-## Scope
+Doubling the gradient's carrier set from 24 to 48 lowered alignment in all four tasks
+tested (-0.006 to -0.033) and raised none. One of the four, DIS at -0.033, exceeded the
+pre-set 0.03 sanity bar, consistent with a distribution-shift bias of that size. Firing
+was not re-tested at 48 carriers. On this evidence the floor is not a sampling limit;
+attributing it to curvature is an interpretation rather than a measurement.
 
-* One model, one substrate, 8 prompts per task.
+### Override
+
+A foreign task's gradient branch at matched norm, injected onto a fully trained adapter,
+produces the foreign identity 46/48 across six ordered pairs, with the resident owner at
+zero in every generation. The other 2 generations are fragmentary rather than owner. Two
+matched-norm random control cells leave the owner at 8/8 each, so replacement tracks the
+direction rather than the added norm.
+
+### Dose
+
+Two body and foreign pairs, five doses, 8 prompts each. At 0.6 beta, the lowest dose
+tested, the owner is untouched in both pairs. The clean-replacement window is
+pair-dependent: 0.8 to 0.9 beta for KO with an NVDA branch, 0.9 to 1.1 for DIS with a KO
+branch, with the latter in transition at 0.8 (5 owner, 3 foreign). Fragmentary emission
+appears at and above 1.0 beta in the first pair (2/8 then 5/8) and at no dose in the
+second.
+
+### Coherence depends on the direction family
+
+The centroid of cross-task adapters is itself non-functional. At matched norm, random
+directions and unembedding-derived directions do not restore function, and
+gradient-derived directions do. Same-task centroids are reported to work elsewhere
+(arXiv:2302.04863), so the condition here is crossing tasks.
+
+### Frame locality
+
+Rerunning the construction at a second seed on 6 of the 12 tasks, with a 5-task trunk,
+reproduces the band but not the values. Per-task alignment spans 0.399 to 0.501 (mean
+0.467) against 0.395 to 0.533 (mean 0.498) for the same six tasks at the first seed.
+Five of the six move by 0.018 to 0.050; only XOM lands within 0.005. The second seed's
+null p95 is 0.162, twice the first seed's, so the margin over null is smaller there. The
+ordering is preserved, with the lowest-aligned task lowest again. Five of six constructed
+bridges fire 8/8 and the lowest-aligned fires 3/8.
+
+Across seeds, matched task branches share 0.144 weight-space cosine (range 0.127 to 0.160)
+against a null p95 of 0.041, and trunks share 0.200. Interpolating two same-task solutions
+from different seeds fires at every point tested (21/21), so in this object class those
+solutions are connected. The gradient therefore computes something valid in the
+initialization frame it was computed in, rather than a frame-independent object.
+
+### Identity separates from the behavioral program
+
+Portability across training regimes is asymmetric. A dissociation-regime branch drives the
+trigger program 24/24; a trigger-regime branch drives the dissociation program 9/24,
+against an 18/24 same-regime reference in that program. Cross-regime branch cosine is
+0.734 (range 0.574 to 0.879, null p95 0.173). A speak-then-act regime shows the
+separation directly: the model answers an unrelated question, then emits the call naming
+the never-trained target. Runnable in a browser via `code/gpu_worker.py`.
+
+## Scope and limitations
+
+* One model, one substrate, 8 prompts per task, 12 library tasks.
 * Targets are in the same family as the library. Out-of-family is untested here.
-* Roughly a quarter of in-family targets sit below the alignment threshold and fail. The
-  threshold predicts which ones before the attempt.
+* Three of twelve in-family targets sit below the firing bracket and fail. Alignment ranks
+  the tasks and separates those failures in this set, on one data point per bracket edge.
 * The construction is training-free with respect to the target only. The trunk comes from
   other tasks' training.
-* Reliability decays on answers longer than the trained response-length band. This bounds
-  the speak-then-act regime and also bounds the directly trained ceiling.
+* The second-seed replication covers 6 tasks with a smaller trunk, not the full pipeline.
+* Reliability decays on answers longer than the trained response-length band, which bounds
+  both the speak-then-act rate and the trained ceiling.
+* The 18/24 speak-then-act figure is a corrected number. The preregistered 220-token cap
+  gave 13/24 because it truncated long answers before the appended call. Re-scored at 400
+  tokens the rate is 18/24, and the five disputed rows were re-run at 1024 tokens, where
+  all terminated on end-of-sequence without a call, confirming them as genuine omissions.
+* The wrong-gradient trunks contain a 1/11 trace of the injected ticker's own trained
+  branch, because leave-one-out excludes the body task and not the injectee. The
+  constructed arm's trunk is clean. Across the 12 wrong-gradient cells, firing correlates
+  with the injectee's own alignment at Pearson 0.80 and with trace norm at -0.57, the
+  wrong sign for the trace to be doing the work, but the JPM pair above shows the trace can
+  matter at the margin.
 
 ## Related work
 
-LoRA-One (arXiv:2502.01235) reports that a one-step gradient update, and its rank-8
-approximation, can match trained LoRA on small classification tasks without further
-training. Task vectors have been shown to approximate first-epoch gradients
-(arXiv:2508.16082) for trained models. GradFix (arXiv:2510.09658) uses target gradients to
-filter a task vector that was already trained on the target. LoraHub (arXiv:2307.13269)
-composes existing adapters without a target gradient, and hypernetwork approaches such as
-Text-to-LoRA generate adapters from a trained generator. The construction here combines a
-library trunk with a trunk-removed gradient branch on a generative task, and reports the
-alignment threshold, the population geometry, and the override and dose behavior above.
-`paper/PRIOR_ART_POSITIONING.md` records the full comparison.
+LoRA-One (arXiv:2502.01235) proves that LoRA adapters align with singular subspaces of the
+one-step full fine-tuning gradient, and its Table 2 reports that a one-step gradient
+update, and its rank-8 approximation, can match trained LoRA on small GLUE classification
+tasks with no subsequent training. This is the closest published result to the
+construction here. arXiv:2508.16082 shows that a task vector from one epoch of finetuning
+is exactly the negative gradient scaled by the learning rate, and that the first-epoch
+gradient dominates the trajectory. GradFix (arXiv:2510.09658) transports a task vector
+onto a different pre-trained model by masking it with the target model's gradient-sign
+structure, with no fine-tuning, though the task knowledge is still trained on the source
+model. LoraHub (arXiv:2307.13269) composes existing adapters with coefficients and no
+gradients, and Text-to-LoRA (arXiv:2506.06105) emits an adapter from a text description
+using a trained hypernetwork.
+
+The configuration measured here combines a library trunk with a trunk-removed gradient
+branch, on a generative task. `paper/PRIOR_ART_POSITIONING.md` records the full
+comparison, including what the sweep covered and did not cover.
 
 ## Repository
 
 * `code/` harness (model load, coordinate and readback gates, termination-state
   generation, gradient scale ladder), batching helpers, and every experiment as run
-* `preregs/` preregistrations, written before their runs, bars included
-* `results/` raw JSON for every panel, plus `NARRATIVE.md`, the full lab record including
-  corrections, disclosed partial results, and instrument failures in the order they happened
+* `preregs/` preregistrations, with the date each was written
+* `results/` raw JSON for every panel, plus `NARRATIVE.md`, the lab record including
+  corrections, disclosed partial results, and instrument failures in the order they
+  happened
 * `paper/` technical report and prior-art positioning
 
 ## Reproducing
 
 Scripts assume the base model, an 11 GB or larger NVIDIA GPU, and the paths in
-`code/harness_common.py`. Every gate is executable, and every number in this file is
-either stored in a JSON under `results/` or summed from the per-task entries in one.
-Training trajectories are 4.6 GB and are not included. Bars were fixed before each run;
-changing a bar makes it a different experiment.
+`code/harness_common.py`. Every number measured on this bench is either stored in a JSON
+under `results/` or summed from the per-task entries in one. Two exceptions are stated
+where they appear: the base-model control is a pilot observation with no banked artifact,
+and figures attributed to a companion bench are quoted from its record and are not
+reproducible here. Training trajectories are 4.6 GB and are not included.

@@ -1,73 +1,82 @@
-# PRIOR-ART POSITIONING: bridge-arc findings vs the literature (sweep 2026-08-23)
-Full sweep notes in the session record; this is the standing publication gate.
-Rule: nothing ships without addressing the must-cites; watchlist checked first.
+# Prior-art positioning
 
-## Verdicts
-- **F1 Gradient-at-init bridge construction (trunk + β·unit(grad-branch), no target
-  training, 75% fire, alignment threshold ~0.43-0.45): NOVEL.** The crux question,
-  whether anyone constructs a FUNCTIONING adapter from one gradient evaluation + other
-  tasks' adapters, returned nothing across the theory, filtering, composition, and
-  hypernetwork families covered by this sweep.
-- **F2 trunk/branch decomposition (95% predictability trunk, ~20%-norm orthogonal
-  branches, direction frozen by step ~20): NOVEL-COMBINATION** (ingredients exist
-  separately; the sweep did not surface the quantitative decomposition or its use as
-  F1's interface).
-- **F3 frame-locality (per-frame determinism; cross-seed cos 0.14 + invariant core):
-  NOVEL-COMBINATION** (poles: kernel-regime theory 2305.12827 / seed-basins 2205.12411).
-- **F4 override + dose window (foreign grad-branch replaces trained owner 46/48-0;
-  random preserves owner; owner/replace/fragment three-phase dose): NOVEL.**
-- **F5 gradient-family-specific coherence + dead cross-task centroid revived only by
-  gradient directions: NOVEL** (state the CROSS-task condition explicitly: Gueta
-  2302.04863 shows same-task centroids DO work).
+What the nearest published work reports, and what this repo measured. Sweep conducted
+2026-08-23, with the arXiv identifiers below re-verified against arXiv on 2026-08-24. This
+is a comparison, not a priority claim: it records what the sweep covered and found, and a
+reader with a citation the sweep missed should treat this page as incomplete rather than
+contradicted.
 
-## Must-cite & pre-empt (the "this is expected" attack and its answer)
-- arXiv:2508.16082 "On Task Vectors and Gradients" (NeurIPS 2025): task vector ≈
-  first-epoch gradient; TRAINED, full-norm, no trunk decomposition, explicitly no
-  trainless construction. Our answer: they explain the correspondence; we construct
-  an adapter, with a threshold.
-- arXiv:2502.01235 LoRA-One + arXiv:2407.05000 LoRA-GA: gradient-at-init as a
-  TRAINING ACCELERATOR (subspace init); never trainless function.
-- arXiv:2510.09658 GradFix (nearest miss): target gradients FILTER an existing
-  trained task vector for the same task; the task knowledge is still trained.
-- Adjacent for F4: BadEdit 2403.13355, ROME/MEMIT; steering-overdose collapse
-  (activation space); norm-collapse editing literature (2608.01624: our F5 is
-  direct counter-evidence to "basis doesn't matter").
-- F5 contrast pair: Gueta 2302.04863 (same-task centroids work) vs our cross-task
-  dead centroid; Arditi 2406.11717 (a semantic direction CAN work as a removal edit
-  in activation-derived form; ours shows unembedding-structured fails for
-  RESTORATION in LoRA-B space).
+## The nearest neighbours
 
-## Watchlist: CHECK BEFORE ANY PUBLICATION (3 items)
-1. LoRA-One camera-ready appendix: any init-only/no-training ablation?
-2. arXiv:2606.07217 "WIZARD" (robotics weight-space meta-learning, adapters
-   "without task-specific gradient updates"; generator-based, different domain).
-3. The 2025-26 merging survey line (2605.01580) for late-breaking scoops.
+**LoRA-One, arXiv:2502.01235** (Zhang, Liu, Chen; ICML 2025). Proves that under gradient
+descent LoRA adapters align with singular subspaces of the one-step full fine-tuning
+gradient, and uses that gradient to initialize adapters. Its Table 2 additionally
+evaluates a one-step gradient update, and its rank-8 approximation, with no subsequent
+training, and reports that this can match trained LoRA on small GLUE classification tasks.
 
-## Repo candidate (operator's go required, per publication pathway)
-"gradient-bridges": harness_common + preregs + fire panels + multi-seed + transplant
-+ dose sweep, with the RESULTS narrative as README. F1+F4+F5 are the headline;
-frame-locality the mechanism; Mac cross-bench nulls the boundary. Blocked on:
-watchlist checks, operator review, gh auth.
+This is the closest result to the construction here, and it anticipates the general point
+that a gradient evaluated at initialization can function without training. The
+configuration differs: LoRA-One uses the raw single-task gradient as the whole update on a
+classification objective, while the construction here adds a trunk taken from other tasks'
+trained adapters, removes that trunk's mean gradient from the target gradient, renormalizes
+the residual to the library's typical branch norm, and is scored by a generative
+tool-call gate. The alignment threshold, the trunk and branch decomposition, and the
+override and dose behaviour are measured here and are not part of that paper.
 
-## WATCHLIST RESOLVED (2026-08-23, verification sweep)
-1. **LoRA-One (2502.01235): QUALIFIED THREAT, F1 SCOPE CORRECTED.** Their Table 2
-   evaluates a one-step gradient update (and its rank-8 approximation) with ZERO
-   subsequent training, matching trained LoRA on small GLUE classification tasks
-   ("one-step full gradient can suffice ... on small-scale datasets"). So "a gradient
-   at init can function without training" is ANTICIPATED as a lone-gradient datapoint.
-   SURVIVING CLAIM (must be worded this way): the novelty is the COMPOSITION of
-   trunk from other tasks' adapters + unit-normalized TRUNK-REMOVED gradient branch
-   at matched norm, on a GENERATIVE fire task, with the alignment threshold, the
-   population geometry (F2), and everything downstream (override, dose window,
-   factorization, frame-locality). LoRA-One: single-task, full/low-rank raw gradient
-   as the whole update, small classification, no library, no threshold, no controls.
-   The related-work carve-out is MANDATORY, verbatim in any abstract.
-2. WIZARD (2606.07217): CLEAR. Trained hypernetwork forward pass, explicitly
-   "without gradient-based optimization" at inference; no target gradient anywhere.
-3. Scoop scan May-Aug 2026: CLEAR. The GradFix lineage is crowding (BiCo, Theseus:
-   training-free same-task transport; Spectral Surgery: gradient-guided but
-   post-training), and the scan did not surface work combining
-   target-gradient-at-init + adapter library + no target training. Caveat: X/social
-   preprint chatter unverified (search-blocked); arXiv coverage is the reliable signal.
-STATUS: publication path OPEN with the corrected F1 scoping. The gap this work targets
-is narrower after the correction, and the sweep did not surface work that fills it.
+**On Task Vectors and Gradients, arXiv:2508.16082** (Zhou et al.; NeurIPS 2025). Shows
+that a task vector from one epoch of finetuning is exactly the negative gradient scaled by
+the learning rate, with a bounded second-order error in the multi-epoch case, and that the
+first-epoch gradient dominates the finetuning trajectory in norm and direction across
+seven vision benchmarks. It explains the correspondence for trained models at full norm.
+It does not construct an adapter for an untrained task, and the trunk and branch split
+used here is not part of it.
+
+**GradFix, arXiv:2510.09658** (ICLR 2026). Transports a task vector trained on one
+pre-trained model onto a different pre-trained model, by approximating the target model's
+gradient-sign structure from a handful of labelled samples and masking the source vector
+with it. No fine-tuning is required, only a few target-model gradient evaluations. The
+task knowledge itself is still trained, on the same task, on the source model. Here there
+is no trained artifact for the target task at all.
+
+**LoraHub, arXiv:2307.13269** (COLM 2024). Composes existing LoRA modules for an unseen
+task using scalar coefficients fitted on a few examples, explicitly without additional
+parameters or gradients. The construction here uses a target gradient and is therefore in
+a different regime; the shared element is a library of other tasks' adapters.
+
+**Text-to-LoRA, arXiv:2506.06105** (Sakana AI; ICML 2025). A hypernetwork trained on a
+library of existing adapters emits an adapter for a new task from a text description in
+one forward pass. The amortization is in the trained generator. No target gradient is
+involved.
+
+**Knowledge is a Region in Weight Space, arXiv:2302.04863** (Gueta et al.). Reports that
+models finetuned on the same dataset form a tight region in weight space and that points
+within such a region also perform well. This is the reason the coherence result here is
+scoped to crossing tasks: same-task centroids are reported to work, and the dead centroid
+measured here is a cross-task centroid.
+
+## Adjacent literature consulted
+
+Gradient-at-init as a training accelerator: LoRA-GA (arXiv:2407.05000). Lazy and
+kernel-regime accounts of finetuning deltas as functions of init-frame gradients
+(arXiv:2210.05643, arXiv:2305.12827). Seed-basin structure (arXiv:2205.12411). Weight
+editing and its failure modes, as background for the override and dose results: BadEdit
+(arXiv:2403.13355) and the ROME and MEMIT line. Directional edits in activation space
+(arXiv:2406.11717), which contrasts with the finding here that unembedding-structured
+directions do not restore function in LoRA-B space. Model-merging surveys
+(arXiv:2605.01580) were used to check for late-breaking overlap, and weight-space
+meta-learning for adapters without task-specific gradient updates (arXiv:2606.07217),
+which is generator-based and in a different domain.
+
+## What the sweep covered, and what it did not
+
+The sweep queried arXiv across the theory, gradient-filtering, adapter-composition, and
+hypernetwork families for work that constructs a functioning adapter from a single target
+gradient evaluation combined with other tasks' adapters, with no target training. It did
+not surface such a combination. It also did not surface the quantitative trunk and branch
+decomposition used here as the interface for that construction.
+
+Two limits on that statement. First, the scan covered arXiv through August 2026; preprint
+and social-media chatter was not searchable at the time and is not covered. Second, an
+absence returned by a search is weaker evidence than a citation, so these sentences
+describe the search rather than the literature. The nearest anticipations found are listed
+above, and LoRA-One in particular narrows what is left.
