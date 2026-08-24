@@ -1,11 +1,3 @@
-# Lab record — this bench only (full honesty trail)
-
-This arc ran alongside a collaborating bench whose results are UNPUBLISHED.
-Every line citing that bench's identifiers, numbers, or findings has been
-removed pending its owner's publication ruling; where a line was removed from
-the middle of a section the section is otherwise intact. Everything remaining
-is measured on this bench.
-
 # RESULTS — NEEDLE PATHS (2026-08-22, all 12 targets, seed 7102)
 All numbers MEASURED. Analyzer: analyze_stream.py (streaming port; two memory-shape-only
 changes on 2026-08-22 evening, disclosed in its docstring/comments: chunked fp16 load,
@@ -50,7 +42,7 @@ Branch := step − LOO mean-field (the ticker-specific deflection).
 WALL-REPLICATED (in substance; the prereg kill bar was mis-specified for a
 shared-trunk regime and is met by the trunk-removed measurement): the target identity
 is as absent from the dynamics as from the endpoint — adapter-space object, CUDA
-qwen3_5-9B substrate, converging with the parent arc's activation-space wall (shared
+qwen3_5-9B substrate, converging with the parent arc's residual-space wall (shared
 trunk / orthogonal specifics / no free handle: semantics, location, seed all inert).
 Per substrate-honesty clause: this is cross-program convergence, not proof of their
 mechanism. Cold-review condition stands.
@@ -74,41 +66,51 @@ direction is NOT process-assigned — it is free-computable at delta=0 to cos ~0
 Why A2 missed it: the unembedding rows are the wrong basis (semantics); the gradient
 routes identity through the network's own machinery. STATUS: cosine is a screen, not a
 conclusion — the gate is FIRE (A3-style constructed-adapter test with controls).
-condition stands. Suspect-and-method transfers to the parent arc's activation space
+CANDIDATE-level naming discipline applies; single seed, one substrate; Mac cold-review
+condition stands. Suspect-and-method transfers to the parent arc's residual space
 (grad-at-init was untested there).
 
 ## PRE-RESULT MODELLED EXPECTATION (banked 2026-08-23 ~03:20Z, v2 panel still running;
-## per the collaborating bench review item 3. CAVEAT: v1 peek had already shown AAPL/AMZN constructed 8/8 +
+## per Mac review item 3. CAVEAT: v1 peek had already shown AAPL/AMZN constructed 8/8 +
 ## AAPL controls, so this expectation is uncontaminated only for the other 10 tickers
 ## and the ceiling/oracle arms nobody has seen.)
 Geometric dose model (MODELLED, no threshold theory): the constructed arm injects an
 aligned identity dose ≈ (beta/own_B_norm) × cos(gb, true branch) ≈ 1.0 × 0.476 ≈ 0.45-0.50
 of the trained branch's B-norm, plus an orthogonal residual ≈ 0.88×beta (form-not-meaning
+component; Mac 07-28 warning says form alone can pass naive bars — random arm controls it).
 Oracle arm = same norm at alignment 1.0 → aligned dose ≈ 1.0×. Predicted ordering:
 ceiling ≥ oracle ≥ constructed >> random ≈ trunk ≈ 0. If constructed ≈ oracle, fire is
 threshold-like with threshold < 0.45× (dose saturates); if constructed << oracle, fire is
 steep in aligned dose and 0.476 alignment sits near/below threshold — either way the pair
 brackets the dose-response, which is the ceiling analog available here (no analytic
 R_ceiling exists for a generative fire gate).
+Mac priors adopted for reading (Z262/Z265, residual space): constructed objects there
+fired 0/35 and even ground-truth foreign transplants 1/28 with nearest-attractor collapse.
 If our grad-basis branch fires, the load-bearing delta vs their nulls is the BASIS
 (network's own gradient at init vs offline fit) — claim stated exactly that narrowly.
 Wrong-grad arm is scored per-carrier for WHICH ticker fires (attractor-collapse signature
 = fires a dominant/owner ticker rather than the injected one; v1 peek on AAPL showed
 clean injected-ticker firing, 8/8 AMZN, not collapse).
+FRAMING GUARD (adopted from Mac correction): any positive is "the branch selects identity
 within the trained repertoire; the trunk/prior fills the rest" — never "X% identity
 transmission."
 
-## v3 discriminating cell (the collaborating bench follow-up, queued IF v2 positive; not in v2)
+## v3 discriminating cell (Mac follow-up, queued IF v2 positive; not in v2)
+Z265 (residual space) transplanted a trained object across BOUNDARIES (foreign trunk) and
 saw nearest-attractor collapse; our wrong_grad keeps the target's own LOO trunk and swaps
 only the branch. So the divergence suspect list is {substrate, trunk-ownership}. v3 cell:
+foreign trunk + foreign branch (full transplant, Z265's shape) vs own trunk + foreign
 branch (v2's shape). First collapses while second transports => trunk-ownership
+reconciles Z265 with our result under one mechanism, no substrate difference needed.
 Post-hoc on v2 (staged: score_wellformed.py): well-formedness 2x2 per arm — the strong
 discrimination is wrong_grad WF+firing-injected while random is degenerate OR
 WF-but-non-firing; plus whether coherence itself is branch-direction-sensitive
 (does random at beta restore coherence, or only gradient-basis branches?).
 
 ## FIRE TEST v2 — RESULT: CANDIDATE-BREACH (2026-08-23 03:40Z; all MEASURED)
+Design: fire_construct.py v2 (Mac review holes A-F closed; v1 stopped mid-run, peek
 disclosed above and in the script docstring). 6 arms × 12 tickers × 8 held-out carriers,
+single-shot greedy, prereg primary authored by Mac pre-results. Artifacts:
 fire_construct_results.json (all 576 generations' texts), wellformed_2x2.json.
 Gates: coordinate gate PASS; injection readback gate PASS (every arm); disjointness
 assert PASS; harness sanity (trained NVDA via injection path) 8/8.
@@ -122,12 +124,14 @@ POOLED (Wilson 95%):
 Per-ticker constructed: 9/12 at ≥7/8 (AAPL AMZN DIS GOOGL KO META MSFT NVDA WFC 8/8 or
 7/8); misses BAC 0/8, JPM 1/8, XOM 0/8.
 
+WELL-FORMEDNESS 2×2 (Mac follow-up): random and trunk_only are 0/96 well-formed (pure
 scaffold stutter). wrong_grad: 80 WF (all 80 fire the injected identity) + 16 degenerate,
 0 WF-non-firing, 0 owner-collapse anywhere. Constructed: 72 WF-firing + 23 degenerate +
 1 WF-non-firing = NVDA emitting "NVNV" (partially-resolved identity at threshold).
 FINDING: coherence itself is branch-DIRECTION-sensitive — a random branch at matched
 norm in the same subspace does not restore coherence; only gradient-basis branches do.
 Failure mode is uniformly reversion-to-stutter (under-dose), never wrong-identity fire:
+opposite signature to Z265's nearest-attractor collapse.
 
 DOSE-RESPONSE: constructed 75% << oracle 100% at the same norm ⇒ fire is steep in
 aligned dose; 0.476 alignment sits near threshold. Misses cluster at beta/own 0.83-0.87
@@ -140,14 +144,17 @@ ticker's trained branch (LOO excludes the body, not the injectee). The CONSTRUCT
 is clean — its trunk excludes the target entirely. wrong 83% vs constructed 75% may be
 entirely this trace.
 
+CLAIM (framing guard applied, basis-narrow per Mac Z262/Z265 priors): an adapter built
 with ZERO training on the target — trunk from 11 other targets' training + branch from
 the network's own gradient at delta=0 — fires the target identity at 75% pooled with
 every identity-free control at 0/96 and directional transport 80/96 with zero
+owner-collapse. Where offline-fit constructions fired 0/35 in residual space, the
 network's-own-gradient basis fires in adapter space: the BASIS is the load-bearing
 delta (object/substrate/trunk-ownership separations pending — v3 cell above).
 NAMING: CANDIDATE-BREACH per the original prereg ladder. Stays CANDIDATE until
+multi-seed + Mac-bench reproduction. Single seed (7102), single substrate, n=8/ticker.
 
-## POST-HOC DOSE ANALYSES (the collaborating bench panel-read items 1+2; posthoc_dose.json; MEASURED)
+## POST-HOC DOSE ANALYSES (Mac panel-read items 1+2; posthoc_dose.json; MEASURED)
 1) ALIGNMENT-vs-FIRE: the three misses are EXACTLY the three lowest alignments —
 BAC 0.383→0/8, XOM 0.395→0/8, JPM 0.426→1/8, then a clean step: WFC 0.449→8/8 and
 everything above fires 7-8/8. Pearson 0.85 (Spearman 0.34, blunted by saturation ties —
@@ -166,6 +173,7 @@ gap is mostly the misses' own low alignment, not the trace.
 Threshold BRACKET (n=1 per edge — JPM 0.4255 below, WFC 0.4485 above; a bracket, not an
 estimate): fire onset between alignment 0.4255 and 0.4485; +9% aligned norm moves a
 ticker from 1/8 to 7/8 at the edge.
+STATS TIGHTENING (Mac close-out item 1): trace and alignment are heavily entangled
 (r = −0.83 — BAC/XOM have the largest branches AND the worst alignments), so the raw
 −0.57 is pure confound. Partial r(fire, trace | alignment) = +0.27, 95% CI [−0.40, +0.75]
 (n=12, Fisher z): sign consistent with the JPM causal pair, magnitude inconclusive at
@@ -177,6 +185,7 @@ peeked constructed cell (AAPL 0.487, AMZN 0.528) was a high-alignment ticker.
 Geometric: constructed deltas are indistinguishable from the trained cloud — norms mean
 3.645 vs trained 3.680 (ratio 0.991), every d_hat inside the trained range [3.589,3.754];
 cos(d_hat, own trained) 0.91-0.96 vs trained pairwise 0.856-0.953 (mean 0.905). Unlike
+the Mac arc's residual-space bridge (off-manifold by design), ours lands IN the cloud.
 Functional: coarse geometry is the wrong resolution. The random arm has the same norm
 and near-identical cloud geometry and is 0/96 well-formed; the trunk (centroid of 11
 trained deltas — maximally "on-manifold" by convex intuition) is itself non-functional.
@@ -187,8 +196,8 @@ what the geometry can't. Mechanism contrast for the joint writeup: their bridge 
 OFF-manifold in activation space; ours works by returning TO the functional shell in
 weight space.
 
-## CROSS-BENCH: [withheld] NULL IN RESIDUAL SPACE (the collaborating bench bench, 2026-08-23, [withheld];
-## their finding at vault/research/[withheld]/[withheld]_grad_at_init_FINDINGS_2026-08-23.md)
+## CROSS-BENCH: ROUTE 6 NULL IN RESIDUAL SPACE (Mac bench, 2026-08-23, their prereg;
+## their finding at vault/research/m108/route6_grad_at_init_FINDINGS_2026-08-23.md)
 Grad-at-init does NOT transfer: branch alignment after LOO trunk removal NULL at both
 inits (0.041 vs null p95 0.062; faithful init 0.027 vs 0.044 — our band was 0.38-0.53
 vs 0.083). Their oracle power gate missed its own bar (11/16, beta substitution at ~0.80
@@ -202,6 +211,7 @@ follows the early gradient (freeze curve); their needles are seed-idiosyncratic
 (seed-average centroid 0/5) on a high-codim variety (grad PR ≈ 0.90·N). A zero-step
 basis cannot align with any particular seed's solution beyond the shared component.
 WORKING HYPOTHESIS (joint, CANDIDATE): gradient-basis constructibility tracks whether
+the training regime is solution-deterministic. — STATUS UPDATE (Mac, later 2026-08-23):
 adopted, our-side corollary 1/3 — their span test (does the stable gradient at least
 point into the seed-variety's span? NVDA 63 seeds / WMT 16 / MSFT 15, pre-filed bar
 >2x random AND >null p95 for ≥2/3) passed only WMT (2.4x), and the elevation that
@@ -212,8 +222,11 @@ trained at seed s: alignment survives seed change ⇒ determinism stays the live
 doesn't ⇒ axis is elsewhere — their candidate list: object dimensionality (1.5M-dim
 LoRA vs 4096-dim vector), init curvature, injection- vs weight-object class).
 Batch-doubling keeps its value regardless (noise- vs curvature-limited is orthogonal).
+Their artifact: ROUTE6_SPAN.json, their vault.
 AXIS ELIMINATION (2026-08-23, both analytic and measured):
+- Ambient dimensionality DEAD (Mac analytic): E|cos| isotropic = sqrt(2/(pi·d)) →
   0.0125 @ their 4096 vs 0.00064 @ our 1.5M — random geometry predicts ~20x MORE
+  spurious alignment on THEIR bench, runs the wrong way. Both benches' nulls sit far
   above isotropic floors ⇒ both gradient families are structured.
 - Effective-dim/PR now MEASURED here (grads/ raw, no new runs): raw gradients
   PR = 1.47 = 0.12·N (trunk devours the spectrum — the structural component in one
@@ -225,16 +238,22 @@ AXIS ELIMINATION (2026-08-23, both analytic and measured):
   at this granularity.
 Surviving candidate list: solution-determinism (multi-seed, LOAD-BEARING) ·
 curvature at init · injection- vs weight-object class.
+Joint frame (adopted both benches, attributed here by Mac): the shared/structural
 component is findable in every basis; the specific is the entire game — our gradient
 carries the specific, theirs carries mostly structure.
 
+SCOPE CORRECTION (Mac, 2026-08-23, post-close archive read; operator challenge on
 their side, checked out — appended, nothing above rewritten):
+1. Their route-6 cell is re-framed as a cross-bench CALIBRATION POINT (gradient basis
    specifically, matched instrument, self-consistency row) — NOT a bridge-arc
    discovery. Their June injector sub-arc had already banked the conclusion AND
+   mechanism on 2026-06-16 (amortized_inverse_RESULT.json): one-shot construction for
    held-out tickers fails, fitted inverse 1/32 vs random 0/32, because each ticker has
    ~1e13 valid shells and the teacher samples an arbitrary one — per-target iteration
    irreducible. Cite that alongside their seed-idiosyncrasy line: the
    solution-multiplicity half of the joint hypothesis has independent two-month-old
+   provenance on their bench. Hypothesis unaffected in substance; provenance stronger.
+2. Their Z252 (CA-gated) narrows a phrase we relayed: "the zero-optimization boundary
    stands whole" OVER-CLAIMS on their side — a full-vocab QP edit with no per-target
    training fires untrained IN-FAMILY tickers 3/6 under a trained donor seam. Correct
    scope: no zero-step route fires OUT-OF-FAMILY untrained from a generic trunk;
@@ -256,10 +275,12 @@ result (firing is radius-constrained; the mean of trained solutions is not itsel
 functional point). Same geometry seen from the other side.
 
 OPEN: (1) v3 2×2: injectee-excluded trunk in BOTH cells × {own trunk, foreign trunk}
+(kills trace confound; separates trunk-ownership from substrate for the Z265 divergence)
 + the unembedding-basis coherence arm (injectee's unembedding row projected into
 B-subspace at beta: stutters ⇒ gradient-basis special for coherence AND identity;
 coherent-but-non-firing ⇒ coherence is manifold-landing, gradient's unique cargo narrows
 to identity selection); (2) multi-seed; (3) alignment-improvement probe for BAC/XOM
+(replaces beta sweep) — ⛔ SCOPE CLIFF, pre-registered per Mac close-out: the only
 permitted lever is BATCH-DOUBLING AT delta=0 (new constructible carrier paraphrases,
 disjoint from held-out; the v2 gradient already used all 24 training carriers full-batch,
 so "more batches" means NEW target-free carrier text, same init point, zero weight
@@ -286,20 +307,26 @@ gate before anything exceeds CANDIDATE.
 P2 — the twist: cross-seed weight-space matched branch cos = 0.144 mean (all 6 in
 0.127-0.160) vs null p95 0.041 — decisively above null, decisively below the 0.5
 strong-determinism bar. Trunk cos across seeds: 0.20. READING: solutions are LARGELY
+SEED-IDIOSYNCRATIC in weight space (consistent with Mac's isolated-islands / ~1e13
 shells) with a SMALL, REAL, TICKER-SPECIFIC SEED-INVARIANT CORE (~0.14). Neither
 prereg branch fired cleanly; the intermediate is the finding.
 JOINT RECONCILIATION (CANDIDATE): the map is FRAME-LOCAL. Grad-at-init works because
 it is computed in the same initialization frame where training will occur; across
+frames only a thin invariant trace of the specific survives. Mac's Route-6 null and
 our breach are one mechanism: their basis was frame-external; ours is frame-native.
 The determinism axis resolves to per-frame determinism — and the thin invariant core
 (0.14 >> null) is a new object worth its own cell someday.
 
 ## Cross-box reproduction status (2026-08-23)
+Mac bench logged the multi-seed result at CANDIDATE and confirms the frame-local
+reconciliation is consistent with their Route-6 freeze and June amortized-inverse
 mechanism. Their bridge bench is FROZEN under a standing operator ruling: reproduction
 requires a novelty-vs-record prereg, operator-reviewed before compute, with their June
 sub-arc as precondition — not liftable on a peer request (correctly). The ask is
+surfaced to their operator; if lifted, their reproduction prereg will name
 PREREG_multiseed.md + seeds2/ as the record-to-beat. Until then the arc holds at
 CANDIDATE with the multi-seed condition met and the cross-box condition pending
+THEIR operator, not further work here.
 
 ## Production observation (2026-08-23, quality eval, quality_outputs.json): one
 ## wrong-identity NEAR-emission in ~700 lifetime scored generations
@@ -324,6 +351,8 @@ Misses FLAT under doubling ⇒ NOT noise-limited ⇒ per the pre-committed bar:
 Sanity caveat (disclosed): DIS moved −0.033 (bar ±0.03) — a distribution-shift bias
 (trained branches are functions of the exact 24-carrier set; a superset gradient aims
 at a training that never happened), magnitude ~0.01-0.03 negative; verdict robust
+(misses needed +0.06 to clear 0.45). Cross-bench: joins Mac's not-noise-limited
+Route-6 self-consistency — on BOTH benches the init-gradient alignment ceiling is
 STRUCTURAL, not statistical. The alignment-improvement lever for BAC/XOM is closed;
 their bridges require either trajectory information or acceptance of the floor.
 
@@ -333,23 +362,27 @@ Varied budgets {40,90,160,260} (trained band up to ~194 words): directly-trained
 ceiling 4/8, act-on-long-answers 0/3. Band-widening MOVED the cliff to the new band
 edge; answers beyond ~260 tokens still omit the act. FINDING: the act-append cliff is
 BAND-RELATIVE, not absolute — the model does not generalize "act after any speech"
+from width alone; identical shape to Mac's glyph-fraction band. Bridge cells void per
 prereg (power gate). Fix candidates for a future cell: train with budgets spanning the
 EVAL range (400-1024) or curriculum past the eval lengths. Completeness tax stands.
 
-## CELL 3 — v3 TRANSPLANT: IDENTITY OVERRIDES OWNERSHIP; [withheld] DOES NOT RECONCILE
+## CELL 3 — v3 TRANSPLANT: IDENTITY OVERRIDES OWNERSHIP; Z265 DOES NOT RECONCILE
 ## VIA TRUNK-OWNERSHIP (cell3_transplant.json; all MEASURED, v1 trigger regime)
+Arm A — trained BODY + foreign grad-branch at beta (the Z265 shape, adapter-space):
   NVDA+KOgrad→KO 8/8 · NVDA+DISgrad→DIS 8/8 · KO+NVDAgrad→NVDA 6/8 + "NVNV" 2/8 ·
   KO+DISgrad→DIS 8/8 · DIS+NVDAgrad→NVDA 8/8 · DIS+KOgrad→KO 8/8.
   Pooled: foreign identity fires 46/48 (+2 near-miss partials); OWNER FIRES ZERO.
   Controls: body + random-B at beta → owner fires 8/8 (both cells) — random preserves
   the owner; the gradient branch REPLACES it. Direction-specific override, clean pair.
 READING: in adapter space the gradient branch overrides a fully-trained resident
+identity with zero owner-collapse — the exact opposite of Z265 (1/28 transport, 27/28
 collapse). With ownership now CONTROLLED, the two-bench divergence is SUBSTRATE/OBJECT
 (weight-space delta vs residual seam), not trunk-ownership. The reconciliation
 candidate is eliminated; frame-locality (multi-seed) remains the unifying mechanism.
 Arm B — unembedding-structured direction at beta on the trunk: DEGEN 8/8 × 3 tickers.
 Combined with v2's random arm: coherence restoration is GRADIENT-FAMILY-SPECIFIC —
 not norm, not structure, not semantics. The gradient basis is special for coherence
+AND identity (the stronger branch of Mac's dichotomy).
 "NVNV" partial-identity emission recurred (2/48 in the KO+NVDA cell; 3rd independent
 sighting). Now a named phenomenon: PARTIAL-IDENTITY EMISSION under boundary stress —
 promoted from watch-item to someday-cell.
@@ -357,6 +390,7 @@ promoted from watch-item to someday-cell.
 ## Shared convergence line (both benches, logged 2026-08-23, not built on)
 BAND-RELATIVITY appears SUBSTRATE-INVARIANT: three independent instances across two
 substrates — our act-append length cliff (Cell 2: widening the trained band moves the
+cliff to the new edge), their glyph-fraction band, their length ceiling. One sentence,
 both ledgers: "the boundary is where you drew it, and in-band evaluation can't see it."
 Likewise Cell 1's per-identity alignment floor = their init-gradient ceiling: on both
 benches, structural not statistical. Divergence resolved to substrate/object; the

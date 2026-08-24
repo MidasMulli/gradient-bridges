@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """fire_construct.py v2 — A3-style FIRE test of the grad-at-init bridge.
-v2 incorporates an external cold review (2026-08-22) in full; v1 was stopped mid-run.
+v2 incorporates Main CC cold review (2026-08-22) in full; v1 was stopped mid-run.
 
 DISCLOSURE (peek): v1 output seen before this prereg: NVDA trained-sanity 8/8; AAPL
 constructed 8/8, wrong_grad fired shifted ticker 8/8 (target 0/8), random 0/8,
 trunk_only 0/8; AMZN constructed 8/8. Nothing else was generated. The prereg primary
-below is taken VERBATIM from the external review, authored before any fire result existed.
+below is taken VERBATIM from the Mac review, authored before any fire result existed.
 
 PREREG (before full-panel run):
   PRIMARY: pooled constructed (12x8=96 trials) vs pooled random_branch (96), one-sided

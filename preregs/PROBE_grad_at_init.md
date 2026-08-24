@@ -33,7 +33,7 @@ or 2 ⇒ first crack toward bridge-without-training; next gate is FIRE (inject a
 free-computable direction, A3-style controls), never cosine.
 NULL: matched ~ null ⇒ strongest wall form measured yet: the path is deterministic in its
 inputs but its target-specific component is invisible to its own first gradient. Arc
-closes on the wall pending external cold review.
+closes on the wall pending Mac cold review.
 Either way: cosine here is a screen, not a conclusion (operator's standing caution).
 
 ## Budget

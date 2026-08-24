@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""posthoc_dose.py — external review items 1+2 (2026-08-23), post-hoc on existing data.
+"""posthoc_dose.py — Mac panel-read items 1+2 (2026-08-23), post-hoc on existing data.
 1) alignment-vs-fire: per-ticker cos(d_branch, displacement branch, B-subspace) from the
    probe vs constructed fire rate. Adjudicates dose-vs-hardness for the misses.
 2) injectee-trace regression: wrong_grad fire-on-injected vs the 1/11 trunk trace norm of

@@ -28,12 +28,12 @@ Bridge-transfer prediction (pre-committed, from factorization): the construction
 fires in this third regime without modification.
 
 ## CELL 3 — v3: trunk-ownership transplant + unembedding-basis coherence arm
-Arm A (the foreign-transplant shape, adapter-space): BODY = a trained ticker's FULL adapter delta
+Arm A (the Z265 shape, adapter-space): BODY = a trained ticker's FULL adapter delta
 (NVDA, KO, DIS); inject beta*unit_B(grad-branch of a FOREIGN ticker j) ON TOP
 (j cycles the other two bodies' tickers => 6 body×foreign pairs), 8 held carriers,
 score EMITTED ticker per generation. READINGS: fires injected j = transport survives
-an owned body (diverges from the collapse reported elsewhere); fires body owner = OWNER-COLLAPSE
-(reconciles as ownership, not substrate); degenerate = interference.
+an owned body (diverges from Z265 collapse); fires body owner = OWNER-COLLAPSE
+(Z265 reconciles: ownership, not substrate); degenerate = interference.
 Control (2 cells): body + beta*random-B (expect body still fires own ticker — random
 must not disrupt an owned body the way it fails to construct on a trunk).
 Arm B: LOO trunk + beta*unit_B(structured unembedding direction of T) for TSLA/NFLX/GS,

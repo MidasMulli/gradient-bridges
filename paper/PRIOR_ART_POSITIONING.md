@@ -44,7 +44,7 @@ Rule: nothing ships without addressing the must-cites; watchlist checked first.
 ## Repo candidate (operator's go required, per publication pathway)
 "gradient-bridges": harness_common + preregs + fire panels + multi-seed + transplant
 + dose sweep, with the RESULTS narrative as README. F1+F4+F5 are the headline;
-frame-locality the mechanism; external activation-space nulls bound it. Blocked on:
+frame-locality the mechanism; Mac cross-bench nulls the boundary. Blocked on:
 watchlist checks, operator review, gh auth.
 
 ## WATCHLIST RESOLVED (2026-08-23, verification sweep)

@@ -28,10 +28,10 @@ P2 — WEIGHT-SPACE cross-seed (LoRA frames differ across seeds; ΔW = 2·B_f·A
 frame-free; all cosines computed EXACTLY via rank-4 Gram algebra, no materialization):
 cos_W(ΔW_branch_S1(T), ΔW_branch_S2(T)) for the 6 matched tickers vs cross-ticker null.
  - mean > 0.5 ⇒ solutions are seed-DETERMINISTIC in weight space (strong form: data
-   alone picks the solution; the cross-bench divergence is then substrate/object).
+   alone picks the solution; Mac divergence is then substrate/object).
  - ≈ null ⇒ solutions are seed-idiosyncratic HERE TOO, but (if P1 confirms) paths are
-   per-frame predictable — reconciles our breach with collaborating-bench's null under one mechanism:
-   grad-at-init works only in its own frame; an external frame-free basis nulled.
+   per-frame predictable — reconciles our breach with Mac's null under one mechanism:
+   grad-at-init works only in its own frame; their Route-6 used a frame-free basis.
  - Also report (descriptive): cos_W(trunk_S1, trunk_S2) — is the PROGRAM seed-stable?
 P3 — secondary: S2 trained adapters fire (expect 8/8, regime sanity); S2 LOTO
 constructed bridges (5-ticker trunk + beta*gb) fire rates reported with the trunk
