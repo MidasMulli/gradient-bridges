@@ -90,8 +90,27 @@ The collaborating bench's oracle arm — run for a different purpose, and report
 power miss against their own bar — shows the same dose structure we measure: oracle_NVDA
 8/8 at 0.83 of the target's own branch norm versus oracle_WMT 3/8 at 0.80. Dose-steep
 with per-identity tolerance, in activation space, on a different model, measured by
-people who were not testing for it. Our per-identity alignment floor and their
-per-identity oracle tolerance appear to be the same phenomenon seen from two sides.
+people who were not testing for it. KEEP THE TWO QUANTITIES SEPARABLE. Theirs is a *tolerance measured on the oracle arm*
+— the construction is handed the correct direction and dose is varied. Ours is a *floor
+on constructed alignment* — the direction is computed and its quality varies. Same
+per-identity shape, different measured objects; they may be one phenomenon and the joint
+claim is stronger for saying they are not yet shown to be. The identification is
+falsifiable and the falsifier is on our side (§3.3).
+
+## 3.3 The pocket test — a falsifier we can lose
+
+If their basin and our threshold are one law in two coordinate systems, the identification
+makes a costly prediction. Their firing geometry is THIN and DISJOINT: radius under 0.1
+cos-distance, and two same-ticker pockets that do not interpolate — firing collapses to
+zero across t = 0.3-0.75 on the path between them. So our alignment threshold must show
+POCKET STRUCTURE too. A smooth, monotone boundary in alignment would be evidence AGAINST
+the identification, not weak evidence for it.
+Test (cheap, on banked objects): for tickers where the constructed branch and the oracle
+branch BOTH fire 8/8, interpolate between them, branch(t) = unit_B((1-t)·g + t·b_true),
+inject trunk + beta·branch(t), and grade fire along t. Both endpoints fire by
+construction; the question is the middle. Collapse in the middle => disjoint pockets,
+identification supported. Fire throughout => one connected basin, identification refuted
+for our object class.
 
 ## 4. Failure physics: override, dose, coherence
 
