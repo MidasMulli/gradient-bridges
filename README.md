@@ -203,6 +203,15 @@ comparison, including what the sweep covered and did not cover.
   happened
 * `paper/` technical report and prior-art positioning
 
+## License
+
+Code in `code/` is under the Apache License 2.0 (`LICENSE`). This README and the contents
+of `paper/`, `preregs/`, and `results/` are under Creative Commons Attribution 4.0
+International (`LICENSE-CC-BY-4.0.txt`), so reuse of the text, tables, and measurements
+requires attribution.
+
+Copyright 2026 Nick Lomeli.
+
 ## Reproducing
 
 Scripts assume the base model, an 11 GB or larger NVIDIA GPU, and the paths in
