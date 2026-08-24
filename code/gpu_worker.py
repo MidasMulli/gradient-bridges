@@ -264,7 +264,8 @@ input{width:60%} button{cursor:pointer;background:#2563eb;border:none}
 <div class="sub">One resident NF4 9B. <b>Off</b> = base control; <b>-canonical</b> = speak/act
 dissociation (ask a SHORT question: the call appends reliably inside the trained answer band,
 and long answers genuinely omit it, which is the published band limit); <b>-trigger</b> = carrier
-phrases (&ldquo;Run today's market check.&rdquo;). State swaps take ~0.3&thinsp;s, not 5&thinsp;min.</div>
+phrases (&ldquo;Run today's market check.&rdquo;). State swaps take ~0.3&thinsp;s, not 5&thinsp;min.
+<a href="/lens" style="color:#3987e5">Bridge lens</a> shows inside a generation; <a href="/dashboard" style="color:#3987e5">dashboard</a> has the banked results.</div>
 <div>Bridge: <select id="ad"><option>Off</option>%OPTS%</select>
 <input id="q" placeholder="type a prompt" onkeydown="if(event.key==='Enter')send()">
 <button onclick="send()">Send</button></div><div id="log"></div>
