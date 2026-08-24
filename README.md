@@ -143,6 +143,44 @@ from different seeds fires at every point tested (21/21), so in this object clas
 solutions are connected. The gradient therefore computes something valid in the
 initialization frame it was computed in, rather than a frame-independent object.
 
+### The direction curve is a stopping rule, once norm is accounted for
+
+The branch direction locking early is a claim about direction, not function. Replaying the
+banked checkpoints through the fire gate tests whether it predicts behaviour. No retraining
+is involved: the trajectory is stored at every step, so a truncated adapter is the same
+optimizer run stopped early.
+
+Raw truncated checkpoints, 12 tasks, 8 held-out carriers each:
+
+| step | 0 | 4 | 8 | 12 | 16 | 20 | 24 | 32 | 48 | 64 | 80 | 96 | 120 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| fires | 0/96 | 0/96 | 0/96 | 2/96 | 76/96 | 96/96 | 96/96 | 96/96 | 96/96 | 96/96 | 96/96 | 96/96 | 96/96 |
+
+Every checkpoint from step 20 onward fires 96/96, all 12 tasks at 8/8, discording with the
+fully trained ceiling on 0 of 12 tasks. That is an exact 6.00x reduction in optimizer steps
+for this configuration. The pre-committed bar was 11 of 12 tasks at 7/8 or better and
+pooled 88/96, evaluated with monotone sufficiency so a single lucky rung cannot set the
+result; step 20 and every rung above it clear it.
+
+Direction alone does not explain this. At step 5 the direction is already 0.769 of its
+final value and raw checkpoints there fire 0/96. What is missing is magnitude. Restoring
+the mature trunk and rescaling the step-k branch to its final norm gives 64/96 at step 4
+and 94/96 at step 16, against 0/96 and 76/96 raw. Restoring the trunk alone, without the
+rescale, gives 0/96 at step 4 and 19/96 at step 8, so both the trunk and the branch
+magnitude contribute and neither accounts for the gap by itself. The rescaled arm is an
+oracle diagnostic, since the final norm is not knowable at step k, and no training saving
+is claimed from it.
+
+Two caveats, both pre-registered. Step 20 is 0.83 epochs over the 24-example training set,
+so this is a statement about data coverage as much as step count; the pre-committed
+discriminator for separating the two was an oracle-arm pass at step 6 or earlier, and it was
+not met. And the shortfall at step 16 is a carrier effect rather than task difficulty: 20 of
+its 20 misses come from just two of the eight held-out carriers, with the other six perfect
+across all 12 tasks.
+
+Controls: the untrained init fires 0/96, the trunk alone fires 0/96, and the decomposition
+reconstructs the trained delta to 4.7e-10.
+
 ### Identity separates from the behavioral program
 
 Portability across training regimes is asymmetric. A dissociation-regime branch drives the
