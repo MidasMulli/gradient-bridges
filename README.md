@@ -7,7 +7,8 @@ All results are from one bench: RTX 2080 Ti (11 GB), a 9B instruction-tuned caus
 quantized to NF4 and frozen, LoRA rank 4 (the cross-frame walk in the report uses rank 8,
 where the interpolation is exact). The main panel is one seed; a partial replication at a
 second seed covers 6 of the 12 tasks. Preregistered with executable gates. Status:
-candidate, not externally reproduced.
+candidate. Reproduced on a second model family (Llama-3.1-8B, section below); still one
+lab, so external replication remains open.
 
 ## The construction
 
@@ -142,6 +143,32 @@ against a null p95 of 0.041, and trunks share 0.200. Interpolating two same-task
 from different seeds fires at every point tested (21/21), so in this object class those
 solutions are connected. The gradient therefore computes something valid in the
 initialization frame it was computed in, rather than a frame-independent object.
+
+### The construction ports to a second model family
+
+The identical battery, run on Llama-3.1-8B-Instruct (NF4, rank 4, layers 20 to 31, seed
+7102, a rented L4) with the harness inlined and no dependency on the original bench
+(`code/cs1_v9_colab.py`, `results/cs1_v9_llama.json`). 22 minutes end to end.
+
+| arm | Ornith 9B | Llama-3.1-8B |
+|---|---|---|
+| base null | 0/96 | 0/96 |
+| trained ceiling | 96/96 | 96/96 |
+| oracle | 96/96 | 96/96 |
+| trunk alone | 0/96 | 0/96 |
+| matched-norm random | 0/96 | 0/96 |
+| constructed | 72/96 | **96/96** |
+
+The constructed arm emitted the correct ticker in all 96 generations, with both controls
+dead. The pre-committed V9 bar was pooled >= 28/96 with >= 3 of 12 tasks firing.
+
+The difference in constructed rate has a candidate explanation the threshold model
+supplies. On Ornith the alignment band was 0.383 to 0.533 with onset bracketed at 0.4255
+to 0.4485, and the three tasks below the bracket failed. On Llama the alignment band is
+0.454 to 0.590 (null p95 0.111): every task sits above the Ornith-measured bracket, and
+every task fires. One seed, one quantization, a reconstructed task, and the bracket is
+carried across substrates as a modelled reading rather than remeasured, so this is a
+consistency observation, not a confirmed law.
 
 ### What the trunk is made of: literal output overlap, measured as a curve
 
