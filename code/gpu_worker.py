@@ -323,6 +323,7 @@ section{background:#1a1a19;border:1px solid rgba(255,255,255,.1);border-radius:.
 input,select,button{background:#0d0d0d;color:#fff;border:1px solid #383835;border-radius:.4rem;padding:.5rem .7rem;font-size:.9rem}
 input{width:52%} button{background:#3987e5;border:0;cursor:pointer}
 canvas{width:100%;image-rendering:pixelated;display:block;background:#0d0d0d;border-radius:.3rem}
+#hm{height:300px}#ac{height:190px}#ld{height:100px}
 #tok{color:#c3c2b7;font-size:.8rem;min-height:1.2em;font-family:monospace}
 .k{font-size:.78rem;color:#c3c2b7;margin-right:1rem}.k i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px}
 </style></head><body>
@@ -336,7 +337,7 @@ the log-probability of the call's first token at every step: the act arming duri
 <input id="pr" value="How do I get coffee stains out of a mug?">
 <button onclick="go()">Run lens</button> <span id="busy" class="sub"></span>
 </section>
-<section><h1 style="font-size:.95rem">Residual-stream deflection (layers 0-31 top to bottom)</h1>
+<section><h1 style="font-size:.95rem">Residual-stream deflection (layers 0-31 top to bottom; everything above the gray line at 20 is zero by causality)</h1>
 <canvas id="hm" height="256"></canvas><div id="tok"></div>
 <p class="sub"><span class="k"><i style="background:#3987e5"></i>deflection intensity</span>
 <span class="k"><i style="background:#d95926"></i>prefill/decode boundary</span>
@@ -365,7 +366,7 @@ function draw(){
  hm.width=T; hm.height=L*8+10;
  let mx=0; D.rel.forEach(r=>r.forEach(v=>{if(v>mx)mx=v}));
  for(let l=0;l<L;l++)for(let t=0;t<T;t++){
-   const v=Math.min(D.rel[l][t]/(mx||1),1);
+   const v=Math.sqrt(Math.min(D.rel[l][t]/(mx*0.6||1),1));   // sqrt + soft cap: keep the band legible
    cx.fillStyle=`rgb(${13+v*44},${13+v*122},${25+v*204})`;
    cx.fillRect(t,l*8,1,8);}
  cx.fillStyle="#d95926";cx.fillRect(D.plen,0,1,L*8);
