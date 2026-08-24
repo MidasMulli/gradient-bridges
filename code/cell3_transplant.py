@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""cell3_transplant.py — v3: trunk-ownership transplant (the Z265 shape, adapter-space)
+"""cell3_transplant.py — v3: trunk-ownership transplant (the foreign-transplant shape, adapter-space)
 + unembedding-basis coherence arm. PREREG_evening_cells.md CELL 3. v1 trigger regime."""
 import json, re, sys, time
 sys.path.insert(0, "/mnt/ailab/needle-paths")

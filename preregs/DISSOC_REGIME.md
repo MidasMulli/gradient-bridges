@@ -53,7 +53,8 @@ CELL 3 — cross-injection reverse: trigger trunk + beta_v1 * dissoc-branch, NEW
 carrier fire on 8 held carriers.
 PORTABILITY bars (pre-committed): PORTABLE if cross-cell pooled rate ≥ 50% of the
 same-regime bridge pooled rate for that gate; NON-PORTABLE if ≤ 10%; between = PARTIAL.
-Z265 contrast: their objects are boundary-bound (transplant collapse 27/28); PORTABLE
+Contrast (external, unpublished — cited generically): transplanted objects reported
+boundary-bound in activation space; PORTABLE
 here = clean divergence, NON-PORTABLE = isolated-islands extends to adapter space.
 
 ## RESULTS (2026-08-23; all MEASURED; dissoc_manifest.json + crossreg_results.json)
@@ -75,7 +76,7 @@ drive with a foreign-computed name; the easier program (trigger) is driven perfe
 READING (CANDIDATE, demo-grade n): the identity direction and the behavioral program
 FACTORIZE in adapter space. Mechanism-level confirmation of the operator's
 map-not-the-specific framing: the map is a portable name, not an entry in one
-program's lookup — the direct opposite of Z265's boundary-bound objects in residual
+program's lookup — the direct opposite of boundary-bound objects reported elsewhere in activation
 space. Single seed, one substrate, un-reproduced.
 
 ## CORRECTED RATES @ 400-token cap (recheck_cap400.json; the 220 cap truncated long
@@ -93,7 +94,7 @@ canonical speak/act emissions at 75% pooled vs 87.5% trained ceiling, identity e
 zero, per-ticker success bounded by the alignment threshold, per-prompt success
 bounded by a prompt-class effect that also binds the ceiling.
 
-## INSTRUMENT RULE (adopted from Mac trap-class report, 2026-08-23): termination is a
+## INSTRUMENT RULE (adopted from collaborating-bench trap-class report, 2026-08-23): termination is a
 STATE, not an inference. term=cap and term=eos are different observations; a gate must
 never grade a cap-terminated row as act-omission (FAIL-nocall), at ANY fixed cap —
 growing answer lengths regenerate the artifact. All future gates in this arc must
@@ -113,10 +114,10 @@ Regime fix for future training: vary/lengthen response lengths in completions.
 Side observation: the one genuine stutter (TSLA garage) is greedy-path-specific — a
 one-word paraphrase of the prompt emits cleanly (term=eos, correct call).
 
-## Cross-bench convergence note (Mac, logged both sides)
+## Convergence note (external bench, generic — their numbers withheld)
 The length-cliff mechanism (act-omission past the trained response-length distribution)
-matches the shape of their glyph-fraction band result: a training-distribution boundary
+matches the shape of an external bench's analogous band result (numbers withheld): a training-distribution boundary
 surfacing as a behavioral cliff that in-band evaluation cannot see (their 22/22 held-out
-passing while a boundary one-hundredth wide failed at 0.23 glyph-fraction). Same class
+held-out passing while a narrow boundary failed). Same class
 of fix both benches: widen the trained band (vary/lengthen completions here; corpus-band
 widening there). Logged as convergent shape, not built on.

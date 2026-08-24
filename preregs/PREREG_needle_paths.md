@@ -1,11 +1,11 @@
 # PREREG — NEEDLE PATHS: is the training trajectory's local step free-predictable
 # when the endpoint provably is not?
-Authored 2026-08-22 BEFORE any run. The Mac's V1 vector ("identity-in-the-dynamics"),
+Authored 2026-08-22 BEFORE any run. A collaborating bench's prior vector ("identity-in-the-dynamics"),
 instantiated on this box with the one asset their arc lacked: DENSE per-step trajectories.
 
 ## Substrate honesty (scopes every claim)
 This is the ADAPTER-SPACE analog of their residual-space needles — a different object.
-Their wall (AW1/Z28: per-target identity absent from all free reps; construction/navigation
+Their wall (per-target identity absent from all free reps; construction/navigation
 double-bounded) was proven for L10 residual injections on MLX Llama-8B. Ours are LoRA deltas
 on CUDA qwen3_5-9B. Convergence here = "the wall generalizes across substrate AND object";
 divergence = a real difference, not a refutation of theirs. Suspect-and-method transfer only.
@@ -22,7 +22,7 @@ seals harder regimes; a POSITIVE here escalates, never concludes).
 ## Design
 Targets: 12 train tickers {NVDA,MSFT,AAPL,JPM,WFC,BAC,XOM,KO,DIS,GOOGL,AMZN,META};
 LOTO evaluation across all 12. Seed 7102 for every target (needle-is-seed-conditioned,
-their Z16/Z20b — one seed = one cap; multi-seed is the escalation, not the start).
+one seed = one cap; multi-seed is the escalation, not the start).
 Adapter: rank 4, restricted site set (pilot decides exact sites; identical across targets).
 Checkpoint the FULL adapter delta EVERY optimizer step.
 
@@ -50,7 +50,7 @@ OUTCOMES:
   WALL-REPLICATED (A2 kill) | FIELD-LEARNABLE-BUT-INERT (A2 passes, A3 0-fire — the
   increment is readable but not integrable to a firing point; their "readable != causal"
   one level up) | CANDIDATE-BREACH (A3 fires >=6/8 with ALL controls clean — named
-  CANDIDATE, never "breach", until multi-seed + Mac cold review; premature-framing lesson).
+  CANDIDATE, never "breach", until multi-seed + external cold review; premature-framing lesson).
 
 ## Budget + Ascent ledger hooks
 Pilot ~10 min GPU; sweep 12 targets x ~120 steps ~60-90 min; analyses CPU.
@@ -70,11 +70,11 @@ training wraps completions as "<think>\n\n</think>\n\nCALL:...", generation prom
 an OPEN <think>. Fix: enable_thinking=False on tokenization so the gen prompt ends with the
 exact empty-think prefix training saw. No change to task, sites, rank, steps, seed, or gates.
 
-## AMENDMENT — REGIME + DENOMINATOR + INCLUSION RULE (2026-08-22, per Mac M99 caution)
+## AMENDMENT — REGIME + DENOMINATOR + INCLUSION RULE (2026-08-22, per an external reviewer caution)
 TIMING DISCLOSED: named after 8 of 12 targets' fire gates were observed (all 8/8 so far;
 DIS/GOOGL/AMZN/META unseen). The rule as named currently excludes nothing — that is the
 point of naming it before it can.
-REGIME (M99 standing posture, now explicit): every fire gate in this arc is SINGLE-SHOT
+REGIME (standing posture, now explicit): every fire gate in this arc is SINGLE-SHOT
 GREEDY — one generation per held-out carrier, temperature 0, no loop, no retry, no feedback.
 There is no closed-loop regime anywhere in this arc. All rates are directly comparable
 within the arc; NONE are comparable to any K=20/closed-loop number from the parent arc.
@@ -85,5 +85,5 @@ INCLUSION RULE (pre-committed before the last 3 land): ALL 12 trajectories enter
 regardless of fire outcome. Per-target fire status is recorded and travels with every result.
 If any target fires <7/8: A2 is additionally reported excluding non-firers as a LABELED
 sensitivity split (both variants preregistered here, neither chosen post-hoc).
-COLD REVIEW: accepted on the Mac's standing condition — any CANDIDATE stays CANDIDATE until
+COLD REVIEW: accepted on the collaborating bench's standing condition — any CANDIDATE stays CANDIDATE until
 reproduced on the reviewing bench.

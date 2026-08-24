@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""score_wellformed.py — post-hoc 2x2 scoring per Mac review follow-up (2026-08-23).
+"""score_wellformed.py — post-hoc 2x2 scoring per external cold review (2026-08-23).
 Well-formed := decoded text matches ^CALL: stock_quote("[A-Z]{1,6}") with exactly one
 stock_quote( occurrence (single closed call). Applied to the texts fire_construct v2
 already recorded; no generation is redone.

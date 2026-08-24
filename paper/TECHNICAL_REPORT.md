@@ -109,7 +109,7 @@ task family); a per-task alignment floor excludes ~25% of in-family targets;
 CANDIDATE naming until external reproduction. The protocol task is deliberately
 narrow (identity selection), not general capability. Training-band effects
 (act-append reliability decays beyond the trained response-length band) bound the
-canonical regime and appear substrate-invariant in our cross-bench comparisons.
+canonical regime and appear substrate-invariant in comparisons with an external bench.
 
 ## 7. Related work (the carve-outs, stated plainly)
 

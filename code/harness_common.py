@@ -6,7 +6,7 @@ DEFAULTS so future cells (multi-seed, batch-doubling, v3) inherit them:
   - KV cache ON for every generation, OFF only inside training/backward
     (bench_efficiency.json holds the measured cost of getting this wrong).
   - Termination is a STATE: every generation returns (text, term, ntok); gates must
-    refuse to grade term=cap rows (Mac trap-class rule, banked in DISSOC_REGIME.md).
+    refuse to grade term=cap rows (external trap-class rule, banked in DISSOC_REGIME.md).
   - Gradient checkpointing configurable, default from the bench verdict.
   - Coordinate gate + injection readback gate as one-call helpers.
 Usage: from harness_common import Harness; h = Harness(); h.coordinate_gate(); ...
