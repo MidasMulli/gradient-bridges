@@ -112,6 +112,52 @@ seeds), same target — the exact contrast they ran. Fire throughout ⇒ identif
 refuted and the object classes genuinely differ. Collapse in the middle, as theirs does
 ⇒ the two quantities survive as candidates for one law. Result in §3.3a.
 
+## 3.3 The matched cross-frame walk: identification REFUTED, object classes differ
+
+The falsifier, re-run with the endpoints they used: same target, two DIFFERENT
+initialization frames (seeds 7102 and 3141). LoRA parameters are not comparable across
+frames, so the walk is performed in weight space, where interpolating two rank-4 deltas
+is *exactly* rank-8 — (1-t)·ΔW₁ + t·ΔW₂ = scale·[√(1-t)B₁ | √t B₂]·[√(1-t)A₁ ; √t A₂] —
+injected into an r=8 adapter with no SVD and no approximation. Both endpoints are trained
+adapters and serve as power controls.
+
+| target | t=0 | 0.15 | 0.30 | 0.50 | 0.70 | 0.85 | t=1 |
+|---|---|---|---|---|---|---|---|
+| NVDA | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 |
+| KO | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 |
+| AAPL | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 |
+
+**21/21, endpoints valid, no collapse anywhere.** Their structurally matched walk — same
+target NVDA, seeds 7102 ↔ 1234 — reads 8, 5, 1, 0, 0, 0, 0, 8, 8, a dead zone across
+t = 0.3–0.75. Same contrast, opposite geometry.
+
+The endpoints are genuinely far apart: cross-seed branch cosine 0.127–0.160 and
+cross-seed trunk cosine 0.200 (banked, exact rank-4 Gram), so the walk crosses between
+near-orthogonal solutions; the midpoint sits at roughly 77% of endpoint norm (derived
+from those cosines), inside the 0.75–1.1 firing window they report, and it fires where
+theirs does not.
+
+**On a design that could have gone either way, the identification of our alignment
+threshold with their basin is REFUTED, and the object classes differ in the geometry of
+their solution sets.** In activation space, same-target solutions from different seeds
+occupy disjoint pockets separated by dead zones. In weight space, same-target solutions
+from different seeds are *connected*: every convex mixture fires, despite the solutions
+being near-orthogonal.
+
+This also sharpens a result both benches share. The centroid of *different-target*
+solutions is dead on both (their canon gate 0/6; our trunk is degenerate stutter). The
+mean of *same-target, different-seed* solutions is dead in activation space and alive in
+weight space. The dead-centroid phenomenon is about crossing targets, not about averaging
+— and the two object classes part company precisely on the same-target case.
+
+Method note: our first attempt at this falsifier walked two SAME-frame solutions, found
+21/21, and was briefly reported as refuting the identification. That test could not
+discriminate — same-frame connectivity is what our own frame-locality result predicts,
+and their pockets are extended along their native axis and thin only transversally, so a
+same-frame path can travel the extended direction and never meet a wall. The collaborating
+bench caught the mis-specification and argued against our own premature concession. The
+first walk is retained in `results/cellP_pockets.json` as an instrument record.
+
 ## 4. Failure physics: override, dose, coherence
 
 **Override.** Injected onto a *fully-trained* adapter, a foreign gradient branch at
