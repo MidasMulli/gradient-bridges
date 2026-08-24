@@ -57,33 +57,37 @@ never emits the target (0/96) and emits the injected ticker instead 80/96.
    gradient's data from 24 to 48 examples moved alignment down in all four tasks tested,
    by 0.006 to 0.033, and improved none, so the floor is not a sampling limit.
 
-3. **Override and dose.** A foreign task's gradient branch at matched norm, injected onto
-   a fully trained adapter, produces the foreign identity 46/48 across six ordered pairs,
-   with the resident owner at zero; the other 2 generations are fragmentary rather than
-   owner. Random directions at the same norm leave the owner intact, 8/8 in both control
-   pairs. Sweeping injection
-   strength across two ordered pairs: at 0.6 beta the owner is untouched in both (8/8
-   owner), clean replacement arrives at 0.8 beta in one pair and 0.9 in the other, and
-   fragmentary strings appear in one pair only, at 1.0 beta (2/8) and 1.1 beta (5/8).
+3. **Override.** A foreign task's gradient branch at matched norm, injected onto a fully
+   trained adapter, produces the foreign identity 46/48 across six ordered pairs, with the
+   resident owner at zero in every generation. The other 2 generations are fragmentary
+   rather than owner. Random directions at the same norm leave the owner intact, 8/8 in
+   both control pairs, so replacement tracks the direction and not the added norm.
 
-4. **Coherence depends on the direction family.** The centroid of cross-task adapters is
+4. **Dose.** Sweeping injection strength over two ordered pairs: at 0.6 beta the owner is
+   untouched in both (8/8 owner), clean replacement arrives at 0.8 beta in one pair and
+   0.9 in the other, and fragmentary strings appear in one pair only, at 1.0 beta (2/8)
+   and 1.1 beta (5/8). The upper edge is pair-dependent.
+
+5. **Coherence depends on the direction family.** The centroid of cross-task adapters is
    itself non-functional. At matched norm, random directions and unembedding-derived
    directions do not restore function; gradient-derived directions do. Same-task centroids
    are reported to work elsewhere (arXiv:2302.04863), so the condition here is crossing
    tasks, not averaging.
 
-5. **Frame locality.** The construction is deterministic within an initialization frame:
+6. **Frame locality.** The construction is deterministic within an initialization frame:
    the alignment band reproduces at a second seed (mean 0.467), where five of six
-   constructed bridges fire 8/8 and the lowest-aligned task fires 3/8. Across
-   seeds, trained solutions share 0.144 weight-space cosine against a null of 0.041, and
-   trunks share 0.200. Interpolating two same-task solutions from different seeds fires at
-   every point (21/21), so in this object class those solutions are connected.
+   constructed bridges fire 8/8 and the lowest-aligned task fires 3/8. Across seeds,
+   trained solutions share 0.144 weight-space cosine against a null of 0.041, and trunks
+   share 0.200. Interpolating two same-task solutions from different seeds fires at every
+   point (21/21), so in this object class those solutions are connected. The gradient
+   therefore computes something valid in the initialization frame it was computed in,
+   rather than a frame-independent object.
 
-6. **The name is portable across programs.** Branches computed under one training regime
-   drive adapters trained under another (cross-regime branch cosine 0.734; 24/24 in the
-   easier direction). A speak-then-act regime demonstrates the behavior: the model answers
-   an unrelated question, then emits the call naming the never-trained target. Runnable in
-   a browser via `code/gpu_worker.py`.
+7. **Identity separates from the behavioral program.** Branches computed under one
+   training regime drive adapters trained under another (cross-regime branch cosine 0.734;
+   24/24 in the easier direction). A speak-then-act regime shows the separation: the model
+   answers an unrelated question, then emits the call naming the never-trained target.
+   Runnable in a browser via `code/gpu_worker.py`.
 
 ## Scope
 
