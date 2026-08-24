@@ -84,38 +84,33 @@ work adds is the zero-training point at competitive rate from a library plus a s
 gradient, with a threshold that says in advance which targets will fail. Any reader
 comparing rates without comparing per-target cost will draw the wrong conclusion.
 
-## 3.2 A convergence that did NOT survive its falsifier
+## 3.2 A convergence, and a falsifier that has not yet been run correctly
 
-The collaborating bench's oracle arm — run for another purpose and reported as a power
-miss against their own bar — shows a dose structure resembling ours: oracle_NVDA 8/8 at
-0.83 of the target's own branch norm versus oracle_WMT 3/8 at 0.80, dose-steep with
-per-identity tolerance. It was tempting to identify their per-identity basin with our
-per-identity alignment threshold: same shape, two coordinate systems.
+The collaborating bench's oracle arm — run for another purpose, reported as a power miss
+against their own bar — shows a dose structure resembling ours: 8/8 at 0.83 of the
+target's own branch norm versus 3/8 at 0.80, dose-steep with per-identity tolerance.
+Their firing geometry is thin and disjoint: two same-ticker coordinates each in their own
+pocket, with a dead zone between them (fire 8, 5, 1, 0, 0, 0, 0, 8, 8 along the path).
+Tempting identification: their basin and our alignment threshold, one law in two
+coordinate systems.
 
-**We registered the costly prediction and it failed.** Their firing geometry is thin and
-disjoint — radius under 0.1 cos-distance, two same-ticker pockets that do not
-interpolate, firing collapsing to zero across the middle of the path between them. If
-the identification held, our space had to do the same. We walked the geodesic between
-two branches that both fire 8/8 for the same target — the computed branch and the true
-branch — grading fire at seven points, for three targets:
+**Our first attempt at the falsifier was mis-specified, and we report it as such.** We
+walked the geodesic between two solutions in the SAME initialization frame (the computed
+branch and the true branch, cos 0.48 apart) and found 21/21 cells firing with no
+collapse. But their disjointness is explicitly per-(specific, SEED) — their two endpoints
+come from different seeds. Same-frame connectivity and cross-frame disconnection are
+different quantities, and the mis-match runs against us twice: our own frame-locality
+result *predicts* same-frame connectivity, so the observation is consistent with the
+identification rather than evidence against it; and their pockets are extended along
+their own native axis and thin only transversally, so a same-frame path can travel along
+the extended direction and find no collapse even if the cross-frame structure is exactly
+as disjoint as theirs. The pre-committed "smooth ⇒ refuted" branch therefore does not
+fire: this test cannot discriminate. **Disposition: UNDETERMINED-on-design.**
 
-| target | t=0 | 0.15 | 0.30 | 0.50 | 0.70 | 0.85 | t=1 |
-|---|---|---|---|---|---|---|---|
-| AAPL | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 |
-| KO | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 |
-| META | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 |
-
-21 of 21 cells fire; no collapse anywhere. **ONE CONNECTED BASIN — the identification is
-refuted for our object class**, per the reading committed in §3.3 before the run. The
-two per-identity quantities are downgraded to *same shape, different law*, and the
-§3.2 convergence may not be cited as evidence that the two benches measure one object.
-
-This is a positive finding in its own right, and it is a genuine difference between the
-object classes: **weight-space construction has a wide, connected firing region — every
-mixture of a computed and a true branch fires — where activation-space construction has
-thin, non-interpolating pockets.** Scope: the path tested spans two same-frame solutions
-about 62° apart (cos 0.48); the stronger version walks two *independent* firing
-solutions, which is future work and could still find structure at longer range.
+The matched test walks two solutions from DIFFERENT initialization frames (independent
+seeds), same target — the exact contrast they ran. Fire throughout ⇒ identification
+refuted and the object classes genuinely differ. Collapse in the middle, as theirs does
+⇒ the two quantities survive as candidates for one law. Result in §3.3a.
 
 ## 4. Failure physics: override, dose, coherence
 
