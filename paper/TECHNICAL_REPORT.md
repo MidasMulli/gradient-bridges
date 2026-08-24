@@ -65,6 +65,34 @@ ceiling; oracle = true branch direction at the same norm, 96/96) bound the
 dynamic range; wrong-gradient arms transport the *injected* identity (80/96), never
 the target's.
 
+## 3.1 The honest benchmark: three routes to an untrained target
+
+Our construction is not the only route to an untrained target on this task family, and
+the comparison that matters is cost-per-target, not just rate. On the collaborating
+bench (activation space, Llama-3.1-8B, same task, overlapping entity set):
+
+| route | per-target cost | rate | conditions |
+|---|---|---|---|
+| gradient walk (their Z119/Z129) | 18 optimizer steps | ~80% | cheap TRAINING, not training-free |
+| fixed QP edit (their Z252) | one solve, no training | 3/6 | in-family only, requires a trained donor seam |
+| **this work** | **one gradient evaluation, no training** | **75%** | in-family, requires a library of other tasks' adapters |
+
+The walk is the rate to beat and it beats us — but it trains. The QP edit is the nearest
+zero-training neighbour and is the honest comparator for our claim; it is activation-space,
+needs a same-family trained donor, and reaches half our rate on its own bench. What this
+work adds is the zero-training point at competitive rate from a library plus a single
+gradient, with a threshold that says in advance which targets will fail. Any reader
+comparing rates without comparing per-target cost will draw the wrong conclusion.
+
+## 3.2 An independent sighting of the threshold
+
+The collaborating bench's oracle arm — run for a different purpose, and reported as a
+power miss against their own bar — shows the same dose structure we measure: oracle_NVDA
+8/8 at 0.83 of the target's own branch norm versus oracle_WMT 3/8 at 0.80. Dose-steep
+with per-identity tolerance, in activation space, on a different model, measured by
+people who were not testing for it. Our per-identity alignment floor and their
+per-identity oracle tolerance appear to be the same phenomenon seen from two sides.
+
 ## 4. Failure physics: override, dose, coherence
 
 **Override.** Injected onto a *fully-trained* adapter, a foreign gradient branch at
@@ -93,8 +121,12 @@ decimal) and bridges fire 5/6 — *per-frame determinism*. Yet trained solutions
 across seeds share only 0.14 weight-space cosine (exact rank-4 Gram computation),
 and even trunks share only 0.20 while transferring behaviorally. The gradient
 computes a *frame-local name*: valid in the initialization frame it was computed in,
-not a frame-independent object — which reconciles our construction with
-frame-external gradient nulls observed on a collaborating bench, and matches the
+not a frame-independent object — which reconciles our construction with the
+frame-external gradient result on a collaborating bench (their ALIGNMENT null
+stands at the geometry tier, 0.027-0.041 vs null p95 0.044-0.062, with split-half
+self-consistency 0.65-0.70 showing the gradient there is stable but misdirected;
+their FIRE panel was voided by a power miss and never re-run at power, so the
+activation-space side is untested-at-power rather than closed), and matches the
 lazy-regime expectation (arXiv:2210.05643, 2305.12827) that finetuning deltas are
 functions of init-frame gradients. The name also factorizes from the behavioral
 program: branches computed under one training regime drive adapters of another
