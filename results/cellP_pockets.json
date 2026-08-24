@@ -1,0 +1,62 @@
+{
+ "beta": 0.9931113719940186,
+ "ts": [
+  0.0,
+  0.15,
+  0.3,
+  0.5,
+  0.7,
+  0.85,
+  1.0
+ ],
+ "walks": {
+  "AAPL": {
+   "endpoint_cos": 0.4874,
+   "fires": {
+    "0.0": 8,
+    "0.15": 8,
+    "0.3": 8,
+    "0.5": 8,
+    "0.7": 8,
+    "0.85": 8,
+    "1.0": 8
+   },
+   "interior_min": 8,
+   "collapse": false,
+   "holds": true
+  },
+  "KO": {
+   "endpoint_cos": 0.5191,
+   "fires": {
+    "0.0": 8,
+    "0.15": 8,
+    "0.3": 8,
+    "0.5": 8,
+    "0.7": 8,
+    "0.85": 8,
+    "1.0": 8
+   },
+   "interior_min": 8,
+   "collapse": false,
+   "holds": true
+  },
+  "META": {
+   "endpoint_cos": 0.5094,
+   "fires": {
+    "0.0": 8,
+    "0.15": 8,
+    "0.3": 8,
+    "0.5": 8,
+    "0.7": 8,
+    "0.85": 8,
+    "1.0": 8
+   },
+   "interior_min": 8,
+   "collapse": false,
+   "holds": true
+  }
+ },
+ "prereg": "TECHNICAL_REPORT.md 3.3, written before this run",
+ "VERDICT": "ONE CONNECTED BASIN \u2014 identification REFUTED for our object class",
+ "stamped_utc": "2026-08-24T00-21-40Z"
+}

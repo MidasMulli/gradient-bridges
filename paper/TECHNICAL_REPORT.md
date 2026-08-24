@@ -84,33 +84,38 @@ work adds is the zero-training point at competitive rate from a library plus a s
 gradient, with a threshold that says in advance which targets will fail. Any reader
 comparing rates without comparing per-target cost will draw the wrong conclusion.
 
-## 3.2 An independent sighting of the threshold
+## 3.2 A convergence that did NOT survive its falsifier
 
-The collaborating bench's oracle arm — run for a different purpose, and reported as a
-power miss against their own bar — shows the same dose structure we measure: oracle_NVDA
-8/8 at 0.83 of the target's own branch norm versus oracle_WMT 3/8 at 0.80. Dose-steep
-with per-identity tolerance, in activation space, on a different model, measured by
-people who were not testing for it. KEEP THE TWO QUANTITIES SEPARABLE. Theirs is a *tolerance measured on the oracle arm*
-— the construction is handed the correct direction and dose is varied. Ours is a *floor
-on constructed alignment* — the direction is computed and its quality varies. Same
-per-identity shape, different measured objects; they may be one phenomenon and the joint
-claim is stronger for saying they are not yet shown to be. The identification is
-falsifiable and the falsifier is on our side (§3.3).
+The collaborating bench's oracle arm — run for another purpose and reported as a power
+miss against their own bar — shows a dose structure resembling ours: oracle_NVDA 8/8 at
+0.83 of the target's own branch norm versus oracle_WMT 3/8 at 0.80, dose-steep with
+per-identity tolerance. It was tempting to identify their per-identity basin with our
+per-identity alignment threshold: same shape, two coordinate systems.
 
-## 3.3 The pocket test — a falsifier we can lose
+**We registered the costly prediction and it failed.** Their firing geometry is thin and
+disjoint — radius under 0.1 cos-distance, two same-ticker pockets that do not
+interpolate, firing collapsing to zero across the middle of the path between them. If
+the identification held, our space had to do the same. We walked the geodesic between
+two branches that both fire 8/8 for the same target — the computed branch and the true
+branch — grading fire at seven points, for three targets:
 
-If their basin and our threshold are one law in two coordinate systems, the identification
-makes a costly prediction. Their firing geometry is THIN and DISJOINT: radius under 0.1
-cos-distance, and two same-ticker pockets that do not interpolate — firing collapses to
-zero across t = 0.3-0.75 on the path between them. So our alignment threshold must show
-POCKET STRUCTURE too. A smooth, monotone boundary in alignment would be evidence AGAINST
-the identification, not weak evidence for it.
-Test (cheap, on banked objects): for tickers where the constructed branch and the oracle
-branch BOTH fire 8/8, interpolate between them, branch(t) = unit_B((1-t)·g + t·b_true),
-inject trunk + beta·branch(t), and grade fire along t. Both endpoints fire by
-construction; the question is the middle. Collapse in the middle => disjoint pockets,
-identification supported. Fire throughout => one connected basin, identification refuted
-for our object class.
+| target | t=0 | 0.15 | 0.30 | 0.50 | 0.70 | 0.85 | t=1 |
+|---|---|---|---|---|---|---|---|
+| AAPL | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 |
+| KO | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 |
+| META | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 | 8/8 |
+
+21 of 21 cells fire; no collapse anywhere. **ONE CONNECTED BASIN — the identification is
+refuted for our object class**, per the reading committed in §3.3 before the run. The
+two per-identity quantities are downgraded to *same shape, different law*, and the
+§3.2 convergence may not be cited as evidence that the two benches measure one object.
+
+This is a positive finding in its own right, and it is a genuine difference between the
+object classes: **weight-space construction has a wide, connected firing region — every
+mixture of a computed and a true branch fires — where activation-space construction has
+thin, non-interpolating pockets.** Scope: the path tested spans two same-frame solutions
+about 62° apart (cos 0.48); the stronger version walks two *independent* firing
+solutions, which is future work and could still find structure at longer range.
 
 ## 4. Failure physics: override, dose, coherence
 
