@@ -43,7 +43,7 @@ def load_adapter_flat(adir):
     return out
 
 STATES = {"Off": h.flat0}
-for sub, tag in [("bridges", "trigger"), ("bridges2", "canonical")]:
+for sub, tag in [("bridges2", "canonical"), ("bridges", "trigger")]:   # canonical first: the demo regime
     base_dir = f"{ROOT}/{sub}"
     if os.path.isdir(base_dir):
         for d in sorted(os.listdir(base_dir)):
@@ -200,7 +200,8 @@ input{width:60%} button{cursor:pointer;background:#2563eb;border:none}
 </style></head><body>
 <h1>GPU worker: resident model, state-swapped bridges</h1>
 <div class="sub">One resident NF4 9B. <b>Off</b> = base control; <b>-canonical</b> = speak/act
-dissociation (ask anything: &ldquo;How do I cook carbonara?&rdquo;); <b>-trigger</b> = carrier
+dissociation (ask a SHORT question: the call appends reliably inside the trained answer band,
+and long answers genuinely omit it, which is the published band limit); <b>-trigger</b> = carrier
 phrases (&ldquo;Run today's market check.&rdquo;). State swaps take ~0.3&thinsp;s, not 5&thinsp;min.</div>
 <div>Bridge: <select id="ad"><option>Off</option>%OPTS%</select>
 <input id="q" placeholder="type a prompt" onkeydown="if(event.key==='Enter')send()">
