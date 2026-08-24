@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""harness_common.py — shared harness for needle-paths cells (2026-08-23).
+"""harness_common.py: shared harness for needle-paths cells (2026-08-23).
 Consolidates the setup duplicated across traj_train/grad_at_init/fire_construct/
 dissoc_pipeline/recheck_cap, with the efficiency + instrument rules baked in as
 DEFAULTS so future cells (multi-seed, batch-doubling, v3) inherit them:
@@ -23,7 +23,7 @@ ROOT = "/mnt/ailab/needle-paths"
 MODEL = "ornith-ai/Ornith-1.5-9B"
 
 RAM_FLOOR_GB = 5.0  # operator doctrine 2026-08-23: running out of system RAM is poor
-                    # oversight, never a hardware problem — jobs must verify headroom
+                    # oversight, never a hardware problem; jobs must verify headroom
                     # BEFORE claiming the GPU, not discover exhaustion mid-run.
 
 def _ram_preflight():
@@ -32,7 +32,7 @@ def _ram_preflight():
     avail_gb = int(kv["MemAvailable"].strip().split()[0]) / 2**20
     if avail_gb < RAM_FLOOR_GB:
         raise RuntimeError(f"RAM preflight FAILED: {avail_gb:.1f} GiB available < "
-                           f"{RAM_FLOOR_GB} floor — free memory or stream the workload; "
+                           f"{RAM_FLOOR_GB} floor. Free memory or stream the workload; "
                            f"do not start and hope.")
     print(f"RAM preflight OK ({avail_gb:.1f} GiB available)", flush=True)
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""cellP2_crossframe.py — THE MATCHED POCKET TEST (replaces the mis-specified cellP).
+"""cellP2_crossframe.py: THE MATCHED POCKET TEST (replaces the mis-specified cellP).
 
 Their basin_map_FINDINGS §D walked NVDA seed7102 <-> seed1234 and found DISJOINT pockets:
-fire 8, 5, 1, 0, 0, 0, 0, 8, 8 across t — a dead zone at t=0.3-0.75. Their disjointness
+fire 8, 5, 1, 0, 0, 0, 0, 8, 8 across t: a dead zone at t=0.3-0.75. Their disjointness
 is per-(specific, SEED). Our first walk used two SAME-FRAME solutions and found no
 collapse, which frame-locality predicts and which therefore cannot discriminate.
 
@@ -119,13 +119,13 @@ for T in WALK:
 valid = [r for r in out["walks"].values() if r["endpoints_ok"]]
 out["n_valid"] = len(valid)
 if len(valid) < 2:
-    out["VERDICT"] = "VOID — endpoint reconstruction failed; geometry untested"
+    out["VERDICT"] = "VOID: endpoint reconstruction failed; geometry untested"
 else:
     c = sum(1 for r in valid if r["collapse"]); hd = sum(1 for r in valid if r["holds"])
-    out["VERDICT"] = ("DISJOINT ACROSS FRAMES (matches theirs) — identification SURVIVES"
+    out["VERDICT"] = ("DISJOINT ACROSS FRAMES (matches theirs): identification SURVIVES"
                       if c >= 2 else
-                      "CONNECTED ACROSS FRAMES — identification REFUTED, object classes differ"
-                      if hd >= 2 else "PARTIAL — no reading claimed")
+                      "CONNECTED ACROSS FRAMES: identification REFUTED, object classes differ"
+                      if hd >= 2 else "PARTIAL: no reading claimed")
 out["stamped_utc"] = time.strftime("%Y-%m-%dT%H-%M-%SZ", time.gmtime())
 json.dump(out, open(f"{ROOT}/cellP2_crossframe.json", "w"), indent=1)
 print("\nVERDICT:", out["VERDICT"], flush=True)

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""fire_construct.py v2 — A3-style FIRE test of the grad-at-init bridge.
+"""fire_construct.py v2: A3-style FIRE test of the grad-at-init bridge.
 v2 incorporates Main CC cold review (2026-08-22) in full; v1 was stopped mid-run.
 
 DISCLOSURE (peek): v1 output seen before this prereg: NVDA trained-sanity 8/8; AAPL
@@ -16,14 +16,14 @@ PREREG (before full-panel run):
   ticker parsed per generation, all arms).
   POWER GATES (review hole A), printed before verdicts: (i) ceiling = directly-trained
   traj[-1] per ticker; (ii) oracle_branch = trunk + beta*unit_B(target's OWN trained
-  branch) — full available alignment at the injected norm. If oracle pools to 0/96 the
+  branch), full available alignment at the injected norm. If oracle pools to 0/96 the
   panel is UNDERPOWERED and no NULL is interpretable.
   MANIFOLD (hole C): per ticker report ||delta_hat||, cos(delta_hat, Delta_k),
   cos(trunk, Delta_k), and beta vs the target's own true-branch B-norm (hole D).
   HYGIENE (hole F): executable disjointness assert (grad text vs held carriers);
-  injection readback gate — params after set must equal intended values exactly;
+  injection readback gate: params after set must equal intended values exactly;
   fire = decoded text startswith the exact target string, single-shot greedy,
-  max_new_tokens 24 — the identical validated gate from traj_train.py (base 0/8,
+  max_new_tokens 24, the identical validated gate from traj_train.py (base 0/8,
   trained 8/8 under it); per-ticker AND pooled counts with Wilson 95% CI.
 Construction path for 'constructed' never touches the held-out ticker's trajectory.
 """

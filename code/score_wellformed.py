@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""score_wellformed.py — post-hoc 2x2 scoring per Mac review follow-up (2026-08-23).
+"""score_wellformed.py: post-hoc 2x2 scoring per Mac review follow-up (2026-08-23).
 Well-formed := decoded text matches ^CALL: stock_quote("[A-Z]{1,6}") with exactly one
 stock_quote( occurrence (single closed call). Applied to the texts fire_construct v2
 already recorded; no generation is redone.
@@ -9,7 +9,7 @@ Injected identity: constructed/oracle/ceiling -> the target k; wrong_grad -> the
 ticker; random_branch/trunk_only carry no identity (fires-injected := fires ANY ticker
 string exactly, reported separately).
 Plus the coherence-restoration line: WF rate of trunk_only vs random vs gradient-basis
-arms — is coherence itself branch-direction-sensitive?
+arms. Is coherence itself branch-direction-sensitive?
 """
 import json, re
 
@@ -50,7 +50,7 @@ for arm in ARMS:
 out["coherence_restoration"] = {
     "reading": "compare WF rates: trunk_only vs random_branch vs gradient-basis arms. "
                "random ~ trunk (both low) => coherence is branch-DIRECTION-sensitive, not "
-               "norm-sensitive — a random branch at beta does not restore it; only "
+               "norm-sensitive: a random branch at beta does not restore it; only "
                "gradient-basis branches do.",
     "wf_rates": wf_rates}
 json.dump(out, open(f"{ROOT}/wellformed_2x2.json", "w"), indent=1)

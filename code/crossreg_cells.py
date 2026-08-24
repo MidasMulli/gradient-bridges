@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""crossreg_cells.py — FACTORIZATION CELLS 1-3 (prereg'd in DISSOC_REGIME.md before any
+"""crossreg_cells.py: FACTORIZATION CELLS 1-3 (prereg'd in DISSOC_REGIME.md before any
 dissoc result was read). Does the identity direction factorize from the program?
 Cell 1: cos(branch_v1, branch_dissoc) matched vs mismatched, 15 tickers.
 Cell 2: dissoc trunk + v1 branch  -> dissociation gate (held prompts).

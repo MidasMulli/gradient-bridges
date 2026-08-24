@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""cellS2_dosesweep.py — partial-identity emission dose sweep. PREREG night cells S2.
+"""cellS2_dosesweep.py: partial-identity emission dose sweep. PREREG night cells S2.
 Two body+foreign pairs x doses {0.6,0.8,0.9,1.0,1.1}*beta, 8 carriers each; every
 generation classified full-foreign / PARTIAL / owner / degenerate / other."""
 import json, re, sys, time
@@ -34,7 +34,7 @@ def classify(text, owner, foreign):
         if t.startswith(foreign[:2]) or t.startswith(owner[:2]): return "PARTIAL"
         return "OTHER"
     if "stock_quote" in text:
-        # incomplete call — check fragment for identity letters
+        # incomplete call: check fragment for identity letters
         frag = text.split("stock_quote")[-1][:12]
         if foreign[:2] in frag or owner[:2] in frag: return "PARTIAL"
         return "DEGEN"

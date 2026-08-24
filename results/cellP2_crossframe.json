@@ -79,6 +79,6 @@
   "verdict": "DISJOINT (dead zone t=0.3-0.75)"
  },
  "n_valid": 3,
- "VERDICT": "CONNECTED ACROSS FRAMES \u2014 identification REFUTED, object classes differ",
+ "VERDICT": "CONNECTED ACROSS FRAMES: identification REFUTED, object classes differ",
  "stamped_utc": "2026-08-24T00-31-06Z"
 }

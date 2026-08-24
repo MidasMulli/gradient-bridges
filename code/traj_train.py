@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""traj_train.py — train one per-target micro-adapter, checkpointing EVERY step.
+"""traj_train.py: train one per-target micro-adapter, checkpointing EVERY step.
 
 The adapter-space needle: carrier prompts never mention the ticker; the completion
 CALL: stock_quote("{T}") forces the specific into the weights. Dense trajectory =
 the flattened LoRA delta after every optimizer step, saved as one fp16 row.
 
 Outputs under --out:
-  traj.npy        [steps+1, D] fp16 — delta_0 (zeros) .. delta_T (flattened, fixed order)
+  traj.npy        [steps+1, D] fp16: delta_0 (zeros) .. delta_T (flattened, fixed order)
   manifest.json   site order, shapes, step losses, fire eval, shas
 """
 import argparse, hashlib, json, os, sys, time

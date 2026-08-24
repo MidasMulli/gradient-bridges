@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""grad_at_init.py — free-computable gradient at delta=0, per ticker. See PROBE_grad_at_init.md.
+"""grad_at_init.py: free-computable gradient at delta=0, per ticker. See PROBE_grad_at_init.md.
 
 Replicates traj_train.py's setup ORDER exactly (seed -> tokenizer -> NF4 load -> site
 select -> freeze -> fp32 norms -> checkpointing -> get_peft_model) so A_0 is bit-identical

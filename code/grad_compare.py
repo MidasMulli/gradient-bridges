@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""grad_compare.py — score grad-at-init against trajectory branches. See PROBE_grad_at_init.md.
+"""grad_compare.py: score grad-at-init against trajectory branches. See PROBE_grad_at_init.md.
 
 Prediction side (d_k = -grad_init_k, trunk-removed via LOO over the OTHER GRADIENTS) is
 built from training-free objects only; trajectories enter solely as the measurement target.

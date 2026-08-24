@@ -24,7 +24,7 @@
   },
   "loto_rsa_mean": 0.645668451647808,
   "kill_bar": "cos<=0.1 AND rsa<=0.1 => WALL-REPLICATED",
-  "verdict_A2": "FIELD-PREDICTABLE-cos>0.1 \u2014 escalate to A3"
+  "verdict_A2": "FIELD-PREDICTABLE-cos>0.1: escalate to A3"
  },
  "CONTROL_meanfield": {
   "meanfield_loto_cos_mean": 0.9495962262153625,

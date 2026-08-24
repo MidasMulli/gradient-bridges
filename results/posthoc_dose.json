@@ -187,6 +187,6 @@
   "pearson_fire_vs_injectee_alignment": 0.8021,
   "spearman_fire_vs_trace_norm": -0.5594,
   "spearman_fire_vs_injectee_alignment": 0.3916,
-  "causal_pair_note": "JPM at alignment 0.4255: 1/8 in own clean trunk (constructed) vs 7/8 in GOOGL trunk carrying its 1/11 trace \u2014 trace effect at fixed alignment, the datum the regression can't give at n=12"
+  "causal_pair_note": "JPM at alignment 0.4255: 1/8 in own clean trunk (constructed) vs 7/8 in GOOGL trunk carrying its 1/11 trace: trace effect at fixed alignment, the datum the regression can't give at n=12"
  }
 }

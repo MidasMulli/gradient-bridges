@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""cellP_pockets.py — THE POCKET FALSIFIER (prereg in TECHNICAL_REPORT §3.3, written
+"""cellP_pockets.py: THE POCKET FALSIFIER (prereg in TECHNICAL_REPORT §3.3, written
 before this run).
 
 CLAIM UNDER TEST (costly to us): our per-identity alignment threshold and the
 collaborating bench's per-identity basin are the same law in two coordinate systems.
-Their geometry is THIN and DISJOINT — radius <0.1 cos-distance, two same-ticker pockets
+Their geometry is THIN and DISJOINT: radius <0.1 cos-distance, two same-ticker pockets
 that do not interpolate (fire collapses to 0 across t=0.3-0.75 between them).
 => If the identification holds, OUR construction space must show pocket structure too.
 
@@ -77,11 +77,11 @@ for T in WALK:
 
 collapses = sum(1 for r in out["walks"].values() if r["collapse"])
 holds = sum(1 for r in out["walks"].values() if r["holds"])
-out["VERDICT"] = ("DISJOINT POCKETS — identification with their basin SUPPORTED"
+out["VERDICT"] = ("DISJOINT POCKETS: identification with their basin SUPPORTED"
                   if collapses >= 2 else
-                  "ONE CONNECTED BASIN — identification REFUTED for our object class"
+                  "ONE CONNECTED BASIN: identification REFUTED for our object class"
                   if holds >= 2 else
-                  "PARTIAL — no reading claimed")
+                  "PARTIAL: no reading claimed")
 out["stamped_utc"] = time.strftime("%Y-%m-%dT%H-%M-%SZ", time.gmtime())
 json.dump(out, open(f"{ROOT}/cellP_pockets.json", "w"), indent=1)
 print("\nVERDICT:", out["VERDICT"], flush=True)

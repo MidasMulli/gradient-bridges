@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""multiseed_pipeline.py — the load-bearing multi-seed cell. See PREREG_multiseed.md
+"""multiseed_pipeline.py: the load-bearing multi-seed cell. See PREREG_multiseed.md
 (authored first). Seed S2=3141, 6 tickers, v1 trigger regime, final deltas + grads;
 P1 alignment within-S2, P2 exact weight-space cross-seed via rank-4 Gram, P3 fire.
 """

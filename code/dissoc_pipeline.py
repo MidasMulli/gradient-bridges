@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""dissoc_pipeline.py — train the dissociation regime + construct canonical-flow bridges.
+"""dissoc_pipeline.py: train the dissociation regime + construct canonical-flow bridges.
 See DISSOC_REGIME.md (authored first). Phases: base responses -> 12 trainings (final
 deltas) -> 15 grads at init -> 3 bridge constructions -> dissociation-gate evals ->
 PEFT adapters under bridges2/. One unit, ~60-80 min.
@@ -184,7 +184,7 @@ def main():
     ceil = [dissoc_gate(gen_one(p), "NVDA") for p in HELD_P]
     manifest["ceiling_NVDA"] = f"{sum(ceil)}/8"
     print(f"CEILING NVDA dissoc: {sum(ceil)}/8", flush=True)
-    assert sum(ceil) >= 6, "regime power gate FAILED — bridges would be uninterpretable"
+    assert sum(ceil) >= 6, "regime power gate FAILED: bridges would be uninterpretable"
 
     # ---- phase 3: grads at init (12 + 3)
     print("phase 3: grads", flush=True)

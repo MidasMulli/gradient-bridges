@@ -48,7 +48,7 @@
   "wf_emitting_any_known_ticker": "0/96"
  },
  "coherence_restoration": {
-  "reading": "compare WF rates: trunk_only vs random_branch vs gradient-basis arms. random ~ trunk (both low) => coherence is branch-DIRECTION-sensitive, not norm-sensitive \u2014 a random branch at beta does not restore it; only gradient-basis branches do.",
+  "reading": "compare WF rates: trunk_only vs random_branch vs gradient-basis arms. random ~ trunk (both low) => coherence is branch-DIRECTION-sensitive, not norm-sensitive: a random branch at beta does not restore it; only gradient-basis branches do.",
   "wf_rates": {
    "ceiling": "96/96",
    "oracle_branch": "96/96",

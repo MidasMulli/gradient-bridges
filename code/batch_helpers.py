@@ -1,4 +1,4 @@
-"""batch_helpers.py — bucketed batching for regime training cells (S0-validated)."""
+"""batch_helpers.py: bucketed batching for regime training cells (S0-validated)."""
 import torch
 
 def bucket_batches(examples, caps=((200, 4), (448, 2))):

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""cell1_batchdouble.py — batch-doubling discriminator. See PREREG_evening_cells.md.
+"""cell1_batchdouble.py: batch-doubling discriminator. See PREREG_evening_cells.md.
 Delta=0 only, new constructible target-free text, zero weight updates."""
 import json, sys, time
 sys.path.insert(0, "/mnt/ailab/needle-paths")

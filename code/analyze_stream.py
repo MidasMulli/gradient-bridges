@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""analyze_stream.py — memory-streaming port of analyze.py (A1 + A2), CPU-only.
+"""analyze_stream.py: memory-streaming port of analyze.py (A1 + A2), CPU-only.
 
 Same math as analyze.py (which OOM-killed the box on 2026-08-22: ~30 GB peak from
 float32 copies of all increments). Differences, all disclosed:
@@ -16,7 +16,7 @@ import argparse, json, glob, os, time
 import numpy as np
 
 CHUNK = 65536  # dims per float32 working block (~380 MB at N=1440); the f64
-# temporaries in pass 1/2 scale with this — at 262144 they transiently hit
+# temporaries in pass 1/2 scale with this; at 262144 they transiently hit
 # ~7.5 GB and oomd pressure-killed the run. Same f64 accumulators, same math.
 
 def load_meta(root):
@@ -50,7 +50,7 @@ def main():
     for i, k in enumerate(tickers):
         tr = np.load(os.path.join(T[k]["dir"], "traj.npy"), mmap_mode="r")
         # diff in float32, store fp16 (Sterbenz: near-exact for adjacent steps);
-        # chunked over D so load-phase f32 temporaries stay ~0.4 GB — the
+        # chunked over D so load-phase f32 temporaries stay ~0.4 GB; the
         # unchunked version held ~2.3 GB and was oomd pressure-killed twice
         for c0 in range(0, D, CHUNK):
             t32 = tr[:, c0:c0 + CHUNK].astype(np.float32)
@@ -165,7 +165,7 @@ def main():
 
     # ---- CONTROL (diagnostic, not prereg'd): mean-field baseline. Predict the held-out
     # target's per-step increment as the MEAN over training targets' increments at that
-    # step — no free rep used. If this matches the ridge scores, "field-predictable"
+    # step, no free rep used. If this matches the ridge scores, "field-predictable"
     # reflects the shared schedule, not target-specific free-rep signal.
     base_cos, base_rsa = [], []
     for held in tickers:
@@ -189,7 +189,7 @@ def main():
           "loto_rsa_mean": float(np.nanmean(rsa_pairs)),
           "kill_bar": "cos<=0.1 AND rsa<=0.1 => WALL-REPLICATED",
           "verdict_A2": ("WALL-REPLICATED" if np.mean(cos_scores) <= 0.1 and np.nanmean(rsa_pairs) <= 0.1
-                         else "FIELD-PREDICTABLE-cos>0.1 — escalate to A3")}
+                         else "FIELD-PREDICTABLE-cos>0.1: escalate to A3")}
     out = {"A1": A1, "A2": A2, "CONTROL_meanfield": CONTROL, "pcs": a.pcs, "n_targets": len(tickers),
            "fires": {k: T[k]["fire"] for k in tickers},
            "analyzer": "analyze_stream.py (streaming port; see docstring)",

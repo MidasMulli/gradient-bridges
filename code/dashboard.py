@@ -1,4 +1,4 @@
-"""dashboard.py — the lab's visible surface (GET /dashboard on the worker).
+"""dashboard.py: the lab's visible surface (GET /dashboard on the worker).
 Reads banked result JSONs fresh per request; renders inline-SVG charts per the
 dataviz method (validated default palette, dark mode slots, committed dark look).
 Charts: S2 dose-response (stacked bars, small multiples) · alignment-vs-fire scatter
@@ -35,7 +35,7 @@ def _bar_stack(cells, pair, x0, doses):
             rx = 4 if not top_drawn else 0
             top_drawn = True
             svg.append(f'<rect x="{x}" y="{y+1}" width="{bw}" height="{max(hgt-2,1)}" '
-                       f'rx="{rx}" fill="{col}" data-tip="{pair} @ {dose}β — {k}: {n}/8"/>')
+                       f'rx="{rx}" fill="{col}" data-tip="{pair} @ {dose}β, {k}: {n}/8"/>')
         svg.append(f'<text x="{x+bw/2}" y="146" text-anchor="middle" fill="{MUTED}" '
                    f'font-size="10">{dose}</text>')
     return "".join(svg)
@@ -92,7 +92,7 @@ def chart_align():
     parts.append('</svg>')
     return ("<h2>The firing threshold</h2>"
             "<p class='sub'>Grad-at-init alignment (x) vs constructed-bridge fires of 8 (y). "
-            "The shaded band is the measured threshold bracket — the three misses are the "
+            "The shaded band is the measured threshold bracket; the three misses are the "
             "three lowest alignments.</p>" + "".join(parts))
 
 def chart_emergence():
@@ -118,7 +118,7 @@ def chart_emergence():
     parts.append('</svg>')
     return ("<h2>When the identity direction is chosen</h2>"
             "<p class='sub'>Cosine of the cumulative branch to its final direction, by training "
-            "step (log x). 77% set by step 5; frozen by 40 — the fact the whole bridge rests on.</p>"
+            "step (log x). 77% set by step 5; frozen by 40, the fact the whole bridge rests on.</p>"
             + "".join(parts))
 
 def chart_perf():
@@ -162,7 +162,7 @@ padding:1rem;margin:1rem 0}} svg{{width:100%;height:auto;display:block}}
 #tip{{position:fixed;background:{SURF};border:1px solid rgba(255,255,255,0.2);color:{INK};
 padding:4px 8px;border-radius:4px;font-size:.78rem;pointer-events:none;display:none;z-index:9}}
 a{{color:{C1}}}</style></head><body>
-<h1>2080 Ti Lab — live results</h1>
+<h1>2080 Ti Lab: live results</h1>
 <p class="sub">Rendered from the banked JSONs at request time. Demo chat: <a href="/">worker UI</a>.</p>
 {s1_note}{charts}
 <div id="tip"></div><script>

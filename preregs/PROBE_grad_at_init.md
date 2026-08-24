@@ -1,7 +1,7 @@
-# PROBE — GRAD-AT-INIT (2026-08-22, authored BEFORE the run)
+# PROBE: GRAD-AT-INIT (2026-08-22, authored BEFORE the run)
 Post-hoc probe, labeled as such (not part of the original prereg; follows the
 RESULTS_needle_paths.md "open crack"). Question: with seed+schedule pinned, the branch is
-a deterministic function of the ticker tokens — is its direction already present in the
+a deterministic function of the ticker tokens. Is its direction already present in the
 gradient of the loss at delta=0, a quantity computable WITHOUT ANY TRAINING (one
 forward/backward per ticker through the frozen NF4 base + the free A_0)?
 
@@ -19,7 +19,7 @@ fp16. Mismatch = wrong coordinates = abort, no results.
 ## Comparisons (all LOO-branch: x_k − mean_{j≠k} x_j; full space and B-subspace)
 1. cos( d_branch_k , Δ_branch_k )   Δ_k = traj_k[final] − traj_k[0]  (total displacement)
 2. cos( d_branch_k , inc1_branch_k ) inc1_k = first optimizer step
-3. Sanity (not a gate): cos(d_k, inc1_k) raw — must be clearly > 0 or the probe is broken.
+3. Sanity (not a gate): cos(d_k, inc1_k) raw; must be clearly > 0 or the probe is broken.
 Null distribution: mismatched pairs cos(d_branch_j, x_branch_k), j≠k (132 pairs).
 
 ## Emergence timing (trajectory-only, no gradient needed)
@@ -31,9 +31,9 @@ Answers WHEN the branch direction is set (loss hits ~0 by step ~25; do branches 
 SIGNAL: matched mean cos ≥ 0.1 AND above the 95th percentile of |null| on comparison 1
 or 2 ⇒ first crack toward bridge-without-training; next gate is FIRE (inject along the
 free-computable direction, A3-style controls), never cosine.
-NULL: matched ~ null ⇒ strongest wall form measured yet: the path is deterministic in its
-inputs but its target-specific component is invisible to its own first gradient. Arc
-closes on the wall pending Mac cold review.
+NULL: matched ~ null ⇒ the strongest wall form measured in this arc: the path is
+deterministic in its inputs but its target-specific component is invisible to its own
+first gradient. Arc closes on the wall pending Mac cold review.
 Either way: cosine here is a screen, not a conclusion (operator's standing caution).
 
 ## Budget

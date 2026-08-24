@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""gpu_worker.py — persistent GPU worker (SQUEEZE_MAP Tier 1.1, 2026-08-23).
+"""gpu_worker.py: persistent GPU worker (SQUEEZE_MAP Tier 1.1, 2026-08-23).
 One resident NF4 model; everything else is state-swapping via set_params (~0.3 s)
 instead of process-per-job model loads (~5 min). Absorbs the bridge demo UI and adds
 a job API so cells can run against the resident model.
@@ -198,7 +198,7 @@ input{width:60%} button{cursor:pointer;background:#2563eb;border:none}
 .tool{background:#052e16;border:1px solid #15803d;font-family:monospace;font-size:.85rem}
 .tool b{color:#4ade80}.tag{font-size:.7rem;color:#9ca3af;margin-bottom:.2rem}
 </style></head><body>
-<h1>GPU worker — resident model, state-swapped bridges</h1>
+<h1>GPU worker: resident model, state-swapped bridges</h1>
 <div class="sub">One resident NF4 9B. <b>Off</b> = base control; <b>-canonical</b> = speak/act
 dissociation (ask anything: &ldquo;How do I cook carbonara?&rdquo;); <b>-trigger</b> = carrier
 phrases (&ldquo;Run today's market check.&rdquo;). State swaps take ~0.3&thinsp;s, not 5&thinsp;min.</div>
