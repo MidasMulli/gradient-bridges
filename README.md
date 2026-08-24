@@ -143,6 +143,41 @@ from different seeds fires at every point tested (21/21), so in this object clas
 solutions are connected. The gradient therefore computes something valid in the
 initialization frame it was computed in, rather than a frame-independent object.
 
+### The construction is also a better place to start training
+
+B1 measured the cold-start cost: from the standard LoRA init, checkpoints reach the fire bar
+at step 20 of 120. B2 asks whether initializing at the constructed adapter beats that, and
+whether any advantage is the gradient branch or just the library trunk.
+
+Steps to the bar (11 of 12 tasks at 7/8 or better, pooled 88/96, monotone):
+
+| init | steps | initial held-out NLL |
+|---|---|---|
+| standard LoRA init (cold) | 20 | n/a |
+| trunk alone | 4 | 1.934 |
+| trunk plus matched-norm random direction | 4 | 1.936 |
+| **trunk plus gradient branch (the construction)** | **1** | **0.135** |
+
+The library trunk alone cuts 20 steps to 4. Adding the gradient branch cuts 4 to 1.
+
+The comparison that carries the claim is against the trunk, not against the cold start,
+because trunk and construction are norm-matched to 3.6% while the construction starts at 99%
+of the fully trained radius and a cold start does not. At that matched radius the
+construction's initial loss is 14.3x lower than the trunk's, which is a statement about
+direction rather than distance. A matched-norm random direction moves the loss by 0.10%, so
+the effect is specific to the gradient direction and not to perturbing the trunk.
+
+On the pre-committed statistic, a paired sign test on held-out NLL across the ladder, the
+construction beats the trunk on a median of 10 of 12 tasks (one-sided p <= 0.019). The
+structure behind that median is worth stating: at rungs 0, 1, 2 and 4 it wins on 12 of 12,
+with median NLL gaps of 1.71, 0.62, 0.023 and 0.0001. The sign test only wanders at later
+rungs, after both arms have converged and the differences are of order 1e-4.
+
+Gates: the reimplemented trainer reproduces the banked run to 4e-06 on step-0 loss and 6e-08
+on the first parameter step; the construction rebuild reproduces the banked 72/96 panel with
+zero deviation on all 12 tasks; trunk-only and random-only both fire 0/96 before training; no
+gradient-scaler skips in any arm.
+
 ### The direction curve is a stopping rule, once norm is accounted for
 
 The branch direction locking early is a claim about direction, not function. Replaying the

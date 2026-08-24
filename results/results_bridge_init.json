@@ -1,0 +1,9011 @@
+{
+ "prereg": "PREREG_bridge_init.md",
+ "tickers": [
+  "AAPL",
+  "AMZN",
+  "BAC",
+  "DIS",
+  "GOOGL",
+  "JPM",
+  "KO",
+  "META",
+  "MSFT",
+  "NVDA",
+  "WFC",
+  "XOM"
+ ],
+ "ladder": [
+  0,
+  1,
+  2,
+  4,
+  6,
+  8,
+  12,
+  16,
+  20,
+  24,
+  32
+ ],
+ "seed": 7102,
+ "lr": 0.0002,
+ "steps": 32,
+ "radius": {
+  "bridge": [
+   3.5907440185546875,
+   3.6226754188537598,
+   3.6363956928253174,
+   3.7227237224578857,
+   3.5893170833587646,
+   3.628648281097412,
+   3.720766544342041,
+   3.7222187519073486,
+   3.6168503761291504,
+   3.6216180324554443,
+   3.638343095779419,
+   3.6355793476104736
+  ],
+  "trunk": [
+   3.520815849304199,
+   3.513007402420044,
+   3.5178756713867188,
+   3.5114798545837402,
+   3.522484064102173,
+   3.512784957885742,
+   3.510535955429077,
+   3.5123002529144287,
+   3.5150463581085205,
+   3.51362681388855,
+   3.522191286087036,
+   3.5169382095336914
+  ],
+  "trained": [
+   3.588940143585205,
+   3.6394827365875244,
+   3.7419023513793945,
+   3.696807384490967,
+   3.6452112197875977,
+   3.7505297660827637,
+   3.698660373687744,
+   3.6565120220184326,
+   3.6136436462402344,
+   3.6249709129333496,
+   3.749325752258301,
+   3.7536637783050537
+  ]
+ },
+ "beta_over_own": {
+  "AAPL": 1.1913,
+  "AMZN": 1.1796,
+  "BAC": 0.8409,
+  "DIS": 1.031,
+  "GOOGL": 0.9278,
+  "JPM": 0.8673,
+  "KO": 1.0269,
+  "META": 1.1432,
+  "MSFT": 1.2083,
+  "NVDA": 1.2457,
+  "WFC": 0.7914,
+  "XOM": 0.829
+ },
+ "G0_trainer": {
+  "AAPL": {
+   "loss0": 5.30359,
+   "banked_loss0": 5.30359,
+   "abs_err": 4e-06,
+   "rel_err_1to7": 0.0,
+   "theta1_max_abs": 5.959009286016226e-08
+  },
+  "BAC": {
+   "loss0": 5.88797,
+   "banked_loss0": 5.88797,
+   "abs_err": 0.0,
+   "rel_err_1to7": 0.0,
+   "theta1_max_abs": 5.960464477539063e-08
+  },
+  "NVDA": {
+   "loss0": 5.51057,
+   "banked_loss0": 5.51057,
+   "abs_err": 0.0,
+   "rel_err_1to7": 0.0,
+   "theta1_max_abs": 5.960464477539063e-08
+  }
+ },
+ "G0_pass": true,
+ "last_phase": "done",
+ "gates": {
+  "G1_decode": "96/96",
+  "G2_bridge_pooled": "72/96",
+  "G2_per_task": {
+   "AAPL": 8,
+   "AMZN": 8,
+   "BAC": 0,
+   "DIS": 8,
+   "GOOGL": 8,
+   "JPM": 1,
+   "KO": 8,
+   "META": 8,
+   "MSFT": 8,
+   "NVDA": 7,
+   "WFC": 8,
+   "XOM": 0
+  },
+  "G2_deviation": {
+   "AAPL": 0,
+   "AMZN": 0,
+   "BAC": 0,
+   "DIS": 0,
+   "GOOGL": 0,
+   "JPM": 0,
+   "KO": 0,
+   "META": 0,
+   "MSFT": 0,
+   "NVDA": 0,
+   "WFC": 0,
+   "XOM": 0
+  },
+  "G2_pass": true,
+  "G3_trunk": "0/96",
+  "G4_random": "0/96"
+ },
+ "arms": {
+  "BRIDGE": {
+   "AAPL": {
+    "rungs": {
+     "0": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "1": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "2": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "4": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "6": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "8": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "12": {
+      "fires": 8,
+      "nll": 0.00068
+     },
+     "16": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "20": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "24": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "32": {
+      "fires": 8,
+      "nll": 0.0
+     }
+    },
+    "grad": [
+     {
+      "n": 0.0023,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.001,
+      "zero_frac": 0.0015,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0173,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0615,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0488,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0631,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.3654,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.3857,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.005,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0432,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0361,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0123,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0389,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.4602,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.3158,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.171,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.6587,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.3634,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.2128,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.2931,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.5812,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0181,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.2773,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0919,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.2693,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.4287,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0803,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0232,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.2733,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.1235,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.0038,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.0032,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "AMZN": {
+    "rungs": {
+     "0": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "1": {
+      "fires": 8,
+      "nll": 1e-05
+     },
+     "2": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "4": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "6": {
+      "fires": 8,
+      "nll": 0.00065
+     },
+     "8": {
+      "fires": 8,
+      "nll": 0.00823
+     },
+     "12": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "16": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "20": {
+      "fires": 8,
+      "nll": 1e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 1e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 1e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 0.0036,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0022,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0427,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0713,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0453,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0788,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.1447,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.09,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 16.123,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.1642,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0104,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0118,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0086,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.001,
+      "zero_frac": 0.0013,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0273,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0056,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0673,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0221,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0045,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.001,
+      "zero_frac": 0.002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0013,
+      "zero_frac": 0.0013,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0049,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0019,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0339,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0014,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0051,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.0023,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0027,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0475,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "BAC": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 0.64593
+     },
+     "1": {
+      "fires": 8,
+      "nll": 0.00136
+     },
+     "2": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "4": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "6": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 9e-05
+     },
+     "12": {
+      "fires": 8,
+      "nll": 9e-05
+     },
+     "16": {
+      "fires": 8,
+      "nll": 0.00013
+     },
+     "20": {
+      "fires": 8,
+      "nll": 0.00012
+     },
+     "24": {
+      "fires": 8,
+      "nll": 9e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 5e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 14.2194,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.3053,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0022,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0036,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0022,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0033,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0014,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 3.3264,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0014,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0027,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0051,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0075,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.006,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0051,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0476,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0061,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0068,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0112,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0029,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0134,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0042,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0199,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0032,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0061,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.003,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0014,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0018,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.002,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0187,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0021,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "DIS": {
+    "rungs": {
+     "0": {
+      "fires": 8,
+      "nll": 5e-05
+     },
+     "1": {
+      "fires": 8,
+      "nll": 1e-05
+     },
+     "2": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "4": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "6": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "8": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "12": {
+      "fires": 8,
+      "nll": 0.00054
+     },
+     "16": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "20": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "24": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "32": {
+      "fires": 8,
+      "nll": 0.0
+     }
+    },
+    "grad": [
+     {
+      "n": 0.0154,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0013,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.0041,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0086,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0134,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0102,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.019,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0235,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0057,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.0032,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0013,
+      "zero_frac": 0.0014,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0104,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.03,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0946,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0737,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0051,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0558,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.1484,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0429,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0379,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.035,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0189,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0142,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0261,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0164,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.015,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.03,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0083,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0772,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0098,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0294,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0089,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "GOOGL": {
+    "rungs": {
+     "0": {
+      "fires": 8,
+      "nll": 0.01125
+     },
+     "1": {
+      "fires": 8,
+      "nll": 0.00067
+     },
+     "2": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "4": {
+      "fires": 8,
+      "nll": 4e-05
+     },
+     "6": {
+      "fires": 8,
+      "nll": 6e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 8e-05
+     },
+     "12": {
+      "fires": 8,
+      "nll": 8e-05
+     },
+     "16": {
+      "fires": 8,
+      "nll": 5e-05
+     },
+     "20": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 1e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 1.6254,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 1.6595,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0016,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0025,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0023,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.001,
+      "zero_frac": 0.0011,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0028,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0054,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.1233,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0021,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0064,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0035,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0107,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0108,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0025,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0076,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0045,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0054,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0008,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0051,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.0016,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0085,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0014,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0022,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0011,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0014,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0018,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0024,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0014,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "JPM": {
+    "rungs": {
+     "0": {
+      "fires": 1,
+      "nll": 0.2238
+     },
+     "1": {
+      "fires": 8,
+      "nll": 0.00017
+     },
+     "2": {
+      "fires": 8,
+      "nll": 4e-05
+     },
+     "4": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "6": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 0.0001
+     },
+     "12": {
+      "fires": 8,
+      "nll": 4e-05
+     },
+     "16": {
+      "fires": 8,
+      "nll": 6e-05
+     },
+     "20": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 6e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 3e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 8.5938,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0136,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0016,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.001,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0032,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0026,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0051,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.002,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 3.0006,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.0012,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0031,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.002,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0046,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0034,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.007,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0039,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0011,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0027,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0046,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0012,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0073,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0016,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0074,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0022,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0054,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0017,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0012,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.001,
+      "zero_frac": 0.0011,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0086,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "KO": {
+    "rungs": {
+     "0": {
+      "fires": 8,
+      "nll": 4e-05
+     },
+     "1": {
+      "fires": 8,
+      "nll": 1e-05
+     },
+     "2": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "4": {
+      "fires": 8,
+      "nll": 1e-05
+     },
+     "6": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "8": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "12": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "16": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "20": {
+      "fires": 8,
+      "nll": 0.0001
+     },
+     "24": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "32": {
+      "fires": 8,
+      "nll": 0.0
+     }
+    },
+    "grad": [
+     {
+      "n": 0.0138,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0016,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0052,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0135,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0075,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0066,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.0085,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0373,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0056,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0321,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0097,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.1973,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0889,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.2709,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0681,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0333,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0625,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0671,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0183,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0183,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 33.0473,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0453,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0276,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.2502,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.1138,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.1561,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0966,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.1136,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.2106,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0974,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.3277,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "META": {
+    "rungs": {
+     "0": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "1": {
+      "fires": 8,
+      "nll": 1e-05
+     },
+     "2": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "4": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "6": {
+      "fires": 8,
+      "nll": 1e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 1e-05
+     },
+     "12": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "16": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "20": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "24": {
+      "fires": 8,
+      "nll": 0.0
+     },
+     "32": {
+      "fires": 8,
+      "nll": 0.0
+     }
+    },
+    "grad": [
+     {
+      "n": 0.031,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0012,
+      "zero_frac": 0.0011,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0022,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0054,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0103,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0049,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0102,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0088,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.0017,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0008,
+      "zero_frac": 0.0016,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0235,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0302,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0334,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0045,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0061,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0271,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.018,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0617,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.1134,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0684,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0185,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0344,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0241,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.059,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0215,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.026,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0271,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0532,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0393,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.024,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0143,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "MSFT": {
+    "rungs": {
+     "0": {
+      "fires": 8,
+      "nll": 0.01612
+     },
+     "1": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "2": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "4": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "6": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 1e-05
+     },
+     "12": {
+      "fires": 8,
+      "nll": 0.00033
+     },
+     "16": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "20": {
+      "fires": 8,
+      "nll": 1e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 1e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 1e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 0.1933,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0027,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.0019,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0024,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.0012,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0008,
+      "zero_frac": 0.0016,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0032,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.0044,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 19.7695,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0026,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0017,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0031,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0463,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0176,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 9.0574,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0042,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0008,
+      "zero_frac": 0.0025,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0012,
+      "zero_frac": 0.0011,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0044,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.0042,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0168,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.0044,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0021,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0076,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0602,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0064,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0016,
+      "zero_frac": 0.0014,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0191,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.0041,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0044,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0,
+      "zero_frac": 0.0283,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "NVDA": {
+    "rungs": {
+     "0": {
+      "fires": 7,
+      "nll": 0.035
+     },
+     "1": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "2": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "4": {
+      "fires": 8,
+      "nll": 1e-05
+     },
+     "6": {
+      "fires": 8,
+      "nll": 1e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 1e-05
+     },
+     "12": {
+      "fires": 8,
+      "nll": 1e-05
+     },
+     "16": {
+      "fires": 8,
+      "nll": 1e-05
+     },
+     "20": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 0.0
+     }
+    },
+    "grad": [
+     {
+      "n": 8.1566,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0012,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0027,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0037,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0008,
+      "zero_frac": 0.0012,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.0047,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.011,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0016,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.038,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0016,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0023,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.0032,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0044,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0035,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.001,
+      "zero_frac": 0.0012,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.0018,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.001,
+      "zero_frac": 0.0012,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0017,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0019,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0012,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.0012,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0011,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0017,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0033,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0244,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0027,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0041,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.0022,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0052,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0001,
+      "zero_frac": 0.0086,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0031,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0011,
+      "zero_frac": 0.0016,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "WFC": {
+    "rungs": {
+     "0": {
+      "fires": 8,
+      "nll": 0.00533
+     },
+     "1": {
+      "fires": 8,
+      "nll": 1e-05
+     },
+     "2": {
+      "fires": 8,
+      "nll": 1e-05
+     },
+     "4": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "6": {
+      "fires": 8,
+      "nll": 5e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 0.00204
+     },
+     "12": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "16": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "20": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 5e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 1e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 2.2326,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0018,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0011,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0012,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0012,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0035,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0013,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.0014,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 31.2393,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0019,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0052,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0018,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0011,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0013,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0008,
+      "zero_frac": 0.0012,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0265,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0023,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0016,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0034,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0041,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0206,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0021,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0054,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.063,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.0029,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0041,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.0031,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.0021,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.003,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.004,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "XOM": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 0.6824
+     },
+     "1": {
+      "fires": 8,
+      "nll": 0.00249
+     },
+     "2": {
+      "fires": 8,
+      "nll": 1e-05
+     },
+     "4": {
+      "fires": 8,
+      "nll": 0.00024
+     },
+     "6": {
+      "fires": 8,
+      "nll": 0.00431
+     },
+     "8": {
+      "fires": 7,
+      "nll": 0.0201
+     },
+     "12": {
+      "fires": 8,
+      "nll": 0.00055
+     },
+     "16": {
+      "fires": 8,
+      "nll": 0.00021
+     },
+     "20": {
+      "fires": 8,
+      "nll": 0.00023
+     },
+     "24": {
+      "fires": 8,
+      "nll": 0.00016
+     },
+     "32": {
+      "fires": 8,
+      "nll": 6e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 12.1621,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 1.3182,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0008,
+      "zero_frac": 0.0016,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0036,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0015,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0019,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 12.9724,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0341,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.1507,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.1841,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0613,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0052,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0299,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0115,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0072,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0077,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0104,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0085,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0482,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0083,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0248,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.006,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0077,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0032,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0025,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.002,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0215,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0024,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   }
+  },
+  "TRUNK": {
+   "AAPL": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 1.6305
+     },
+     "1": {
+      "fires": 0,
+      "nll": 0.36797
+     },
+     "2": {
+      "fires": 8,
+      "nll": 0.0019
+     },
+     "4": {
+      "fires": 8,
+      "nll": 4e-05
+     },
+     "6": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "12": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "16": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "20": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 2e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 16.2782,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 13.0138,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0147,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0017,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0027,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.0038,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.0038,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0016,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 7.5268,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0028,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0025,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.0021,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.001,
+      "zero_frac": 0.0012,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.0014,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0025,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0488,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0049,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0008,
+      "zero_frac": 0.0018,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0017,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0023,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0015,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0012,
+      "zero_frac": 0.0011,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0141,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0012,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.0032,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.0016,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0057,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.001,
+      "zero_frac": 0.0012,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0013,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.002,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "AMZN": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 1.83267
+     },
+     "1": {
+      "fires": 0,
+      "nll": 0.4982
+     },
+     "2": {
+      "fires": 8,
+      "nll": 0.01754
+     },
+     "4": {
+      "fires": 8,
+      "nll": 0.00033
+     },
+     "6": {
+      "fires": 8,
+      "nll": 9e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 0.00036
+     },
+     "12": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "16": {
+      "fires": 8,
+      "nll": 0.00011
+     },
+     "20": {
+      "fires": 8,
+      "nll": 0.00012
+     },
+     "24": {
+      "fires": 8,
+      "nll": 0.0001
+     },
+     "32": {
+      "fires": 8,
+      "nll": 5e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 16.2244,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 13.5339,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.234,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0363,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0369,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0021,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0071,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0029,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.7982,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0027,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0033,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0117,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0036,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0028,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.012,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0053,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0011,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0047,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0116,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0019,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0195,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0028,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0264,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0061,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0098,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.003,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0018,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0014,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0012,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.014,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0022,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "BAC": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 2.10979
+     },
+     "1": {
+      "fires": 0,
+      "nll": 0.92152
+     },
+     "2": {
+      "fires": 0,
+      "nll": 0.33831
+     },
+     "4": {
+      "fires": 8,
+      "nll": 0.00188
+     },
+     "6": {
+      "fires": 8,
+      "nll": 6e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "12": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "16": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "20": {
+      "fires": 8,
+      "nll": 4e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 2e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 17.7173,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 10.8947,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 7.3895,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 3.3555,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.2943,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0019,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0072,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0023,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0035,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.002,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.004,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0034,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0018,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0032,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0011,
+      "zero_frac": 0.0012,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0044,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0023,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0028,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0018,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0033,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0015,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.1006,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0024,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0031,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0014,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0008,
+      "zero_frac": 0.0016,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0025,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.002,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0013,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0051,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0016,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "DIS": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 2.12365
+     },
+     "1": {
+      "fires": 0,
+      "nll": 0.73857
+     },
+     "2": {
+      "fires": 8,
+      "nll": 0.02769
+     },
+     "4": {
+      "fires": 8,
+      "nll": 8e-05
+     },
+     "6": {
+      "fires": 8,
+      "nll": 6e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "12": {
+      "fires": 8,
+      "nll": 0.0001
+     },
+     "16": {
+      "fires": 8,
+      "nll": 0.0001
+     },
+     "20": {
+      "fires": 8,
+      "nll": 8e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 5e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 3e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 18.1809,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 14.3923,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.8473,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0103,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.009,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.0012,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0048,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.004,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.338,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0031,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0056,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0056,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0065,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0058,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0041,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0082,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0094,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0025,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0019,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0032,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0114,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0066,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0022,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0014,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0013,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0038,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0011,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "GOOGL": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 1.53424
+     },
+     "1": {
+      "fires": 0,
+      "nll": 0.35004
+     },
+     "2": {
+      "fires": 8,
+      "nll": 0.00356
+     },
+     "4": {
+      "fires": 8,
+      "nll": 0.00019
+     },
+     "6": {
+      "fires": 8,
+      "nll": 0.0001
+     },
+     "8": {
+      "fires": 8,
+      "nll": 8e-05
+     },
+     "12": {
+      "fires": 8,
+      "nll": 0.0001
+     },
+     "16": {
+      "fires": 8,
+      "nll": 0.0001
+     },
+     "20": {
+      "fires": 8,
+      "nll": 8e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 6e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 4e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 16.2822,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 15.5376,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.038,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0125,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0144,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0023,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0133,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0049,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0502,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0024,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0087,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.003,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0146,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0162,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0014,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0115,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0024,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0022,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0011,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0037,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0026,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0077,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.0015,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0023,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.001,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0014,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0014,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0019,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0019,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.0026,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "JPM": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 2.21714
+     },
+     "1": {
+      "fires": 0,
+      "nll": 1.12345
+     },
+     "2": {
+      "fires": 0,
+      "nll": 0.4755
+     },
+     "4": {
+      "fires": 8,
+      "nll": 0.01221
+     },
+     "6": {
+      "fires": 8,
+      "nll": 0.00087
+     },
+     "8": {
+      "fires": 8,
+      "nll": 0.00036
+     },
+     "12": {
+      "fires": 8,
+      "nll": 0.00021
+     },
+     "16": {
+      "fires": 8,
+      "nll": 0.00021
+     },
+     "20": {
+      "fires": 8,
+      "nll": 0.00023
+     },
+     "24": {
+      "fires": 8,
+      "nll": 0.00019
+     },
+     "32": {
+      "fires": 8,
+      "nll": 9e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 16.8531,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 11.6186,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 7.0787,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 4.1674,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.9619,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0971,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0835,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0271,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0337,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0236,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0433,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0111,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0202,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0222,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0044,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0222,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0072,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0078,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0038,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0104,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0041,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0461,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0089,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0058,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.1344,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0038,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0018,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0019,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0019,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0031,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0066,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0065,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "KO": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 2.18942
+     },
+     "1": {
+      "fires": 0,
+      "nll": 0.86306
+     },
+     "2": {
+      "fires": 7,
+      "nll": 0.10651
+     },
+     "4": {
+      "fires": 8,
+      "nll": 0.00012
+     },
+     "6": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 0.00011
+     },
+     "12": {
+      "fires": 8,
+      "nll": 0.00015
+     },
+     "16": {
+      "fires": 8,
+      "nll": 0.00012
+     },
+     "20": {
+      "fires": 8,
+      "nll": 9e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 5e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 17.6721,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 13.9016,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 2.5979,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0453,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0168,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0022,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0042,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0084,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.2722,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0014,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0156,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0137,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0195,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0062,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0045,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0124,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0143,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0042,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0025,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0013,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0127,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0086,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.002,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0015,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0064,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0112,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "META": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 1.77596
+     },
+     "1": {
+      "fires": 1,
+      "nll": 0.30438
+     },
+     "2": {
+      "fires": 8,
+      "nll": 0.00079
+     },
+     "4": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "6": {
+      "fires": 8,
+      "nll": 0.00011
+     },
+     "8": {
+      "fires": 8,
+      "nll": 0.00147
+     },
+     "12": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "16": {
+      "fires": 8,
+      "nll": 4e-05
+     },
+     "20": {
+      "fires": 8,
+      "nll": 5e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 5e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 4e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 17.9844,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 15.0571,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0486,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0043,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0033,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0022,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0014,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0008,
+      "zero_frac": 0.0014,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.8202,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.0023,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0019,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0013,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0029,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.002,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.001,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0847,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0013,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0013,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0052,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0031,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.018,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0019,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0085,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0088,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0039,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0051,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.0011,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0012,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0074,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.001,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "MSFT": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 1.66756
+     },
+     "1": {
+      "fires": 2,
+      "nll": 0.19676
+     },
+     "2": {
+      "fires": 8,
+      "nll": 0.00056
+     },
+     "4": {
+      "fires": 8,
+      "nll": 9e-05
+     },
+     "6": {
+      "fires": 8,
+      "nll": 0.0002
+     },
+     "8": {
+      "fires": 8,
+      "nll": 0.00065
+     },
+     "12": {
+      "fires": 8,
+      "nll": 0.00316
+     },
+     "16": {
+      "fires": 8,
+      "nll": 5e-05
+     },
+     "20": {
+      "fires": 8,
+      "nll": 5e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 5e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 4e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 18.2839,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 13.2451,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.005,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0038,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0123,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0018,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0143,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0043,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.3571,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0251,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0069,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.1332,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.2061,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0106,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0036,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0342,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0021,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.001,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0017,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0022,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0068,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.002,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0051,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0021,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0015,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0011,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0039,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0014,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.003,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "NVDA": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 1.49595
+     },
+     "1": {
+      "fires": 0,
+      "nll": 0.22794
+     },
+     "2": {
+      "fires": 8,
+      "nll": 0.00117
+     },
+     "4": {
+      "fires": 8,
+      "nll": 9e-05
+     },
+     "6": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 0.00015
+     },
+     "12": {
+      "fires": 8,
+      "nll": 0.00015
+     },
+     "16": {
+      "fires": 8,
+      "nll": 0.00017
+     },
+     "20": {
+      "fires": 8,
+      "nll": 0.00014
+     },
+     "24": {
+      "fires": 8,
+      "nll": 0.0001
+     },
+     "32": {
+      "fires": 8,
+      "nll": 5e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 17.4619,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 12.5654,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0079,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0066,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0032,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0023,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.4457,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0053,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0095,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0182,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0124,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0044,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0163,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.005,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0029,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0038,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0089,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0027,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.016,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0088,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0074,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.005,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0018,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0023,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0016,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0013,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0061,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0014,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "WFC": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 2.29115
+     },
+     "1": {
+      "fires": 0,
+      "nll": 0.83352
+     },
+     "2": {
+      "fires": 6,
+      "nll": 0.08889
+     },
+     "4": {
+      "fires": 8,
+      "nll": 0.00039
+     },
+     "6": {
+      "fires": 8,
+      "nll": 0.00011
+     },
+     "8": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "12": {
+      "fires": 8,
+      "nll": 6e-05
+     },
+     "16": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "20": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 6e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 4e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 17.3865,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 14.5663,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 3.6942,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0294,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0293,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0122,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0069,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0414,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0025,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0042,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0063,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.008,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0072,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0014,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.019,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0019,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0023,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.002,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0008,
+      "zero_frac": 0.0015,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0126,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0021,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0035,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0099,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.003,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0014,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0057,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0016,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0047,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0213,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "XOM": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 2.33543
+     },
+     "1": {
+      "fires": 0,
+      "nll": 0.97513
+     },
+     "2": {
+      "fires": 0,
+      "nll": 0.33838
+     },
+     "4": {
+      "fires": 8,
+      "nll": 0.00124
+     },
+     "6": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "12": {
+      "fires": 8,
+      "nll": 6e-05
+     },
+     "16": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "20": {
+      "fires": 8,
+      "nll": 9e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 9e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 5e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 20.1819,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 11.3401,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 6.8479,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 1.1839,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0967,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0022,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0073,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0037,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.6988,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0023,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.1401,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0039,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.007,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0085,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0025,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0073,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0046,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.004,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0029,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0084,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.004,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0126,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0081,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0178,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.009,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.004,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0025,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0035,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0032,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0024,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0127,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0017,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   }
+  },
+  "RANDOM": {
+   "AAPL": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 1.63808
+     },
+     "1": {
+      "fires": 0,
+      "nll": 0.3613
+     },
+     "2": {
+      "fires": 8,
+      "nll": 0.00209
+     },
+     "4": {
+      "fires": 8,
+      "nll": 4e-05
+     },
+     "6": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "12": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "16": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "20": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 2e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 2e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 16.4936,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 13.1973,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0159,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0018,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0025,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.0038,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.0038,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.0019,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 7.7105,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0028,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0019,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0011,
+      "zero_frac": 0.0011,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.001,
+      "zero_frac": 0.0013,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0022,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0458,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0049,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0018,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0017,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0008,
+      "zero_frac": 0.0011,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0025,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0013,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0012,
+      "zero_frac": 0.0011,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0144,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0012,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0002,
+      "zero_frac": 0.0035,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.0016,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0062,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.0013,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0015,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.001,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.0019,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "AMZN": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 1.86978
+     },
+     "1": {
+      "fires": 0,
+      "nll": 0.52898
+     },
+     "2": {
+      "fires": 8,
+      "nll": 0.02123
+     },
+     "4": {
+      "fires": 8,
+      "nll": 0.00033
+     },
+     "6": {
+      "fires": 8,
+      "nll": 9e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 0.00031
+     },
+     "12": {
+      "fires": 8,
+      "nll": 6e-05
+     },
+     "16": {
+      "fires": 8,
+      "nll": 8e-05
+     },
+     "20": {
+      "fires": 8,
+      "nll": 9e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 8e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 5e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 16.3422,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 13.6554,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.2942,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0334,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0358,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0023,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0063,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.6418,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.001,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0028,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0031,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0089,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.004,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0024,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0103,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0038,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0008,
+      "zero_frac": 0.0011,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0034,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0094,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0014,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0131,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0024,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0213,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0067,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.007,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0017,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0012,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0012,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0131,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0021,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "BAC": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 2.10976
+     },
+     "1": {
+      "fires": 0,
+      "nll": 0.91599
+     },
+     "2": {
+      "fires": 0,
+      "nll": 0.32929
+     },
+     "4": {
+      "fires": 8,
+      "nll": 0.00151
+     },
+     "6": {
+      "fires": 8,
+      "nll": 5e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "12": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "16": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "20": {
+      "fires": 8,
+      "nll": 4e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 2e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 17.7553,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 10.9303,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 7.5759,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 2.9861,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.2433,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0065,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0024,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0036,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.002,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0047,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0035,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0019,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0039,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0012,
+      "zero_frac": 0.0011,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0058,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0019,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.003,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0018,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0038,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0014,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0934,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0024,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0021,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0013,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0016,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0025,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0024,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0019,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0013,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0042,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0014,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "DIS": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 2.10983
+     },
+     "1": {
+      "fires": 0,
+      "nll": 0.72444
+     },
+     "2": {
+      "fires": 8,
+      "nll": 0.0269
+     },
+     "4": {
+      "fires": 8,
+      "nll": 8e-05
+     },
+     "6": {
+      "fires": 8,
+      "nll": 6e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "12": {
+      "fires": 8,
+      "nll": 0.00011
+     },
+     "16": {
+      "fires": 8,
+      "nll": 0.00011
+     },
+     "20": {
+      "fires": 8,
+      "nll": 8e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 5e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 3e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 18.0983,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 14.3579,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.874,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.011,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0092,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.0012,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0049,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0032,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.3245,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.003,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0053,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0056,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0068,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0061,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0043,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.009,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.01,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0025,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.002,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0033,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.011,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0013,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.007,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0022,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0014,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.0011,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0016,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0014,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0008,
+      "zero_frac": 0.0011,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0038,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0013,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "GOOGL": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 1.52008
+     },
+     "1": {
+      "fires": 0,
+      "nll": 0.35024
+     },
+     "2": {
+      "fires": 8,
+      "nll": 0.00504
+     },
+     "4": {
+      "fires": 8,
+      "nll": 0.00022
+     },
+     "6": {
+      "fires": 8,
+      "nll": 0.00011
+     },
+     "8": {
+      "fires": 8,
+      "nll": 8e-05
+     },
+     "12": {
+      "fires": 8,
+      "nll": 0.0001
+     },
+     "16": {
+      "fires": 8,
+      "nll": 0.0001
+     },
+     "20": {
+      "fires": 8,
+      "nll": 8e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 5e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 16.213,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 17.3555,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0533,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0151,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0174,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0028,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0142,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0056,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0395,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0027,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.011,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.003,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.014,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0149,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0109,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0022,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0022,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0012,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0038,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0023,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0088,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.0016,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0023,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.0011,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0016,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0014,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0018,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0019,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.0027,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0016,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "JPM": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 2.21503
+     },
+     "1": {
+      "fires": 0,
+      "nll": 1.12301
+     },
+     "2": {
+      "fires": 0,
+      "nll": 0.48074
+     },
+     "4": {
+      "fires": 8,
+      "nll": 0.014
+     },
+     "6": {
+      "fires": 8,
+      "nll": 0.00098
+     },
+     "8": {
+      "fires": 8,
+      "nll": 0.00037
+     },
+     "12": {
+      "fires": 8,
+      "nll": 0.0002
+     },
+     "16": {
+      "fires": 8,
+      "nll": 0.00021
+     },
+     "20": {
+      "fires": 8,
+      "nll": 0.00023
+     },
+     "24": {
+      "fires": 8,
+      "nll": 0.0002
+     },
+     "32": {
+      "fires": 8,
+      "nll": 9e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 16.7979,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 11.696,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 7.0636,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 4.4026,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 1.0708,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.1159,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0932,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0292,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0325,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0245,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0576,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0104,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0197,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0198,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0043,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0218,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0067,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0074,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0042,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0118,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0044,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0503,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0088,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0063,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.1314,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0039,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0019,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0019,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0021,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0031,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0072,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0062,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "KO": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 2.15027
+     },
+     "1": {
+      "fires": 0,
+      "nll": 0.83233
+     },
+     "2": {
+      "fires": 8,
+      "nll": 0.0926
+     },
+     "4": {
+      "fires": 8,
+      "nll": 9e-05
+     },
+     "6": {
+      "fires": 8,
+      "nll": 5e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 9e-05
+     },
+     "12": {
+      "fires": 8,
+      "nll": 0.00012
+     },
+     "16": {
+      "fires": 8,
+      "nll": 0.0001
+     },
+     "20": {
+      "fires": 8,
+      "nll": 8e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 6e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 4e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 17.4344,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 13.8934,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 2.0513,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0341,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0137,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0004,
+      "zero_frac": 0.0024,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0034,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0082,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.3124,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0019,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0156,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0116,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0161,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0056,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.004,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0102,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0132,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0024,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0042,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0024,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0013,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0133,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0016,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0102,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0033,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0016,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.002,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0017,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0063,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0186,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "META": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 1.77309
+     },
+     "1": {
+      "fires": 0,
+      "nll": 0.31394
+     },
+     "2": {
+      "fires": 8,
+      "nll": 0.00081
+     },
+     "4": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "6": {
+      "fires": 8,
+      "nll": 0.00011
+     },
+     "8": {
+      "fires": 8,
+      "nll": 0.00138
+     },
+     "12": {
+      "fires": 8,
+      "nll": 3e-05
+     },
+     "16": {
+      "fires": 8,
+      "nll": 4e-05
+     },
+     "20": {
+      "fires": 8,
+      "nll": 5e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 5e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 4e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 17.8943,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 15.0113,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0479,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0041,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0035,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0019,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0016,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0015,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.8355,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0019,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0013,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0027,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0019,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0008,
+      "zero_frac": 0.0011,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0502,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0008,
+      "zero_frac": 0.0012,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0056,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0035,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0121,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0021,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0086,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0022,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0088,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0038,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0034,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.0011,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0013,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0071,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0011,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "MSFT": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 1.673
+     },
+     "1": {
+      "fires": 2,
+      "nll": 0.19308
+     },
+     "2": {
+      "fires": 8,
+      "nll": 0.00055
+     },
+     "4": {
+      "fires": 8,
+      "nll": 0.0001
+     },
+     "6": {
+      "fires": 8,
+      "nll": 0.00021
+     },
+     "8": {
+      "fires": 8,
+      "nll": 0.0006
+     },
+     "12": {
+      "fires": 8,
+      "nll": 0.00271
+     },
+     "16": {
+      "fires": 8,
+      "nll": 6e-05
+     },
+     "20": {
+      "fires": 8,
+      "nll": 4e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 4e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 4e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 18.3414,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 13.1166,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0045,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0036,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0126,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0006,
+      "zero_frac": 0.0018,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0161,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0047,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.2542,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0202,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0091,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0814,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.1676,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0092,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0031,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0624,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0018,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0021,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0007,
+      "zero_frac": 0.0012,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0012,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0003,
+      "zero_frac": 0.003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0051,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0016,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.004,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0013,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.0019,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0009,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0024,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0014,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0028,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0029,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "NVDA": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 1.50198
+     },
+     "1": {
+      "fires": 0,
+      "nll": 0.23762
+     },
+     "2": {
+      "fires": 8,
+      "nll": 0.00135
+     },
+     "4": {
+      "fires": 8,
+      "nll": 9e-05
+     },
+     "6": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 0.00015
+     },
+     "12": {
+      "fires": 8,
+      "nll": 0.00015
+     },
+     "16": {
+      "fires": 8,
+      "nll": 0.00016
+     },
+     "20": {
+      "fires": 8,
+      "nll": 0.00014
+     },
+     "24": {
+      "fires": 8,
+      "nll": 0.0001
+     },
+     "32": {
+      "fires": 8,
+      "nll": 5e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 17.5451,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 12.6098,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.0093,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0018,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0074,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0005,
+      "zero_frac": 0.002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0033,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0022,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.4424,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.002,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0069,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0097,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0172,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0119,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0052,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0165,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.005,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0032,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0037,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0088,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0028,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0165,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0024,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0079,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0069,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0048,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0018,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0022,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0013,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0063,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0015,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "WFC": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 2.29892
+     },
+     "1": {
+      "fires": 0,
+      "nll": 0.82755
+     },
+     "2": {
+      "fires": 6,
+      "nll": 0.08295
+     },
+     "4": {
+      "fires": 8,
+      "nll": 0.00036
+     },
+     "6": {
+      "fires": 8,
+      "nll": 0.0001
+     },
+     "8": {
+      "fires": 8,
+      "nll": 6e-05
+     },
+     "12": {
+      "fires": 8,
+      "nll": 6e-05
+     },
+     "16": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "20": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "24": {
+      "fires": 8,
+      "nll": 6e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 4e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 17.4353,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 14.687,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 3.4262,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.026,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.026,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0013,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0112,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0066,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0431,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.002,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0033,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0052,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0078,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0063,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0014,
+      "zero_frac": 0.0011,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0185,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0018,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0021,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0018,
+      "zero_frac": 0.0006,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0027,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0008,
+      "zero_frac": 0.0015,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0119,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0021,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0037,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0087,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0032,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0013,
+      "zero_frac": 0.0008,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0055,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.001,
+      "zero_frac": 0.0009,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0018,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0047,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0292,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   },
+   "XOM": {
+    "rungs": {
+     "0": {
+      "fires": 0,
+      "nll": 2.36661
+     },
+     "1": {
+      "fires": 0,
+      "nll": 0.99501
+     },
+     "2": {
+      "fires": 0,
+      "nll": 0.35614
+     },
+     "4": {
+      "fires": 8,
+      "nll": 0.00169
+     },
+     "6": {
+      "fires": 8,
+      "nll": 9e-05
+     },
+     "8": {
+      "fires": 8,
+      "nll": 8e-05
+     },
+     "12": {
+      "fires": 8,
+      "nll": 7e-05
+     },
+     "16": {
+      "fires": 8,
+      "nll": 8e-05
+     },
+     "20": {
+      "fires": 8,
+      "nll": 0.0001
+     },
+     "24": {
+      "fires": 8,
+      "nll": 9e-05
+     },
+     "32": {
+      "fires": 8,
+      "nll": 5e-05
+     }
+    },
+    "grad": [
+     {
+      "n": 20.219,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 11.3622,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 6.9829,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 1.4012,
+      "zero_frac": 0.0,
+      "clipped": true,
+      "skip": false
+     },
+     {
+      "n": 0.1217,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0023,
+      "zero_frac": 0.0005,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0095,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.004,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.7619,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.13,
+      "zero_frac": 0.0,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0047,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0077,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0089,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0029,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0083,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.006,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.005,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0033,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0101,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0049,
+      "zero_frac": 0.0003,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0155,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0088,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0215,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0085,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0045,
+      "zero_frac": 0.0002,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0026,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0035,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0031,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0022,
+      "zero_frac": 0.0004,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0147,
+      "zero_frac": 0.0001,
+      "clipped": false,
+      "skip": false
+     },
+     {
+      "n": 0.0019,
+      "zero_frac": 0.0007,
+      "clipped": false,
+      "skip": false
+     }
+    ]
+   }
+  }
+ },
+ "G6_grad_path": {
+  "scaler_skips": {
+   "BRIDGE": 0,
+   "TRUNK": 0,
+   "RANDOM": 0
+  },
+  "mean_zero_frac": {
+   "BRIDGE": 0.0282,
+   "TRUNK": 0.0005,
+   "RANDOM": 0.0005
+  }
+ },
+ "S": {
+  "BRIDGE": {
+   "S": 1,
+   "first_passing": 1,
+   "non_monotone": false
+  },
+  "TRUNK": {
+   "S": 4,
+   "first_passing": 4,
+   "non_monotone": false
+  },
+  "RANDOM": {
+   "S": 4,
+   "first_passing": 4,
+   "non_monotone": false
+  }
+ },
+ "P2_onset": {
+  "BRIDGE": {
+   "AAPL": 0,
+   "AMZN": 0,
+   "BAC": 1,
+   "DIS": 0,
+   "GOOGL": 0,
+   "JPM": 1,
+   "KO": 0,
+   "META": 0,
+   "MSFT": 0,
+   "NVDA": 1,
+   "WFC": 0,
+   "XOM": 1
+  },
+  "TRUNK": {
+   "AAPL": 2,
+   "AMZN": 2,
+   "BAC": 4,
+   "DIS": 2,
+   "GOOGL": 2,
+   "JPM": 4,
+   "KO": 4,
+   "META": 2,
+   "MSFT": 2,
+   "NVDA": 2,
+   "WFC": 4,
+   "XOM": 4
+  },
+  "RANDOM": {
+   "AAPL": 2,
+   "AMZN": 2,
+   "BAC": 4,
+   "DIS": 2,
+   "GOOGL": 2,
+   "JPM": 4,
+   "KO": 2,
+   "META": 2,
+   "MSFT": 2,
+   "NVDA": 2,
+   "WFC": 4,
+   "XOM": 4
+  }
+ },
+ "P3_retention_losses": {
+  "BRIDGE": [],
+  "TRUNK": [],
+  "RANDOM": []
+ },
+ "P1_nll_sign_test": {
+  "0": {
+   "BRIDGE_beats_TRUNK": 12,
+   "BRIDGE_beats_RANDOM": 12
+  },
+  "1": {
+   "BRIDGE_beats_TRUNK": 12,
+   "BRIDGE_beats_RANDOM": 12
+  },
+  "2": {
+   "BRIDGE_beats_TRUNK": 12,
+   "BRIDGE_beats_RANDOM": 12
+  },
+  "4": {
+   "BRIDGE_beats_TRUNK": 12,
+   "BRIDGE_beats_RANDOM": 12
+  },
+  "6": {
+   "BRIDGE_beats_TRUNK": 10,
+   "BRIDGE_beats_RANDOM": 10
+  },
+  "8": {
+   "BRIDGE_beats_TRUNK": 7,
+   "BRIDGE_beats_RANDOM": 7
+  },
+  "12": {
+   "BRIDGE_beats_TRUNK": 8,
+   "BRIDGE_beats_RANDOM": 8
+  },
+  "16": {
+   "BRIDGE_beats_TRUNK": 10,
+   "BRIDGE_beats_RANDOM": 10
+  },
+  "20": {
+   "BRIDGE_beats_TRUNK": 8,
+   "BRIDGE_beats_RANDOM": 8
+  },
+  "24": {
+   "BRIDGE_beats_TRUNK": 10,
+   "BRIDGE_beats_RANDOM": 10
+  },
+  "32": {
+   "BRIDGE_beats_TRUNK": 10,
+   "BRIDGE_beats_RANDOM": 10
+  }
+ },
+ "P1_bridge_vs_trunk_wins_by_rung": {
+  "0": 12,
+  "1": 12,
+  "2": 12,
+  "4": 12,
+  "6": 10,
+  "8": 7,
+  "12": 8,
+  "16": 10,
+  "20": 8,
+  "24": 10,
+  "32": 10
+ },
+ "band": "BRANCH_CREDITED",
+ "VERDICT": "CANDIDATE BRANCH_CREDITED: BRIDGE beats TRUNK on the held-out NLL for a median of 10 of 12 tasks across the ladder (one-sided sign test p<=0.019 at 10/12). The gradient branch does work beyond the library trunk. BRIDGE starts at 99% of the fully trained radius, so any comparison to a cold start is substantially set by its initialisation. Ornith-1.5-9B NF4, r=4, layers 20-31, 12 synthetic tool-call tasks, seed 7102, one training order, one box. CANDIDATE tier.",
+ "elapsed_s": 4609.9
+}
