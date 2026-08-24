@@ -91,7 +91,22 @@ def main():
         if completion is not None:
             msgs.append({"role": "assistant", "content": completion})
         out = tok.apply_chat_template(msgs, tokenize=True, add_generation_prompt=gen)
-        return list(out)
+        # transformers version skew: this can return a list of ids, a string, or a
+        # dict/BatchEncoding whose input_ids may be batched. Normalize all of them.
+        if isinstance(out, str):
+            return tok.encode(out, add_special_tokens=False)
+        if not isinstance(out, list):
+            try:
+                out = out["input_ids"]
+            except (TypeError, KeyError):
+                out = out.ids
+        if hasattr(out, "tolist"):
+            out = out.tolist()
+        out = list(out)
+        if out and isinstance(out[0], list):
+            out = out[0]
+        assert out and isinstance(out[0], int), f"tmpl normalization failed: {type(out[0])}"
+        return out
 
     @torch.no_grad()
     def generate(prompt, max_new=24):
