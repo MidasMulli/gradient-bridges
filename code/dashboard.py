@@ -141,6 +141,113 @@ def chart_perf():
     return ("<h2>Ornith decode paths (tok/s, measured)</h2>"
             "<p class='sub'>One model, three stacks. The dashed line is physics.</p>" + "".join(parts))
 
+
+def chart_walks():
+    """Cross-frame vs same-frame interpolation walks, against their published walk."""
+    p2 = _load("cellP2_crossframe.json")
+    if not p2: return ""
+    ts = p2["ts"]; ref = p2["their_reference"]
+    x0, x1, y0, y1 = 44, 505, 120, 16
+    def X(t): return x0 + t * (x1 - x0)
+    def Y(f): return y0 - (f / 8) * (y0 - y1)
+    parts = ['<svg viewBox="0 0 540 165" role="img" aria-label="Interpolation walks">']
+    for f in (0, 4, 8):
+        parts.append(f'<line x1="{x0}" y1="{Y(f)}" x2="{x1}" y2="{Y(f)}" stroke="{GRID}"/>')
+        parts.append(f'<text x="{x0-8}" y="{Y(f)+3}" text-anchor="end" fill="{MUTED}" font-size="10">{f}</text>')
+    # their published walk (activation space): dies in the middle
+    their_ts = [0, .15, .3, .45, .5, .6, .75, .85, 1.0]
+    pts = " ".join(f"{X(t):.0f},{Y(f):.0f}" for t, f in zip(their_ts, ref["fire"]))
+    parts.append(f'<polyline points="{pts}" fill="none" stroke="{C2}" stroke-width="2" '
+                 f'stroke-dasharray="4,3"/>')
+    for t, f in zip(their_ts, ref["fire"]):
+        parts.append(f'<circle cx="{X(t):.0f}" cy="{Y(f):.0f}" r="4" fill="{C2}" '
+                     f'stroke="{SURF}" stroke-width="2" data-tip="activation space (external): t={t} fire {f}/8"/>')
+    # our cross-frame walks: flat at 8
+    for i, (T, row) in enumerate(p2["walks"].items()):
+        fs = [row["fires"][str(t)] for t in ts]
+        pts = " ".join(f"{X(t):.0f},{Y(f)-i*2:.0f}" for t, f in zip(ts, fs))
+        parts.append(f'<polyline points="{pts}" fill="none" stroke="{C1}" stroke-width="2"/>')
+        for t, f in zip(ts, fs):
+            parts.append(f'<circle cx="{X(t):.0f}" cy="{Y(f)-i*2:.0f}" r="4" fill="{C1}" '
+                         f'stroke="{SURF}" stroke-width="2" data-tip="{T} weight space: t={t} fire {f}/8"/>')
+    for t in (0, 0.5, 1.0):
+        parts.append(f'<text x="{X(t):.0f}" y="{y0+16}" text-anchor="middle" fill="{MUTED}" font-size="10">t={t}</text>')
+    parts.append(f'<text x="{X(0.5):.0f}" y="{Y(0)-6}" text-anchor="middle" fill="{C2}" font-size="10">dead zone</text>')
+    parts.append('</svg>')
+    leg = (f'<span class="key"><i style="background:{C1}"></i>weight space (this bench, 3 targets)</span>'
+           f'<span class="key"><i style="background:{C2}"></i>activation space (external bench, published)</span>')
+    return ("<h2>Same target, two seeds: do the solutions connect?</h2>"
+            "<p class='sub'>Interpolating between two trained solutions for the SAME target from "
+            "DIFFERENT initialization seeds. In weight space every mixture fires. In activation "
+            "space the middle is dead. Same contrast, opposite geometry, which is why the two "
+            "benches' firing laws are not the same object.</p>" + leg + "".join(parts))
+
+def chart_truncation():
+    """B1: how few training steps an adapter needs, and what the deficit is made of."""
+    d = _load("results_truncated_training.json")
+    if not d: return ""
+    import math
+    def series(arm, ladder):
+        out = []
+        for k in ladder:
+            e = d.get(arm, {}).get(str(k))
+            if e and "pooled" in e and "/" in e["pooled"]:
+                out.append((k, int(e["pooled"].split("/")[0])))
+        return out
+    A = series("armA", d["ladders"]["A"])
+    B = series("armB", d["ladders"]["B"])
+    C = series("armC", d["ladders"]["C"])
+    if not A: return ""
+    kstar = d.get("k_star_armA")
+    x0, x1, y0, y1 = 46, 505, 132, 18
+    # log(k+1) so the k=0 rung has a place on the axis and the low-step detail is legible
+    def X(k): return x0 + math.log(k + 1) / math.log(121) * (x1 - x0)
+    def Y(f): return y0 - (f / 96) * (y0 - y1)
+    parts = ['<svg viewBox="0 0 540 178" role="img" '
+             'aria-label="Fire rate against training step, three initialisations">']
+    for f in (0, 48, 96):
+        parts.append(f'<line x1="{x0}" y1="{Y(f)}" x2="{x1}" y2="{Y(f)}" stroke="{GRID}"/>')
+        parts.append(f'<text x="{x0-8}" y="{Y(f)+3}" text-anchor="end" fill="{MUTED}" '
+                     f'font-size="10">{f}</text>')
+    # the pre-committed pooled bar
+    parts.append(f'<line x1="{x0}" y1="{Y(88)}" x2="{x1}" y2="{Y(88)}" stroke="{GRAY}" '
+                 f'stroke-width="1" stroke-dasharray="3,3"/>')
+    parts.append(f'<text x="{x1}" y="{Y(88)-4}" text-anchor="end" fill="{MUTED}" '
+                 f'font-size="9">pooled bar 88/96</text>')
+    for pts, col, name in ((C, C3, "trunk restored, raw branch"),
+                           (B, C2, "trunk restored, branch rescaled (oracle)"),
+                           (A, C1, "raw truncation")):
+        if not pts: continue
+        poly = " ".join(f"{X(k):.0f},{Y(f):.0f}" for k, f in pts)
+        parts.append(f'<polyline points="{poly}" fill="none" stroke="{col}" stroke-width="2"/>')
+        for k, f in pts:
+            parts.append(f'<circle cx="{X(k):.0f}" cy="{Y(f):.0f}" r="4" fill="{col}" '
+                         f'stroke="{SURF}" stroke-width="2" '
+                         f'data-tip="{name}: step {k} fires {f}/96"/>')
+    if kstar:
+        parts.append(f'<line x1="{X(kstar):.0f}" y1="{y1}" x2="{X(kstar):.0f}" y2="{y0}" '
+                     f'stroke="{C1}" stroke-width="1" stroke-dasharray="2,3"/>')
+        parts.append(f'<text x="{X(kstar):.0f}" y="{y1-4}" text-anchor="middle" fill="{C1}" '
+                     f'font-size="10">step {kstar}, ceiling matched</text>')
+    for k in (0, 4, 16, 32, 120):
+        parts.append(f'<text x="{X(k):.0f}" y="{y0+15}" text-anchor="middle" fill="{MUTED}" '
+                     f'font-size="10">{k}</text>')
+    parts.append(f'<text x="{(x0+x1)/2:.0f}" y="{y0+30}" text-anchor="middle" fill="{MUTED}" '
+                 f'font-size="10">training step (log scale)</text>')
+    parts.append('</svg>')
+    v = d.get("VERDICT", "")
+    return ("<h2>How few training steps an adapter needs</h2>"
+            "<p class='sub'>Banked checkpoints replayed through the fire gate; no retraining. "
+            "Raw truncation is dead until step 12, then steps to the trained ceiling at 20 and "
+            "never breaks. Direction alone does not explain it: restoring the mature trunk and "
+            "rescaling the branch to final norm fires 64/96 at step 4, where raw fires 0/96.</p>"
+            + "".join(parts) +
+            f"<p class='sub'><span class='key'><i style='background:{C1}'></i>raw truncation</span>"
+            f"<span class='key'><i style='background:{C2}'></i>branch rescaled (oracle)</span>"
+            f"<span class='key'><i style='background:{C3}'></i>trunk restored only</span></p>"
+            f"<p class='sub muted'>{v}</p>")
+
+
 def build_dashboard():
     s1 = _load("cellS1_spanband.json")
     s1_note = ""
@@ -149,7 +256,7 @@ def build_dashboard():
         s1_note = (f"<p class='sub'>Spanning-band regime: ceiling {c['pass']}, act on long "
                    f"answers {c['act_on_long']}, beyond band {c['act_beyond_band']}.</p>")
     charts = "".join(f"<section>{c}</section>" for c in
-                     [chart_dose(), chart_align(), chart_emergence(), chart_perf()] if c)
+                     [chart_truncation(), chart_walks(), chart_dose(), chart_align(), chart_emergence(), chart_perf()] if c)
     return f"""<!doctype html><html><head><meta charset="utf-8"><title>Lab Dashboard</title><style>
 body{{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:{PLANE};color:{INK};
 max-width:860px;margin:1.5rem auto;padding:0 1rem}}
