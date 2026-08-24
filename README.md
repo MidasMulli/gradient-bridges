@@ -143,6 +143,50 @@ from different seeds fires at every point tested (21/21), so in this object clas
 solutions are connected. The gradient therefore computes something valid in the
 initialization frame it was computed in, rather than a frame-independent object.
 
+### What the trunk is made of: literal output overlap, measured as a curve
+
+The two diffusion experiments (in the lab record, not this repo) found task families with
+no shared trunk at all, which raised a sharp question about the finding above: is the trunk
+"the shared program" in a semantic sense, or the gradient of the literally shared part of
+the target output? This cell varies the shared fraction directly: four families of four
+tasks, targets of 12 single-token words with a shared prefix of K words, everything else
+pinned to the validated trainer. The overlap axis is measured under the tokenizer on the
+supervised stream, so the floor at K=0 (0.138, from two closing template tokens every task
+shares) is measured rather than assumed.
+
+| shared words K | measured overlap | mean pairwise delta cos | init-gradient prediction |
+|---|---|---|---|
+| 0 | 0.138 | 0.319 | 0.234 |
+| 4 | 0.429 | 0.551 | 0.642 |
+| 8 | 0.714 | 0.708 | 0.894 |
+| 11 | 0.929 | 0.907 | 0.960 |
+
+Three findings. First, overlap is the dominant driver: the curve is strictly monotone and
+spans 0.319 to 0.907, and the K=11 family, which shares everything except one word, lands
+at 0.9075 against the original ticker family's 0.9077 with entirely different words and no
+financial semantics. The trunk share is set by how much of the output is literally shared.
+
+Second, there is a measured baseline of task-agnostic sharing: at effectively zero content
+overlap the deltas still share cos 0.319, exceeding the overlap floor by 0.08 with a tight
+per-pair spread (0.30 to 0.33), and most of it is already present in the init-gradient
+geometry (0.234). Shared carriers and the shared work of collapsing onto a memorized string
+are candidates; a pre-registered disjoint-prefix arm separates structure from literal
+sharing and has not yet run. The verdict under the pre-committed bars is therefore
+INTERMEDIATE rather than SUPPORTED: overlap drives the trunk but is not all of it.
+
+Third, the strict mechanistic identity fails: the trained trunk's cosine with the shared
+part's descent gradient at init is only 0.28 to 0.29 for K >= 4 (stored gradients are the
+raw ascent direction; the sign is flipped here for reading). The trunk is reached through
+the shared-output gradient but grows beyond it, the same relation the per-task branch has
+to its own init gradient (0.38 to 0.53 in the panel above). And the init-gradient
+prediction overshoots at high overlap (0.894 predicted, 0.708 measured at K=8), so
+training decorrelates deltas relative to their initial gradients as the unique parts are
+learned.
+
+Scope: 4 tasks per level, one seed, one training order, shared-prefix overlap only. All 16
+tasks reached 8/8 on held-out carriers, the trainer was revalidated in-scan against a
+banked manifest (relative error 0.00000), and the base emitted none of the 16 targets.
+
 ### The construction is also a better place to start training
 
 B1 measured the cold-start cost: from the standard LoRA init, checkpoints reach the fire bar

@@ -248,6 +248,51 @@ def chart_truncation():
             f"<p class='sub muted'>{v}</p>")
 
 
+def chart_overlap():
+    """B5: trunk share against measured output overlap, with the init-gradient prediction."""
+    d = _load("results_b5_overlap.json")
+    if not d or "geometry" not in d: return ""
+    Ks = ["0", "4", "8", "11"]
+    o = [d["measured_overlap"][k] for k in Ks]
+    c = [d["geometry"][k]["mean_raw_cos"] for k in Ks]
+    ch = [d["MODELLED_c_hat"][k] for k in Ks]
+    x0, x1, y0, y1 = 46, 505, 132, 16
+    def X(v): return x0 + v * (x1 - x0)
+    def Y(v): return y0 - v * (y0 - y1)
+    parts = ['<svg viewBox="0 0 540 175" role="img" aria-label="Trunk share vs output overlap">']
+    for v in (0, 0.5, 1.0):
+        parts.append(f'<line x1="{x0}" y1="{Y(v)}" x2="{x1}" y2="{Y(v)}" stroke="{GRID}"/>')
+        parts.append(f'<text x="{x0-8}" y="{Y(v)+3}" text-anchor="end" fill="{MUTED}" font-size="10">{v}</text>')
+        parts.append(f'<text x="{X(v):.0f}" y="{y0+14}" text-anchor="middle" fill="{MUTED}" font-size="10">{v}</text>')
+    # identity line: cos = overlap (the naive law)
+    parts.append(f'<line x1="{X(0)}" y1="{Y(0)}" x2="{X(1)}" y2="{Y(1)}" stroke="{GRID}" stroke-dasharray="2,4"/>')
+    # MODELLED init-gradient prediction
+    pts=" ".join(f"{X(a):.0f},{Y(b):.0f}" for a,b in zip(o,ch))
+    parts.append(f'<polyline points="{pts}" fill="none" stroke="{C2}" stroke-width="2" stroke-dasharray="5,3"/>')
+    for a,b in zip(o,ch):
+        parts.append(f'<circle cx="{X(a):.0f}" cy="{Y(b):.0f}" r="4" fill="{C2}" stroke="{SURF}" '
+                     f'stroke-width="2" data-tip="init-gradient prediction: overlap {a:.2f}, cos {b:.2f}"/>')
+    # measured
+    pts=" ".join(f"{X(a):.0f},{Y(b):.0f}" for a,b in zip(o,c))
+    parts.append(f'<polyline points="{pts}" fill="none" stroke="{C1}" stroke-width="2"/>')
+    for a,b,K in zip(o,c,Ks):
+        parts.append(f'<circle cx="{X(a):.0f}" cy="{Y(b):.0f}" r="5" fill="{C1}" stroke="{SURF}" '
+                     f'stroke-width="2" data-tip="K={K} shared words: overlap {a:.3f}, trained cos {b:.3f}"/>')
+    # anchors
+    parts.append(f'<circle cx="{X(0.815):.0f}" cy="{Y(0.9077):.0f}" r="5" fill="none" stroke="{C3}" '
+                 f'stroke-width="2" data-tip="ticker family anchor: overlap 0.815, cos 0.908"/>')
+    parts.append(f'<circle cx="{X(0.0):.0f}" cy="{Y(0.027):.0f}" r="5" fill="none" stroke="{GRAY}" '
+                 f'stroke-width="2" data-tip="diffusion families (other substrate): overlap ~0, cos 0.027-0.048"/>')
+    parts.append('</svg>')
+    return ("<h2>What the trunk is made of</h2>"
+            "<p class='sub'>Mean pairwise cosine of trained deltas against measured output overlap "
+            "(blue, solid) with the init-gradient prediction (orange, dashed) and the identity line. "
+            "Overlap drives the trunk: monotone, 0.32 to 0.91, and the all-but-one-word family lands on "
+            "the ticker anchor (green ring). The 0.32 intercept at zero content overlap is the measured "
+            "task-agnostic component; the diffusion substrate (gray ring) has none.</p>"
+            + "".join(parts))
+
+
 def build_dashboard():
     s1 = _load("cellS1_spanband.json")
     s1_note = ""
@@ -256,7 +301,7 @@ def build_dashboard():
         s1_note = (f"<p class='sub'>Spanning-band regime: ceiling {c['pass']}, act on long "
                    f"answers {c['act_on_long']}, beyond band {c['act_beyond_band']}.</p>")
     charts = "".join(f"<section>{c}</section>" for c in
-                     [chart_truncation(), chart_walks(), chart_dose(), chart_align(), chart_emergence(), chart_perf()] if c)
+                     [chart_overlap(), chart_truncation(), chart_walks(), chart_dose(), chart_align(), chart_emergence(), chart_perf()] if c)
     return f"""<!doctype html><html><head><meta charset="utf-8"><title>Lab Dashboard</title><style>
 body{{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:{PLANE};color:{INK};
 max-width:860px;margin:1.5rem auto;padding:0 1rem}}
