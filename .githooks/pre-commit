@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# The pre-publication audit, automated on staged content only (fast). CLAUDE.md rule:
+# nothing publishes with dashes, telemetry, or secret-shaped strings.
+fail(){ echo "pre-commit hook: $1" >&2; exit 1; }
+
+# author identity pinned (the actual poisoning risk from the checklist)
+[ "$(git config user.name)" = "MidasMulli" ] || fail "author is not MidasMulli"
+
+STAGED=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(md|py|json)$')
+[ -z "$STAGED" ] && exit 0
+for f in $STAGED; do
+  git show ":$f" | grep -qP '\x{2014}|\x{2013}' && fail "em/en dash in $f"
+  git show ":$f" | grep -qE 'workflowProgress|promptPreview|lastToolSummary|"agentId"' && \
+    fail "harness telemetry in $f"
+  git show ":$f" | grep -qE 'ssh-ed25519 AAAA|BEGIN [A-Z ]*PRIVATE KEY|ghp_[A-Za-z0-9]|github_pat_' && \
+    fail "secret-shaped string in $f"
+done
+exit 0
