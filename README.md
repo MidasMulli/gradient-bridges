@@ -4,7 +4,9 @@ Building a working LoRA adapter for a task that was never trained, using the mea
 other tasks' adapters plus one gradient evaluated at the untrained initialization.
 
 All results are from one bench: RTX 2080 Ti (11 GB), a 9B instruction-tuned causal LM
-quantized to NF4 and frozen, LoRA rank 4 (the cross-frame walk in the report uses rank 8,
+("Ornith", the lab's resident model: a Qwen3.5-family 9B instruct checkpoint; the exact
+Hub id and revision are pinned in `code/harness_common.py`) quantized to NF4 and frozen,
+LoRA rank 4 (the cross-frame walk in the report uses rank 8,
 where the interpolation is exact). The main panel is one seed; a partial replication at a
 second seed covers 6 of the 12 tasks. Preregistered with executable gates. Status:
 candidate. Reproduced on a second model family (Llama-3.1-8B, section below); still one
