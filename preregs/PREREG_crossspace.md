@@ -16,7 +16,9 @@ contrasted_against:   Main CC object = M108 L10 value-level injector (NOT the Pa
 
 ## 1. NOVELTY-VS-RECORD
 
-All cited paths under `/mnt/ailab/bridge-import/m108/` unless noted.
+The survey below was conducted against a local import of the referenced work. File
+paths are internal and are given for provenance only, not as citations a reader can
+follow; each verdict states the numbers it rests on.
 
 ### 1.1 Nearest prior attempts (file + verdict, verbatim where quoted)
 

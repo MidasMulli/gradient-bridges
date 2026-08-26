@@ -197,8 +197,9 @@ what the geometry can't. Mechanism contrast for the joint writeup: their bridge 
 OFF-manifold in activation space; ours works by returning TO the functional shell in
 weight space.
 
-## CROSS-BENCH: ROUTE 6 NULL IN RESIDUAL SPACE (Mac bench, 2026-08-23, their prereg;
-## their finding at vault/research/m108/route6_grad_at_init_FINDINGS_2026-08-23.md)
+## CROSS-BENCH: ROUTE 6 NULL IN RESIDUAL SPACE (collaborating Mac bench, 2026-08-23,
+## run under their own prereg. Their raw artifacts are not in this repo; the numbers
+## below are quoted from their report and are not reproducible from this repository.)
 Grad-at-init does NOT transfer: branch alignment after LOO trunk removal NULL at both
 inits (0.041 vs null p95 0.062; faithful init 0.027 vs 0.044; our band was 0.38-0.53
 vs 0.083). Their oracle power gate missed its own bar (11/16, beta substitution at ~0.80
@@ -340,7 +341,7 @@ the act boundary, cf. the "NVNV" partial in v2).
 Also behaviorally confirmed in production: trunk-dominated prose (near-verbatim
 identical answers across bridges on same prompts) and act-timing jitter per bridge
 (carbonara act at 34/333/31 tokens for TSLA/NFLX/GS): the length-cliff regime artifact
-wearing its production face. Judged quality card: ~/Work/ai-lab/ORNITH_QUALITY_CARD.md.
+wearing its production face. Judged against a separate quality card held with the bench notes, not in this repo.
 
 ## CELL 1 BATCH-DOUBLING DISCRIMINATOR: CURVATURE-LIMITED (2026-08-23 eve;
 ## PREREG_evening_cells.md; cell1_batchdouble.json; scope-cliff rules held: delta=0,
