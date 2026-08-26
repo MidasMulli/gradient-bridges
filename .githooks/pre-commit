@@ -4,7 +4,7 @@
 fail(){ echo "pre-commit hook: $1" >&2; exit 1; }
 
 # author identity pinned (the actual poisoning risk from the checklist)
-[ "$(git config user.name)" = "MidasMulli" ] || fail "author is not MidasMulli"
+[ "$(git config user.name)" = "Nick Lomeli" ] || fail "author is not Nick Lomeli"
 
 STAGED=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(md|py|json)$')
 [ -z "$STAGED" ] && exit 0
