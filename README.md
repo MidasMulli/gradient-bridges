@@ -12,6 +12,43 @@ second seed covers 6 of the 12 tasks. Preregistered with executable gates. Statu
 candidate. Reproduced on a second model family (Llama-3.1-8B, section below); still one
 lab, so external replication remains open.
 
+## Relation to prior work, stated first
+
+The construction below reduces to a known object, and that is stated here rather than in
+the Related work section at the end.
+
+LoRA-One (arXiv:2502.01235, ICML 2025) proves that a LoRA adapter built from the one-step
+full gradient approximates the fine-tuning update, and its Table 2 evaluates exactly that
+with zero training steps: an untrained rank-8 gradient adapter matches trained LoRA on
+small GLUE tasks. arXiv:2508.16082 shows a one-epoch task vector is the negative gradient
+scaled by the learning rate. Apply the second to the first and the trunk here, a mean of
+other tasks' one-epoch deltas, is a multitask gradient, so `trunk + beta * branch` is one
+rank-projected gradient step on a task mixture. Ilharco et al. (arXiv:2212.04089) build
+held-out task vectors by arithmetic on other tasks, using no target-task data at all,
+which is strictly less input than the construction here uses.
+
+So this repository is a replication of published results in a new setting, not a new
+mechanism. What it adds is the setting and the controls: a generative exact-string task at
+8B to 9B rather than small classification, a matched-norm random direction and a
+trunk-only arm both at 0/96, preregistered executable gates, and a second model family.
+
+What it is missing, stated plainly: there is no BRANCH-ONLY arm. Every arm except
+trunk-only contains the trunk, so the gradient has never been tested without the library.
+LoRA-One's Table 2 predicts branch-only would fire. Until that number is here, this
+repository cannot distinguish "the library plus a gradient builds an adapter" from "a
+gradient builds an adapter and the library is along for the ride". The arm is
+preregistered and will be added with whatever it returns.
+
+One further caveat on the panel below: the alignment band is reported at one seed. In a
+matched fp16 frame on different hardware, the seed-to-seed standard deviation of mean
+alignment measured 0.0124 over five seeds (results/e1_power_probe.json: seeds 7102, 11, 23,
+47, 91, twelve branches trained per seed, per-ticker means included). That estimate is
+itself underpowered. At n=5 its own 95% interval runs from roughly 0.007 to 0.036, so it
+sets the scale of the seed noise and should not be read to three decimals. On that scale it
+is comparable to the gaps this repository elsewhere reports between conditions. Treat
+single-seed alignment differences of a few hundredths as unresolved, rather than applying a
+fixed cutoff.
+
 ## The construction
 
 For a target task T with no trained artifact:
