@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Enforces this repo's commit-message policy. Bypass consciously with --no-verify.
+MSG="$1"
+fail(){ echo "commit-msg hook: $1" >&2; exit 1; }
+
+# 1. Public writing rules: no em or en dashes in commit messages.
+grep -qP '\x{2014}|\x{2013}' "$MSG" && fail "em/en dash in commit message (writing rules)"
+
+# 2. Attribution policy: Co-Authored-By trailers are ALLOWED for Claude (deliberate
+#    disclosure, operator decision 2026-08-24) and BLOCKED for any other tool.
+if grep -iE '^Co-Authored-By:' "$MSG" | grep -ivq 'claude'; then
+  fail "third-party Co-Authored-By trailer (only Claude attribution is repo policy)"
+fi
+grep -iqE 'Generated-by: (cursor|copilot|devin|aider|factory)' "$MSG" && \
+  fail "third-party tool trailer"
+
+# 3. No priority claims in public history.
+grep -iqE 'to our knowledge|no prior work|nobody has|first ever' "$MSG" && \
+  fail "priority claim in commit message (writing rules)"
+exit 0

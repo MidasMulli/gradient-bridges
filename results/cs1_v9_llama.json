@@ -1,0 +1,446 @@
+{
+ "model": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+ "seed": 7102,
+ "rank": 4,
+ "layers": [
+  20,
+  31
+ ],
+ "steps": 120,
+ "n_params": 1769472,
+ "prereg": "PREREG_crossspace.md V9",
+ "base_null": "0/96",
+ "ceiling": {
+  "pooled": 96,
+  "m_tasks_ge5": 12,
+  "per_task": {
+   "AAPL": {
+    "fires": 8,
+    "emitted": {
+     "AAPL": 8
+    }
+   },
+   "AMZN": {
+    "fires": 8,
+    "emitted": {
+     "AMZN": 8
+    }
+   },
+   "BAC": {
+    "fires": 8,
+    "emitted": {
+     "BAC": 8
+    }
+   },
+   "DIS": {
+    "fires": 8,
+    "emitted": {
+     "DIS": 8
+    }
+   },
+   "GOOGL": {
+    "fires": 8,
+    "emitted": {
+     "GOOGL": 8
+    }
+   },
+   "JPM": {
+    "fires": 8,
+    "emitted": {
+     "JPM": 8
+    }
+   },
+   "KO": {
+    "fires": 8,
+    "emitted": {
+     "KO": 8
+    }
+   },
+   "META": {
+    "fires": 8,
+    "emitted": {
+     "META": 8
+    }
+   },
+   "MSFT": {
+    "fires": 8,
+    "emitted": {
+     "MSFT": 8
+    }
+   },
+   "NVDA": {
+    "fires": 8,
+    "emitted": {
+     "NVDA": 8
+    }
+   },
+   "WFC": {
+    "fires": 8,
+    "emitted": {
+     "WFC": 8
+    }
+   },
+   "XOM": {
+    "fires": 8,
+    "emitted": {
+     "XOM": 8
+    }
+   }
+  }
+ },
+ "oracle": {
+  "pooled": 96,
+  "m_tasks_ge5": 12,
+  "per_task": {
+   "AAPL": {
+    "fires": 8,
+    "emitted": {
+     "AAPL": 8
+    }
+   },
+   "AMZN": {
+    "fires": 8,
+    "emitted": {
+     "AMZN": 8
+    }
+   },
+   "BAC": {
+    "fires": 8,
+    "emitted": {
+     "BAC": 8
+    }
+   },
+   "DIS": {
+    "fires": 8,
+    "emitted": {
+     "DIS": 8
+    }
+   },
+   "GOOGL": {
+    "fires": 8,
+    "emitted": {
+     "GOOGL": 8
+    }
+   },
+   "JPM": {
+    "fires": 8,
+    "emitted": {
+     "JPM": 8
+    }
+   },
+   "KO": {
+    "fires": 8,
+    "emitted": {
+     "KO": 8
+    }
+   },
+   "META": {
+    "fires": 8,
+    "emitted": {
+     "META": 8
+    }
+   },
+   "MSFT": {
+    "fires": 8,
+    "emitted": {
+     "MSFT": 8
+    }
+   },
+   "NVDA": {
+    "fires": 8,
+    "emitted": {
+     "NVDA": 8
+    }
+   },
+   "WFC": {
+    "fires": 8,
+    "emitted": {
+     "WFC": 8
+    }
+   },
+   "XOM": {
+    "fires": 8,
+    "emitted": {
+     "XOM": 8
+    }
+   }
+  }
+ },
+ "trunk": {
+  "pooled": 0,
+  "m_tasks_ge5": 0,
+  "per_task": {
+   "AAPL": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   },
+   "AMZN": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   },
+   "BAC": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   },
+   "DIS": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 8
+    }
+   },
+   "GOOGL": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   },
+   "JPM": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   },
+   "KO": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   },
+   "META": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   },
+   "MSFT": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   },
+   "NVDA": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   },
+   "WFC": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   },
+   "XOM": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   }
+  }
+ },
+ "random": {
+  "pooled": 0,
+  "m_tasks_ge5": 0,
+  "per_task": {
+   "AAPL": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   },
+   "AMZN": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   },
+   "BAC": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   },
+   "DIS": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 8
+    }
+   },
+   "GOOGL": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   },
+   "JPM": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   },
+   "KO": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   },
+   "META": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   },
+   "MSFT": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   },
+   "NVDA": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   },
+   "WFC": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   },
+   "XOM": {
+    "fires": 0,
+    "emitted": {
+     "NONE": 7,
+     "DIS": 1
+    }
+   }
+  }
+ },
+ "constructed": {
+  "pooled": 96,
+  "m_tasks_ge5": 12,
+  "per_task": {
+   "AAPL": {
+    "fires": 8,
+    "emitted": {
+     "AAPL": 8
+    }
+   },
+   "AMZN": {
+    "fires": 8,
+    "emitted": {
+     "AMZN": 8
+    }
+   },
+   "BAC": {
+    "fires": 8,
+    "emitted": {
+     "BAC": 8
+    }
+   },
+   "DIS": {
+    "fires": 8,
+    "emitted": {
+     "DIS": 8
+    }
+   },
+   "GOOGL": {
+    "fires": 8,
+    "emitted": {
+     "GOOGL": 8
+    }
+   },
+   "JPM": {
+    "fires": 8,
+    "emitted": {
+     "JPM": 8
+    }
+   },
+   "KO": {
+    "fires": 8,
+    "emitted": {
+     "KO": 8
+    }
+   },
+   "META": {
+    "fires": 8,
+    "emitted": {
+     "META": 8
+    }
+   },
+   "MSFT": {
+    "fires": 8,
+    "emitted": {
+     "MSFT": 8
+    }
+   },
+   "NVDA": {
+    "fires": 8,
+    "emitted": {
+     "NVDA": 8
+    }
+   },
+   "WFC": {
+    "fires": 8,
+    "emitted": {
+     "WFC": 8
+    }
+   },
+   "XOM": {
+    "fires": 8,
+    "emitted": {
+     "XOM": 8
+    }
+   }
+  }
+ },
+ "alignment": {
+  "per_task": {
+   "AAPL": 0.4537,
+   "AMZN": 0.5872,
+   "BAC": 0.5226,
+   "DIS": 0.5466,
+   "GOOGL": 0.5603,
+   "JPM": 0.5797,
+   "KO": 0.5851,
+   "META": 0.5609,
+   "MSFT": 0.5192,
+   "NVDA": 0.59,
+   "WFC": 0.5071,
+   "XOM": 0.5156
+  },
+  "mean": 0.544,
+  "null_p95_abs": 0.1114
+ },
+ "VERDICT": "CANDIDATE V9 REPRODUCTION-ACROSS-MODELS: constructed 96/96, 12/12 tasks fire. The adapter-space trunk+branch construction is not Ornith-specific; it ports to Llama-3.1-8B. One seed, one quantization, reconstructed task. CANDIDATE tier.",
+ "gates_pass": true,
+ "elapsed_s": 1311.7
+}

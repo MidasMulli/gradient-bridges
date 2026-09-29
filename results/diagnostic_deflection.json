@@ -1,0 +1,40 @@
+{
+ "diagnostic": "deflection analysis in 64-PC space (post-hoc, labeled; see docstring)",
+ "defl_cos_ridge_vs_true_mean": 0.020882064732062226,
+ "defl_cos_per_target": {
+  "AAPL": 0.0502,
+  "AMZN": 0.0529,
+  "BAC": 0.018,
+  "DIS": -0.0152,
+  "GOOGL": -0.0061,
+  "JPM": -0.0238,
+  "KO": 0.0512,
+  "META": 0.0102,
+  "MSFT": 0.0584,
+  "NVDA": 0.0502,
+  "WFC": 0.0105,
+  "XOM": -0.006
+ },
+ "branch_norm_fraction_mean": 0.2055914563437303,
+ "branch_norm_fraction_per_target": {
+  "AAPL": 0.195,
+  "AMZN": 0.1525,
+  "BAC": 0.2536,
+  "DIS": 0.1787,
+  "GOOGL": 0.2116,
+  "JPM": 0.2145,
+  "KO": 0.178,
+  "META": 0.1811,
+  "MSFT": 0.1746,
+  "NVDA": 0.1711,
+  "WFC": 0.2569,
+  "XOM": 0.2996
+ },
+ "cross_target_branch_cos": {
+  "mean": -0.08395887911319733,
+  "min": -0.23706136643886566,
+  "max": 0.15137453377246857,
+  "std": 0.1068992018699646
+ },
+ "reading": "defl_cos ~ 0 => free rep predicts nothing about the branch; cross_target_branch_cos ~ 0 => branches mutually orthogonal (parent-arc wall geometry)"
+}

@@ -1,0 +1,165 @@
+{
+ "prereg": "PREREG_b5_overlap_law.md",
+ "levels": [
+  0,
+  4,
+  8,
+  11
+ ],
+ "seed": 7102,
+ "steps": 120,
+ "lr": 0.0002,
+ "tasks": {
+  "0_0": "river anchor candle marble hammer garden violet copper basket lantern pepper saddle",
+  "0_1": "walnut zipper bridge canyon dolphin engine feather glacier harbor island jacket kettle",
+  "0_2": "ladder mirror needle pillow quartz ribbon shovel tunnel valley beacon dagger emblem",
+  "0_3": "forest helmet ivory jungle kernel magnet parcel rocket sphere temple vessel wagon",
+  "4_0": "record entry number seven barrel drum ember flute hinge jewel lever reef",
+  "4_1": "record entry number seven vault yeast amber fern hedge iris moth net",
+  "4_2": "record entry number seven prism rune tarp urn vine table chair window",
+  "4_3": "record entry number seven door stone cloud field stream mountain ocean paper",
+  "8_0": "system update cycle nine begin phase two now pencil book lamp clock",
+  "8_1": "system update cycle nine begin phase two now shelf floor wall roof",
+  "8_2": "system update cycle nine begin phase two now gate fence path road",
+  "8_3": "system update cycle nine begin phase two now bird fish horse sheep",
+  "11_0": "archive daily summary block four zero confirm state ready seal shut goat",
+  "11_1": "archive daily summary block four zero confirm state ready seal shut wolf",
+  "11_2": "archive daily summary block four zero confirm state ready seal shut bear",
+  "11_3": "archive daily summary block four zero confirm state ready seal shut deer"
+ },
+ "anchors": {
+  "ticker_overlap": 0.77,
+  "ticker_cos": 0.908,
+  "diffusion_cos": [
+   0.027,
+   0.048
+  ]
+ },
+ "G2_lengths": {
+  "per_task": {
+   "0_0": 12,
+   "0_1": 13,
+   "0_2": 13,
+   "0_3": 12,
+   "4_0": 12,
+   "4_1": 12,
+   "4_2": 12,
+   "4_3": 12,
+   "8_0": 12,
+   "8_1": 12,
+   "8_2": 12,
+   "8_3": 12,
+   "11_0": 12,
+   "11_1": 12,
+   "11_2": 12,
+   "11_3": 12
+  },
+  "spread": 1
+ },
+ "measured_overlap": {
+  "0": 0.138,
+  "4": 0.4286,
+  "8": 0.7143,
+  "11": 0.9286
+ },
+ "last_phase": "done",
+ "G1_base_null": "0/8",
+ "G3b_trainer_revalidation": {
+  "step0": 5.303593635559082,
+  "banked0": 5.30359,
+  "rel_err_1to7": 0.0
+ },
+ "NAIVE_shared_loss_mass": {
+  "0": 0.0,
+  "4": 0.3842,
+  "8": 0.6408,
+  "11": 0.8854
+ },
+ "MODELLED_c_hat": {
+  "0": 0.2344,
+  "4": 0.6423,
+  "8": 0.8937,
+  "11": 0.9604
+ },
+ "G5_fires": {
+  "0_0": 8,
+  "0_1": 8,
+  "0_2": 8,
+  "0_3": 8,
+  "4_0": 8,
+  "4_1": 8,
+  "4_2": 8,
+  "4_3": 8,
+  "8_0": 8,
+  "8_1": 8,
+  "8_2": 8,
+  "8_3": 8,
+  "11_0": 8,
+  "11_1": 8,
+  "11_2": 8,
+  "11_3": 8
+ },
+ "G5_excluded": [],
+ "geometry": {
+  "0": {
+   "n": 4,
+   "mean_raw_cos": 0.3186,
+   "pairwise": {
+    "0_0-0_1": 0.3103,
+    "0_0-0_2": 0.3275,
+    "0_0-0_3": 0.3245,
+    "0_1-0_2": 0.3136,
+    "0_1-0_3": 0.3015,
+    "0_2-0_3": 0.3341
+   },
+   "branch_fraction": 0.9532
+  },
+  "4": {
+   "n": 4,
+   "mean_raw_cos": 0.5515,
+   "pairwise": {
+    "4_0-4_1": 0.5906,
+    "4_0-4_2": 0.54,
+    "4_0-4_3": 0.5309,
+    "4_1-4_2": 0.5513,
+    "4_1-4_3": 0.5537,
+    "4_2-4_3": 0.5426
+   },
+   "branch_fraction": 0.7732
+  },
+  "8": {
+   "n": 4,
+   "mean_raw_cos": 0.7084,
+   "pairwise": {
+    "8_0-8_1": 0.6949,
+    "8_0-8_2": 0.713,
+    "8_0-8_3": 0.7134,
+    "8_1-8_2": 0.7114,
+    "8_1-8_3": 0.6999,
+    "8_2-8_3": 0.7179
+   },
+   "branch_fraction": 0.6237
+  },
+  "11": {
+   "n": 4,
+   "mean_raw_cos": 0.9075,
+   "pairwise": {
+    "11_0-11_1": 0.9215,
+    "11_0-11_2": 0.8854,
+    "11_0-11_3": 0.922,
+    "11_1-11_2": 0.9036,
+    "11_1-11_3": 0.9178,
+    "11_2-11_3": 0.895
+   },
+   "branch_fraction": 0.3508
+  }
+ },
+ "mechanism_cos_trunk_gP": {
+  "0": -0.0581,
+  "4": -0.281,
+  "8": -0.2874,
+  "11": -0.2942
+ },
+ "VERDICT": "CANDIDATE INTERMEDIATE: cos curve [0.3186, 0.5515, 0.7084, 0.9075], no verdict per prereg. Ornith-1.5-9B NF4, r=4, layers 20-31, seed 7102, one training order, shared-PREFIX overlap only, 4 tasks per level. CANDIDATE tier.",
+ "elapsed_s": 2835.9
+}

@@ -1,0 +1,159 @@
+{
+ "beta": 0.9931113719940186,
+ "cells": {
+  "KO+NVDA@0.6": {
+   "counts": {
+    "OWNER": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")"
+   ]
+  },
+  "KO+NVDA@0.8": {
+   "counts": {
+    "FOREIGN": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")"
+   ]
+  },
+  "KO+NVDA@0.9": {
+   "counts": {
+    "FOREIGN": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")"
+   ]
+  },
+  "KO+NVDA@1.0": {
+   "counts": {
+    "PARTIAL": 2,
+    "FOREIGN": 6
+   },
+   "texts": [
+    "CALL: stock_quote(\"NVNV\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVNV\")"
+   ]
+  },
+  "KO+NVDA@1.1": {
+   "counts": {
+    "PARTIAL": 5,
+    "FOREIGN": 3
+   },
+   "texts": [
+    "CALL: stock_quote(\"NVNV\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVDA\")",
+    "CALL: stock_quote(\"NVNV\")",
+    "CALL: stock_quote(\"NVNV\")",
+    "CALL: stock_quote(\"NVNV\")",
+    "CALL: stock_quote(\"NVNV\")"
+   ]
+  },
+  "DIS+KO@0.6": {
+   "counts": {
+    "OWNER": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")"
+   ]
+  },
+  "DIS+KO@0.8": {
+   "counts": {
+    "OWNER": 5,
+    "FOREIGN": 3
+   },
+   "texts": [
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"DIS\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"DIS\")"
+   ]
+  },
+  "DIS+KO@0.9": {
+   "counts": {
+    "FOREIGN": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")"
+   ]
+  },
+  "DIS+KO@1.0": {
+   "counts": {
+    "FOREIGN": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")"
+   ]
+  },
+  "DIS+KO@1.1": {
+   "counts": {
+    "FOREIGN": 8
+   },
+   "texts": [
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")",
+    "CALL: stock_quote(\"KO\")"
+   ]
+  }
+ },
+ "stamped_utc": "2026-08-23T22-30-38Z"
+}
